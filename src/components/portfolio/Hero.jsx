@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Play, ArrowDown } from "lucide-react";
 import MagneticButton from "./MagneticButton";
 import Typewriter from "./Typewriter";
-import Stats from "./Stats";
+
 import Particles from "./Particles";
 
 const NAME = "Lissette De Leon";
@@ -92,9 +92,7 @@ export default function Hero() {
             </MagneticButton>
           </div>
 
-          <div className="mt-12">
-            <Stats />
-          </div>
+
         </motion.div>
 
         {/* Right — proof of life card */}
