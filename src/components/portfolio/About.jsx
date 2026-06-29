@@ -3,9 +3,12 @@ import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 
 const GROUPS = [
-  { title: "Languages", items: ["Python", "SQL"] },
+  { title: "Languages", items: ["Python", "SQL", "Bash"] },
+  { title: "Security Tools", items: ["Wireshark", "Burp Suite", "Kali Linux", "Nmap", "Metasploit"] },
+  { title: "Platforms & OS", items: ["Linux", "Red Hat", "Windows"] },
   { title: "Cloud", items: ["Google Cloud", "Firebase", "FlutterFlow"] },
-  { title: "Security", items: ["NIST CSF", "Access Controls", "Sec+"] },
+  { title: "Security", items: ["NIST CSF", "Access Controls", "Sec+", "Vulnerability Assessment"] },
+  { title: "Dev Tools", items: ["VS Code", "Git", "GitHub", "Docker"] },
   { title: "Strengths", items: ["Documentation", "Team Lead", "AI Tools"] },
 ];
 
@@ -14,7 +17,7 @@ export default function About() {
     <section id="about" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
       <SectionTitle eyebrow="01 — Who I Am">About Me</SectionTitle>
 
-      <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-2">
+      <div className="mt-14 flex flex-col gap-12">
         <motion.div
           initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="space-y-6 text-lg leading-relaxed text-cream/75"
@@ -34,7 +37,7 @@ export default function About() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {GROUPS.map((g, i) => (
             <motion.div
               key={g.title}
