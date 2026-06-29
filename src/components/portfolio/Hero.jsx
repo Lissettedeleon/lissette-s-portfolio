@@ -19,8 +19,8 @@ export default function Hero() {
     <section id="hero" className="relative flex min-h-screen items-center overflow-hidden pt-24">
       {/* aurora blobs (0.1x) */}
       <motion.div style={{ y: blobsY }} className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-32 top-20 h-[28rem] w-[28rem] rounded-full opacity-30 blur-[120px]" style={{ background: "#d4a853" }} />
-        <div className="absolute -right-20 bottom-10 h-[26rem] w-[26rem] rounded-full opacity-20 blur-[120px]" style={{ background: "#d4847a" }} />
+        <div className="absolute -left-32 top-20 h-[28rem] w-[28rem] rounded-full opacity-30 blur-[120px]" style={{ background: "#b39ddb" }} />
+        <div className="absolute -right-20 bottom-10 h-[26rem] w-[26rem] rounded-full opacity-20 blur-[120px]" style={{ background: "#80cbc4" }} />
       </motion.div>
 
       {/* decorative rings (0.3x) */}
@@ -42,7 +42,7 @@ export default function Hero() {
           </motion.p>
 
           <h1 className="font-serif-display text-6xl italic leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl">
-            {NAME.split("").map((ch, i) => (
+            {"Lissette".split("").map((ch, i) => (
               <motion.span
                 key={i}
                 className="inline-block gold-gradient-text"
@@ -50,9 +50,23 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0, rotateX: 0 }}
                 transition={{ delay: 0.4 + i * 0.04, duration: 0.5, ease: "easeOut" }}
               >
-                {ch === " " ? "\u00A0" : ch}
+                {ch}
               </motion.span>
             ))}
+            {"\u00A0"}
+            <span className="whitespace-nowrap">
+              {"De Leon".split("").map((ch, i) => (
+                <motion.span
+                  key={i}
+                  className="inline-block gold-gradient-text"
+                  initial={{ opacity: 0, y: 30, rotateX: -40 }}
+                  animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                  transition={{ delay: 0.4 + (i + 9) * 0.04, duration: 0.5, ease: "easeOut" }}
+                >
+                  {ch === " " ? "\u00A0" : ch}
+                </motion.span>
+              ))}
+            </span>
           </h1>
 
           <div className="mt-5 font-serif-display text-2xl italic text-cream/90 sm:text-3xl">

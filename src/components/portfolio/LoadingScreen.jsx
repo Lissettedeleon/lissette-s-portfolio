@@ -25,14 +25,14 @@ export default function LoadingScreen() {
           >
             <svg width="120" height="120" viewBox="0 0 120 120" className="overflow-visible">
               <motion.circle
-                cx="60" cy="60" r="54" fill="none" stroke="#d4a853" strokeWidth="1"
+                cx="60" cy="60" r="54" fill="none" stroke="#b39ddb" strokeWidth="1"
                 initial={{ pathLength: 0, opacity: 0.4 }}
                 animate={{ pathLength: 1, opacity: 1 }}
                 transition={{ duration: 1.6, ease: "easeInOut" }}
                 style={{ rotate: -90, transformOrigin: "center" }}
               />
               <text x="60" y="78" textAnchor="middle" className="font-serif-display"
-                style={{ fontSize: 52, fontStyle: "italic", fill: "#d4a853" }}>
+                style={{ fontSize: 52, fontStyle: "italic", fill: "#b39ddb" }}>
                 LD
               </text>
             </svg>
