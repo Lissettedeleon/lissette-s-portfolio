@@ -3,13 +3,12 @@ import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 
 const GROUPS = [
-  { title: "Languages", items: ["Python", "SQL", "Bash"] },
-  { title: "Security Tools", items: ["Wireshark", "Burp Suite", "Kali Linux", "Nmap", "Metasploit"] },
-  { title: "Platforms & OS", items: ["Linux", "Red Hat", "Windows"] },
-  { title: "Cloud", items: ["Google Cloud", "Firebase", "FlutterFlow"] },
-  { title: "Security", items: ["NIST CSF", "Access Controls", "Sec+", "Vulnerability Assessment"] },
-  { title: "Dev Tools", items: ["VS Code", "Git", "GitHub", "Docker"] },
-  { title: "Strengths", items: ["Documentation", "Team Lead", "AI Tools"] },
+  { title: "Languages", items: ["Python", "SQL"] },
+  { title: "Security", items: ["NIST CSF", "Access Controls", "Sec+ (in progress)", "Wireshark", "Kali Linux"] },
+  { title: "Cloud", items: ["Google Cloud", "Firebase", "FlutterFlow", "AWS Security"] },
+  { title: "Dev Tools", items: ["VS Code", "Git", "GitHub", "Linux"] },
+  { title: "AI Tools", items: ["ChatGPT", "Claude", "Prompt Workflows"] },
+  { title: "Strengths", items: ["Documentation", "Data Validation", "Team Lead", "Written Communication"] },
 ];
 
 export default function About() {
@@ -37,7 +36,7 @@ export default function About() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {GROUPS.map((g, i) => (
             <motion.div
               key={g.title}
