@@ -1,45 +1,52 @@
 import React from "react";
 
-const SEGMENTS = [
-  { text: "█████", color: "lavender" },
-  { text: " ▓▓▓▓", color: "lavender-mid" },
-  { text: " ▒▒▒▒", color: "mint-mid" },
-  { text: " ░░░░", color: "faded" },
-  { text: "  ·  🔒  ·  ", color: "faded" },
-  { text: "░░░░ ", color: "faded" },
-  { text: "▒▒▒▒ ", color: "mint-mid" },
-  { text: "▓▓▓▓ ", color: "lavender-mid" },
-  { text: "█████", color: "lavender" },
-  { text: "  ·  [ SECURE ]  ·  ", color: "mint" },
-  { text: "█████", color: "mint" },
-  { text: " ▓▓▓▓", color: "mint-mid" },
-  { text: " ▒▒▒▒", color: "lavender-mid" },
-  { text: " ░░░░", color: "faded" },
-  { text: "  ·  🛡  ·  ", color: "faded" },
-  { text: "░░░░ ", color: "faded" },
-  { text: "▒▒▒▒ ", color: "lavender-mid" },
-  { text: "▓▓▓▓ ", color: "mint-mid" },
-  { text: "█████", color: "mint" },
-  { text: "  ·  [ ENCRYPTED ]  ·  ", color: "lavender" },
+const NODES = [
+  { type: "node", label: "◉" },
+  { type: "line", label: " ─────── " },
+  { type: "node", label: "◉" },
+  { type: "line", label: " ═══ " },
+  { type: "node", label: "◎" },
+  { type: "line", label: " · · · " },
+  { type: "node", label: "◉" },
+  { type: "line", label: " ─── " },
+  { type: "node", label: "●" },
+  { type: "line", label: " ══════ " },
+  { type: "node", label: "◉" },
+  { type: "line", label: " · · " },
+  { type: "node", label: "◎" },
+  { type: "line", label: " ─────── " },
+  { type: "node", label: "◉" },
+  { type: "line", label: " ═══ " },
+  { type: "node", label: "●" },
+  { type: "line", label: " · · · · " },
+  { type: "node", label: "◉" },
+  { type: "line", label: " ─── " },
+  { type: "node", label: "◎" },
+  { type: "line", label: " ══════ " },
+  { type: "node", label: "◉" },
+  { type: "line", label: "     " },
 ];
-
-const colorMap = {
-  lavender: "text-gold",
-  "lavender-mid": "text-gold/60",
-  mint: "text-rose-dusty",
-  "mint-mid": "text-rose-dusty/60",
-  faded: "text-cream/20",
-};
 
 export default function SkillTicker() {
   return (
     <section className="group relative overflow-hidden border-y border-gold/10 bg-noir py-4">
       <div className="flex w-max animate-ticker gap-0 group-hover:[animation-play-state:paused]">
         {[0, 1].map((copy) => (
-          <span key={copy} className="font-mono text-sm tracking-widest whitespace-nowrap">
-            {SEGMENTS.map((seg, i) => (
-              <span key={i} className={colorMap[seg.color]}>
-                {seg.text}
+          <span key={copy} className="font-mono text-base tracking-widest whitespace-nowrap">
+            {NODES.map((n, i) => (
+              <span
+                key={i}
+                className={
+                  n.type === "node"
+                    ? i % 6 === 0
+                      ? "text-gold"
+                      : i % 6 === 2
+                      ? "text-rose-dusty"
+                      : "text-gold/70"
+                    : "text-cream/25"
+                }
+              >
+                {n.label}
               </span>
             ))}
           </span>
