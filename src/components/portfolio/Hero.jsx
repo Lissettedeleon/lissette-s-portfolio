@@ -122,7 +122,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6, duration: 0.7 }}
           className="relative"
         >
-          <div className="glass-card shine relative aspect-[4/5] w-full overflow-hidden rounded-3xl">
+          <div className="glass-card shine relative aspect-[4/5] w-full max-w-sm mx-auto overflow-hidden rounded-3xl">
             <div className="absolute right-4 top-4 z-10 rounded-full border border-gold/30 bg-noir/40 px-3 py-1 text-xs uppercase tracking-[0.2em] text-gold">
               Welcome
             </div>
