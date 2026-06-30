@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Play, ArrowDown } from "lucide-react";
 import MagneticButton from "./MagneticButton";
@@ -9,6 +9,14 @@ import Particles from "./Particles";
 const NAME = "Lissette De Leon";
 
 export default function Hero() {
+  const videoRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
+
+  function handlePlay() {
+    setPlaying(true);
+    videoRef.current?.play();
+  }
+
   const { scrollY } = useScroll();
   const blobsY = useTransform(scrollY, [0, 800], [0, 80]);
   const ringsY = useTransform(scrollY, [0, 800], [0, 240]);
@@ -115,21 +123,33 @@ export default function Hero() {
           className="relative"
         >
           <div className="glass-card shine relative aspect-[4/5] w-full overflow-hidden rounded-3xl">
-            <div className="absolute right-4 top-4 rounded-full border border-gold/30 bg-noir/40 px-3 py-1 text-xs uppercase tracking-[0.2em] text-gold">
+            <div className="absolute right-4 top-4 z-10 rounded-full border border-gold/30 bg-noir/40 px-3 py-1 text-xs uppercase tracking-[0.2em] text-gold">
               Welcome
             </div>
-            <div className="absolute left-4 top-4 text-2xl animate-bob">👋</div>
-            <div className="flex h-full items-center justify-center">
-              <button
-                aria-label="Play intro video"
-                className="flex h-20 w-20 items-center justify-center rounded-full border border-gold/40 bg-gold/10 animate-bob text-gold backdrop-blur-sm hover:bg-gold/20"
-              >
-                <Play className="ml-1 h-8 w-8" fill="currentColor" />
-              </button>
-            </div>
-            <div className="absolute inset-x-0 bottom-0 p-5 text-center text-xs uppercase tracking-[0.2em] text-cream/45">
-              Intro video coming soon
-            </div>
+            <div className="absolute left-4 top-4 z-10 text-2xl animate-bob">👋</div>
+
+            {/* Video */}
+            <video
+              ref={videoRef}
+              src="/intro.mp4"
+              className="absolute inset-0 h-full w-full object-cover"
+              playsInline
+              controls={playing}
+              onEnded={() => setPlaying(false)}
+            />
+
+            {/* Play overlay — hidden once playing */}
+            {!playing && (
+              <div className="absolute inset-0 flex items-center justify-center bg-noir/40 backdrop-blur-[2px]">
+                <button
+                  aria-label="Play intro video"
+                  onClick={handlePlay}
+                  className="flex h-20 w-20 items-center justify-center rounded-full border border-gold/40 bg-gold/10 animate-bob text-gold backdrop-blur-sm hover:bg-gold/20 transition-colors"
+                >
+                  <Play className="ml-1 h-8 w-8" fill="currentColor" />
+                </button>
+              </div>
+            )}
           </div>
         </motion.div>
       </div>
