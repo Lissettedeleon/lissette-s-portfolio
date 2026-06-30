@@ -26,24 +26,24 @@ function ToolShell({ id, emoji, title, subtitle, children }) {
 }
 
 export default function LiveTools() {
-  return (
-    <section id="tools" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32 hidden">
-      <SectionTitle eyebrow="04 — The Proof">Live Security Tools</SectionTitle>
-      <p className="mt-5 max-w-xl text-cream/60">
-        Hands-on, fully functional demos — try them right here in the browser.
-      </p>
+  return null;
 
-      <div className="mt-12 space-y-8">
-        <ToolShell id="demo-pw" emoji="🔐" title="Password Strength Analyzer" subtitle="Real-time entropy engine">
-          <PasswordAnalyzer />
-        </ToolShell>
-        <ToolShell id="demo-cipher" emoji="🔑" title="Caesar Cipher Encryptor" subtitle="Cryptography tool">
-          <CaesarCipher />
-        </ToolShell>
-        <ToolShell id="demo-phish" emoji="🎣" title="Phishing URL Detector" subtitle="Threat analysis tool">
-          <PhishingDetector />
-        </ToolShell>
-      </div>
-    </section>);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
