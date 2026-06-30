@@ -11,8 +11,8 @@ function ToolShell({ id, emoji, title, subtitle, children }) {
       id={id}
       initial={{ opacity: 0, y: 36 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-8%" }}
       transition={{ duration: 0.6 }}
-      className="scroll-mt-28 rounded-3xl border border-gold/15 bg-cream/[0.02] p-6 sm:p-8"
-    >
+      className="scroll-mt-28 rounded-3xl border border-gold/15 bg-cream/[0.02] p-6 sm:p-8">
+      
       <div className="mb-6 flex items-center gap-3">
         <span className="text-2xl">{emoji}</span>
         <div>
@@ -21,13 +21,13 @@ function ToolShell({ id, emoji, title, subtitle, children }) {
         </div>
       </div>
       {children}
-    </motion.div>
-  );
+    </motion.div>);
+
 }
 
 export default function LiveTools() {
   return (
-    <section id="tools" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
+    <section id="tools" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32 hidden">
       <SectionTitle eyebrow="04 — The Proof">Live Security Tools</SectionTitle>
       <p className="mt-5 max-w-xl text-cream/60">
         Hands-on, fully functional demos — try them right here in the browser.
@@ -44,6 +44,6 @@ export default function LiveTools() {
           <PhishingDetector />
         </ToolShell>
       </div>
-    </section>
-  );
+    </section>);
+
 }
