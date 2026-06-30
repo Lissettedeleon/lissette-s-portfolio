@@ -89,9 +89,9 @@ export default function Hero() {
             
           </div>
 
-          <p className="mt-5 max-w-md font-serif-display text-lg italic text-cream/60 hidden">
-            "Curious enough to explore it. Careful enough to protect it."
-          </p>
+          
+
+          
 
           <div className="mt-8 flex flex-wrap gap-4">
             <MagneticButton
@@ -155,13 +155,13 @@ export default function Hero() {
       </div>
 
       {/* scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-cream/40 hidden">
-        <span className="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
-        <div className="h-10 w-px bg-gold/40">
-          <div className="h-full w-full origin-top bg-gold animate-scroll-line" />
-        </div>
-        <ArrowDown className="h-3 w-3" />
-      </div>
+      
+
+
+
+
+
+      
     </section>);
 
 }
