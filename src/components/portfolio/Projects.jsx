@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Github, ExternalLink, PlayCircle, ArrowRight } from "lucide-react";
 import SectionTitle from "./SectionTitle";
@@ -6,6 +6,7 @@ import TiltCard from "./TiltCard";
 
 const PROJECTS = [
   {
+    category: "cybersecurity",
     emoji: "🔍",
     title: "Cybersecurity Audit",
     role: "Team Lead · Confidential Nonprofit",
@@ -15,6 +16,25 @@ const PROJECTS = [
     links: [],
   },
   {
+    category: "cybersecurity",
+    emoji: "🔎",
+    title: "API Key / Secret Leak Scanner",
+    role: "Live Demo · Client-Side Detection Engine",
+    desc: "Scans pasted code or config text for exposed secrets — AWS keys, private keys, DB credentials, GitHub/Slack tokens, JWTs — with masked previews, severity ratings, and a generated remediation checklist.",
+    tags: ["JavaScript", "Regex Detection", "Secrets Management"],
+    tryHref: "#demo-secrets",
+  },
+  {
+    category: "cybersecurity",
+    emoji: "🛡️",
+    title: "Prompt Injection Sandbox",
+    role: "Live Demo · Simulated AI Security",
+    desc: "An interactive fake support bot with a visible system prompt. Try to 'jailbreak' it with real injection phrasing and watch detection rules catch (or miss) the attempt in real time.",
+    tags: ["AI Security", "Prompt Injection", "Pattern Detection"],
+    tryHref: "#demo-injection",
+  },
+  {
+    category: "software",
     emoji: "☁️",
     title: "TidyMe Cloud Storage",
     role: "Secondary Project Lead · CS 4243 · UTSA 2023",
@@ -26,23 +46,39 @@ const PROJECTS = [
       { label: "Demo", icon: PlayCircle, href: "https://www.youtube.com/watch?v=6j9aHk2kmaw" },
     ],
   },
-  {
-    emoji: "🔎",
-    title: "API Key / Secret Leak Scanner",
-    role: "Live Demo · Client-Side Detection Engine",
-    desc: "Scans pasted code or config text for exposed secrets — AWS keys, private keys, DB credentials, GitHub/Slack tokens, JWTs — with masked previews, severity ratings, and a generated remediation checklist.",
-    tags: ["JavaScript", "Regex Detection", "Secrets Management"],
-    tryHref: "#demo-secrets",
-  },
+];
+
+const TABS = [
+  { key: "cybersecurity", label: "Cybersecurity" },
+  { key: "software", label: "Software Development" },
 ];
 
 export default function Projects() {
+  const [tab, setTab] = useState("cybersecurity");
+  const filtered = PROJECTS.filter((p) => p.category === tab);
+
   return (
     <section id="projects" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
       <SectionTitle eyebrow="03 — The Tangible">Selected Projects</SectionTitle>
 
-      <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {PROJECTS.map((p, i) => (
+      <div className="mt-8 flex gap-3">
+        {TABS.map((t) => (
+          <button
+            key={t.key}
+            onClick={() => setTab(t.key)}
+            className={`rounded-full border px-5 py-2 text-sm font-medium transition-colors ${
+              tab === t.key
+                ? "border-gold bg-gold text-noir"
+                : "border-gold/25 text-cream/70 hover:border-gold/50 hover:text-cream"
+            }`}
+          >
+            {t.label}
+          </button>
+        ))}
+      </div>
+
+      <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {filtered.map((p, i) => (
           <motion.div
             key={p.title}
             initial={{ opacity: 0, y: 36 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-8%" }}

@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import SecretScanner from "./tools/SecretScanner";
+import PromptInjectionSandbox from "./tools/PromptInjectionSandbox";
 
 function ToolShell({ id, emoji, title, subtitle, children }) {
   return (
@@ -36,6 +37,15 @@ export default function LiveTools() {
           subtitle="Live Demo · Client-Side Detection Engine"
         >
           <SecretScanner />
+        </ToolShell>
+
+        <ToolShell
+          id="demo-injection"
+          emoji="🛡️"
+          title="Prompt Injection Sandbox"
+          subtitle="Live Demo · Simulated AI Security"
+        >
+          <PromptInjectionSandbox />
         </ToolShell>
       </div>
     </section>
