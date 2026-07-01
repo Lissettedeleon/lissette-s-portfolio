@@ -31,9 +31,9 @@ export default function About() {
             strategic, detail-oriented, and always showing up. Seeking entry-level roles in
             cybersecurity or QA engineering.
           </p>
-          <p className="font-serif-display text-xl italic text-gold hidden">
-            The best technologists never stop being curious. I definitely haven't. 🌿
-          </p>
+          
+
+          
         </motion.div>
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
