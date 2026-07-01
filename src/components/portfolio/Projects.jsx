@@ -46,6 +46,18 @@ const PROJECTS = [
       { label: "Demo", icon: PlayCircle, href: "https://www.youtube.com/watch?v=6j9aHk2kmaw" },
     ],
   },
+  {
+    category: "software",
+    emoji: "🍓",
+    title: "The Strawberry Shop",
+    role: "Freelance Developer · Live Client Site",
+    badge: "🌐 Live",
+    desc: "Built a live, revenue-generating ordering site for a real strawberry dessert business — end-to-end client project from requirements meetings to launch. Integrates Toast POS on the backend for order and payment processing, with AI tooling used throughout the build.",
+    tags: ["Toast POS", "Payments Integration", "E-Commerce", "Client Project"],
+    links: [
+      { label: "Live Site", icon: ExternalLink, href: "https://thestrawberryshop.store/" },
+    ],
+  },
 ];
 
 const TABS = [
@@ -61,20 +73,30 @@ export default function Projects() {
     <section id="projects" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
       <SectionTitle eyebrow="03 — The Tangible">Selected Projects</SectionTitle>
 
-      <div className="mt-8 flex gap-3">
-        {TABS.map((t) => (
-          <button
-            key={t.key}
-            onClick={() => setTab(t.key)}
-            className={`rounded-full border px-5 py-2 text-sm font-medium transition-colors ${
-              tab === t.key
-                ? "border-gold bg-gold text-noir"
-                : "border-gold/25 text-cream/70 hover:border-gold/50 hover:text-cream"
-            }`}
-          >
-            {t.label}
-          </button>
-        ))}
+      <div className="mt-8 inline-flex rounded-full border border-gold/25 bg-noir/40 p-1.5">
+        {TABS.map((t) => {
+          const count = PROJECTS.filter((p) => p.category === t.key).length;
+          return (
+            <button
+              key={t.key}
+              onClick={() => setTab(t.key)}
+              className={`flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 ${
+                tab === t.key
+                  ? "bg-gold text-noir shadow-[0_0_20px_rgba(179,157,219,0.35)]"
+                  : "text-cream/60 hover:text-cream"
+              }`}
+            >
+              {t.label}
+              <span
+                className={`rounded-full px-2 py-0.5 text-xs ${
+                  tab === t.key ? "bg-noir/20 text-noir" : "bg-cream/10 text-cream/50"
+                }`}
+              >
+                {count}
+              </span>
+            </button>
+          );
+        })}
       </div>
 
       <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
