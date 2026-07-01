@@ -1,5 +1,19 @@
 import React, { useMemo, useState } from "react";
-import { ShieldAlert, ShieldCheck, AlertTriangle, ScanSearch } from "lucide-react";
+import { ShieldAlert, ShieldCheck, AlertTriangle, ScanSearch, FileText } from "lucide-react";
+
+const SAMPLE_TEXT = `# .env example (all values below are fake placeholders)
+aws_secret_access_key = "AKIANOTREALEXAMPLE99"
+DATABASE_URL=postgres://demoadmin:demopass@db.example.com:5432/prod
+api_key: "sk_test_NOTAREALKEY0000example"
+
+const githubToken = "ghp_NOTAREALTOKEN0000000000000000example";
+const slackToken = "xoxb-NOTREAL-0000000000-example";
+
+password = "correcthorsebatterystaple123"
+
+-----BEGIN RSA PRIVATE KEY-----
+NOTAREALKEYNOTAREALKEYNOTAREALKEYEXAMPLE
+-----END RSA PRIVATE KEY-----`;
 
 const RULES = [
   {
@@ -138,13 +152,25 @@ export default function SecretScanner() {
         className="w-full resize-y rounded-xl border border-gold/20 bg-noir/60 px-4 py-3 font-mono text-sm text-cream outline-none focus:border-gold/60"
       />
 
-      <button
-        onClick={handleScan}
-        disabled={!input.trim()}
-        className="mt-4 inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-noir transition-opacity hover:opacity-90 disabled:opacity-40"
-      >
-        <ScanSearch className="h-4 w-4" /> Scan for Secrets
-      </button>
+      <div className="mt-4 flex flex-wrap gap-3">
+        <button
+          onClick={handleScan}
+          disabled={!input.trim()}
+          className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-noir transition-opacity hover:opacity-90 disabled:opacity-40"
+        >
+          <ScanSearch className="h-4 w-4" /> Scan for Secrets
+        </button>
+        <button
+          onClick={() => {
+            setInput(SAMPLE_TEXT);
+            setHasScanned(false);
+          }}
+          className="inline-flex items-center gap-2 rounded-full border border-rose-dusty/50 px-5 py-2.5 text-sm font-semibold text-rose-dusty transition-colors hover:bg-rose-dusty/10"
+        >
+          <FileText className="h-4 w-4" /> Load Sample
+        </button>
+      </div>
+      <p className="mt-2 text-xs text-cream/40">Runs entirely in your browser — nothing is sent or stored.</p>
 
       {hasScanned && (
         <div className="mt-6">
