@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Github, ExternalLink, PlayCircle, ArrowRight } from "lucide-react";
 import SectionTitle from "./SectionTitle";
 import TiltCard from "./TiltCard";
 
 const PROJECTS = [
+  {
+    category: "cybersecurity",
+    emoji: "🧠",
+    title: "Security+ & AI Security Quiz",
+    role: "Live Demo · Quick Knowledge Check",
+    desc: "A mixed quiz covering Security+ fundamentals — NIST CSF, least privilege, phishing red flags — plus modern AI security concepts like prompt injection and safe AI tool usage.",
+    tags: ["Security+", "AI Security", "NIST CSF", "Quiz"],
+    tryHref: "#demo-cyber-quiz",
+  },
   {
     category: "cybersecurity",
     emoji: "🔍",
@@ -32,6 +41,15 @@ const PROJECTS = [
     desc: "An interactive fake support bot with a visible system prompt. Try to 'jailbreak' it with real injection phrasing and watch detection rules catch (or miss) the attempt in real time.",
     tags: ["AI Security", "Prompt Injection", "Pattern Detection"],
     tryHref: "#demo-injection",
+  },
+  {
+    category: "software",
+    emoji: "💻",
+    title: "Coding & AI Dev Tools Quiz",
+    role: "Live Demo · Quick Knowledge Check",
+    desc: "A mixed quiz covering core software development concepts — idempotency, React re-renders, Git, environment variables — plus practical questions on using AI coding assistants responsibly.",
+    tags: ["JavaScript", "React", "AI Tools", "Quiz"],
+    tryHref: "#demo-dev-quiz",
   },
   {
     category: "software",
@@ -68,6 +86,14 @@ const TABS = [
 export default function Projects() {
   const [tab, setTab] = useState("cybersecurity");
   const filtered = PROJECTS.filter((p) => p.category === tab);
+
+  useEffect(() => {
+    function onSelectTab(e) {
+      setTab(e.detail);
+    }
+    window.addEventListener("selectProjectsTab", onSelectTab);
+    return () => window.removeEventListener("selectProjectsTab", onSelectTab);
+  }, []);
 
   return (
     <section id="projects" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">

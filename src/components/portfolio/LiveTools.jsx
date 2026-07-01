@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import SecretScanner from "./tools/SecretScanner";
 import PromptInjectionSandbox from "./tools/PromptInjectionSandbox";
+import CyberQuiz from "./tools/CyberQuiz";
+import DevQuiz from "./tools/DevQuiz";
 
 function ToolShell({ id, emoji, title, subtitle, children }) {
   return (
@@ -30,6 +32,24 @@ export default function LiveTools() {
       <SectionTitle eyebrow="04 — Try It Yourself">Live Security Tools</SectionTitle>
 
       <div className="mt-14 space-y-8">
+        <ToolShell
+          id="demo-cyber-quiz"
+          emoji="🧠"
+          title="Security+ & AI Security Quiz"
+          subtitle="Live Demo · Quick Knowledge Check"
+        >
+          <CyberQuiz />
+        </ToolShell>
+
+        <ToolShell
+          id="demo-dev-quiz"
+          emoji="💻"
+          title="Coding & AI Dev Tools Quiz"
+          subtitle="Live Demo · Quick Knowledge Check"
+        >
+          <DevQuiz />
+        </ToolShell>
+
         <ToolShell
           id="demo-secrets"
           emoji="🔎"
