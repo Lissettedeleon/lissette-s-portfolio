@@ -1,22 +1,54 @@
 import React from "react";
 
-const SKILLS = [
-  "Python", "SQL", "Google Cloud", "Firebase", "NIST CSF", "FlutterFlow",
-  "CompTIA Security+", "Gap Analysis", "OAuth 2.0", "Data Validation",
-  "Cyber Defense", "Access Controls",
+const NODES = [
+  { type: "node", label: "◉" },
+  { type: "line", label: " ─────── " },
+  { type: "node", label: "◉" },
+  { type: "line", label: " ═══ " },
+  { type: "node", label: "◎" },
+  { type: "line", label: " · · · " },
+  { type: "node", label: "◉" },
+  { type: "line", label: " ─── " },
+  { type: "node", label: "●" },
+  { type: "line", label: " ══════ " },
+  { type: "node", label: "◉" },
+  { type: "line", label: " · · " },
+  { type: "node", label: "◎" },
+  { type: "line", label: " ─────── " },
+  { type: "node", label: "◉" },
+  { type: "line", label: " ═══ " },
+  { type: "node", label: "●" },
+  { type: "line", label: " · · · · " },
+  { type: "node", label: "◉" },
+  { type: "line", label: " ─── " },
+  { type: "node", label: "◎" },
+  { type: "line", label: " ══════ " },
+  { type: "node", label: "◉" },
+  { type: "line", label: "     " },
 ];
 
 export default function SkillTicker() {
-  const doubled = [...SKILLS, ...SKILLS];
   return (
-    <section className="group relative overflow-hidden border-y border-gold/10 bg-noir py-6">
-      <div className="flex w-max animate-ticker gap-10 group-hover:[animation-play-state:paused]">
-        {doubled.map((s, i) => (
-          <span key={i} className="flex items-center gap-10 whitespace-nowrap">
-            <span className="font-serif-display text-2xl italic text-cream/70 transition-colors hover:text-gold">
-              {s}
-            </span>
-            <span className="text-gold/40">✦</span>
+    <section className="group relative overflow-hidden border-y border-gold/10 bg-noir py-4">
+      <div className="flex w-max animate-ticker gap-0 group-hover:[animation-play-state:paused]">
+        {[0, 1].map((copy) => (
+          <span key={copy} className="font-mono text-base tracking-widest whitespace-nowrap">
+            {NODES.map((n, i) => (
+              <span
+                key={i}
+                className={
+                  n.type === "node"
+                    ? i % 6 === 0
+                      ? "text-gold"
+                      : i % 6 === 2
+                      ? "text-rose-dusty"
+                      : "text-gold/70"
+                    : "text-cream/25"
+                }
+              >
+                {n.label}
+              </span>
+            ))}
           </span>
         ))}
       </div>

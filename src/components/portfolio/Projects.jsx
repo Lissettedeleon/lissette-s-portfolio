@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Github, ExternalLink, PlayCircle, ArrowRight } from "lucide-react";
 import SectionTitle from "./SectionTitle";
@@ -6,6 +6,16 @@ import TiltCard from "./TiltCard";
 
 const PROJECTS = [
   {
+    category: "cybersecurity",
+    emoji: "🧠",
+    title: "Security+ & AI Security Quiz",
+    role: "Live Demo · Quick Knowledge Check",
+    desc: "A mixed quiz covering Security+ fundamentals — NIST CSF, least privilege, phishing red flags — plus modern AI security concepts like prompt injection and safe AI tool usage.",
+    tags: ["Security+", "AI Security", "NIST CSF", "Quiz"],
+    tryHref: "#demo-cyber-quiz",
+  },
+  {
+    category: "cybersecurity",
     emoji: "🔍",
     title: "Cybersecurity Audit",
     role: "Team Lead · Confidential Nonprofit",
@@ -15,6 +25,34 @@ const PROJECTS = [
     links: [],
   },
   {
+    category: "cybersecurity",
+    emoji: "🔎",
+    title: "API Key / Secret Leak Scanner",
+    role: "Live Demo · Client-Side Detection Engine",
+    desc: "Scans pasted code or config text for exposed secrets — AWS keys, private keys, DB credentials, GitHub/Slack tokens, JWTs — with masked previews, severity ratings, and a generated remediation checklist.",
+    tags: ["JavaScript", "Regex Detection", "Secrets Management"],
+    tryHref: "#demo-secrets",
+  },
+  {
+    category: "cybersecurity",
+    emoji: "🛡️",
+    title: "Prompt Injection Sandbox",
+    role: "Live Demo · Simulated AI Security",
+    desc: "An interactive fake support bot with a visible system prompt. Try to 'jailbreak' it with real injection phrasing and watch detection rules catch (or miss) the attempt in real time.",
+    tags: ["AI Security", "Prompt Injection", "Pattern Detection"],
+    tryHref: "#demo-injection",
+  },
+  {
+    category: "software",
+    emoji: "💻",
+    title: "Coding & AI Dev Tools Quiz",
+    role: "Live Demo · Quick Knowledge Check",
+    desc: "A mixed quiz covering core software development concepts — idempotency, React re-renders, Git, environment variables — plus practical questions on using AI coding assistants responsibly.",
+    tags: ["JavaScript", "React", "AI Tools", "Quiz"],
+    tryHref: "#demo-dev-quiz",
+  },
+  {
+    category: "software",
     emoji: "☁️",
     title: "TidyMe Cloud Storage",
     role: "Secondary Project Lead · CS 4243 · UTSA 2023",
@@ -27,38 +65,68 @@ const PROJECTS = [
     ],
   },
   {
-    emoji: "🔐",
-    title: "Password Strength Analyzer",
-    role: "Live Demo · Vanilla JavaScript",
-    desc: "Real-time entropy calculation engine evaluating passwords across 6 security dimensions with actionable hardening tips.",
-    tags: ["JavaScript", "Entropy Math", "Security UX"],
-    tryHref: "#demo-pw",
-  },
-  {
-    emoji: "🔑",
-    title: "Caesar Cipher Encryptor",
-    role: "Live Demo · Cryptography Tool",
-    desc: "Interactive text encryption/decryption using Caesar cipher. Visualizes alphabet shift in real-time with adjustable key 1-25.",
-    tags: ["JavaScript", "Cryptography", "Algorithms"],
-    tryHref: "#demo-cipher",
-  },
-  {
-    emoji: "🎣",
-    title: "Phishing URL Detector",
-    role: "Live Demo · Threat Analysis Tool",
-    desc: "Analyzes URLs for phishing indicators: missing HTTPS, suspicious keywords, IP-based domains, unusual TLDs, excessive subdomains.",
-    tags: ["JavaScript", "Threat Intel", "URL Analysis"],
-    tryHref: "#demo-phish",
+    category: "software",
+    emoji: "🍓",
+    title: "The Strawberry Shop",
+    role: "Freelance Developer · Live Client Site",
+    badge: "🌐 Live",
+    desc: "Built a live, revenue-generating ordering site for a real strawberry dessert business — end-to-end client project from requirements meetings to launch. Integrates Toast POS on the backend for order and payment processing, with AI tooling used throughout the build.",
+    tags: ["Toast POS", "Payments Integration", "E-Commerce", "Client Project"],
+    links: [
+      { label: "Live Site", icon: ExternalLink, href: "https://thestrawberryshop.store/" },
+    ],
   },
 ];
 
+const TABS = [
+  { key: "cybersecurity", label: "Cybersecurity" },
+  { key: "software", label: "Software Development" },
+];
+
 export default function Projects() {
+  const [tab, setTab] = useState("cybersecurity");
+  const filtered = PROJECTS.filter((p) => p.category === tab);
+
+  useEffect(() => {
+    function onSelectTab(e) {
+      setTab(e.detail);
+    }
+    window.addEventListener("selectProjectsTab", onSelectTab);
+    return () => window.removeEventListener("selectProjectsTab", onSelectTab);
+  }, []);
+
   return (
     <section id="projects" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
       <SectionTitle eyebrow="03 — The Tangible">Selected Projects</SectionTitle>
 
-      <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {PROJECTS.map((p, i) => (
+      <div className="mt-8 inline-flex rounded-full border border-gold/25 bg-noir/40 p-1.5">
+        {TABS.map((t) => {
+          const count = PROJECTS.filter((p) => p.category === t.key).length;
+          return (
+            <button
+              key={t.key}
+              onClick={() => setTab(t.key)}
+              className={`flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 ${
+                tab === t.key
+                  ? "bg-gold text-noir shadow-[0_0_20px_rgba(179,157,219,0.35)]"
+                  : "text-cream/60 hover:text-cream"
+              }`}
+            >
+              {t.label}
+              <span
+                className={`rounded-full px-2 py-0.5 text-xs ${
+                  tab === t.key ? "bg-noir/20 text-noir" : "bg-cream/10 text-cream/50"
+                }`}
+              >
+                {count}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {filtered.map((p, i) => (
           <motion.div
             key={p.title}
             initial={{ opacity: 0, y: 36 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-8%" }}

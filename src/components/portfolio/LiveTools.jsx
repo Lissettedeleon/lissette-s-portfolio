@@ -1,9 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
-import PasswordAnalyzer from "./tools/PasswordAnalyzer";
-import CaesarCipher from "./tools/CaesarCipher";
-import PhishingDetector from "./tools/PhishingDetector";
+import SecretScanner from "./tools/SecretScanner";
+import PromptInjectionSandbox from "./tools/PromptInjectionSandbox";
+import CyberQuiz from "./tools/CyberQuiz";
+import DevQuiz from "./tools/DevQuiz";
 
 function ToolShell({ id, emoji, title, subtitle, children }) {
   return (
@@ -27,21 +28,44 @@ function ToolShell({ id, emoji, title, subtitle, children }) {
 
 export default function LiveTools() {
   return (
-    <section id="tools" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
-      <SectionTitle eyebrow="04 — The Proof">Live Security Tools</SectionTitle>
-      <p className="mt-5 max-w-xl text-cream/60">
-        Hands-on, fully functional demos — try them right here in the browser.
-      </p>
+    <section id="live-tools" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
+      <SectionTitle eyebrow="04 — Try It Yourself">Live Security Tools</SectionTitle>
 
-      <div className="mt-12 space-y-8">
-        <ToolShell id="demo-pw" emoji="🔐" title="Password Strength Analyzer" subtitle="Real-time entropy engine">
-          <PasswordAnalyzer />
+      <div className="mt-14 space-y-8">
+        <ToolShell
+          id="demo-cyber-quiz"
+          emoji="🧠"
+          title="Security+ & AI Security Quiz"
+          subtitle="Live Demo · Quick Knowledge Check"
+        >
+          <CyberQuiz />
         </ToolShell>
-        <ToolShell id="demo-cipher" emoji="🔑" title="Caesar Cipher Encryptor" subtitle="Cryptography tool">
-          <CaesarCipher />
+
+        <ToolShell
+          id="demo-dev-quiz"
+          emoji="💻"
+          title="Coding & AI Dev Tools Quiz"
+          subtitle="Live Demo · Quick Knowledge Check"
+        >
+          <DevQuiz />
         </ToolShell>
-        <ToolShell id="demo-phish" emoji="🎣" title="Phishing URL Detector" subtitle="Threat analysis tool">
-          <PhishingDetector />
+
+        <ToolShell
+          id="demo-secrets"
+          emoji="🔎"
+          title="API Key / Secret Leak Scanner"
+          subtitle="Live Demo · Client-Side Detection Engine"
+        >
+          <SecretScanner />
+        </ToolShell>
+
+        <ToolShell
+          id="demo-injection"
+          emoji="🛡️"
+          title="Prompt Injection Sandbox"
+          subtitle="Live Demo · Simulated AI Security"
+        >
+          <PromptInjectionSandbox />
         </ToolShell>
       </div>
     </section>

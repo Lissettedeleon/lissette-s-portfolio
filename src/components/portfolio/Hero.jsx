@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Sparkles } from "lucide-react";
+import { ArrowDown, Play } from "lucide-react";
 import MagneticButton from "./MagneticButton";
-import Stats from "./Stats";
 
 export default function Hero() {
+  const videoRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
+
+  function handlePlay() {
+    setPlaying(true);
+    videoRef.current?.play();
+  }
+
   return (
     <section id="hero" className="relative flex min-h-screen items-center overflow-hidden pt-24">
       {/* single subtle background glow */}
@@ -53,41 +60,40 @@ export default function Hero() {
               Say Hello
             </MagneticButton>
           </div>
-
-          <div className="mt-12">
-            <Stats />
-          </div>
         </motion.div>
 
-        {/* Right — identity card */}
+        {/* Right — intro video card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.6 }}
           className="relative"
         >
-          <div className="glass-card relative aspect-[4/5] w-full overflow-hidden rounded-3xl">
-            {/* top badge */}
-            <div className="absolute right-4 top-4 rounded-full border border-gold/30 bg-noir/40 px-3 py-1 text-xs uppercase tracking-[0.2em] text-gold">
-              Open to Work
+          <div className="glass-card relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl">
+            <div className="absolute right-4 top-4 z-10 rounded-full border border-gold/30 bg-noir/40 px-3 py-1 text-xs uppercase tracking-[0.2em] text-gold">
+              Welcome
             </div>
 
-            {/* center content */}
-            <div className="flex h-full flex-col items-center justify-center gap-6 px-8 text-center">
-              <div className="flex h-24 w-24 items-center justify-center rounded-full border border-gold/30 bg-gold/10 font-serif-display text-3xl italic text-gold">
-                LD
+            {/* Video */}
+            <video
+              ref={videoRef}
+              src="/intro.mp4"
+              className="absolute inset-0 h-full w-full object-cover"
+              playsInline
+              controls={playing}
+              onEnded={() => setPlaying(false)}
+            />
+
+            {/* Play overlay — hidden once playing */}
+            {!playing && (
+              <div className="absolute inset-0 flex items-center justify-center bg-noir/40 backdrop-blur-[2px]">
+                <button
+                  aria-label="Play intro video"
+                  onClick={handlePlay}
+                  className="flex h-20 w-20 items-center justify-center rounded-full border border-gold/40 bg-gold/10 text-gold backdrop-blur-sm transition-colors hover:bg-gold/20"
+                >
+                  <Play className="ml-1 h-8 w-8" fill="currentColor" />
+                </button>
               </div>
-              <div>
-                <p className="font-serif-display text-2xl italic text-cream">Lissette De Leon</p>
-                <p className="mt-1 text-xs uppercase tracking-[0.2em] text-gold/80">San Antonio, TX</p>
-              </div>
-              <p className="max-w-xs text-sm leading-relaxed text-cream/60">
-                I like figuring out how things break — and making sure they don't.
-                When I'm not doing that, you'll find me on a pickleball court or a hiking trail.
-              </p>
-              <div className="flex items-center gap-2 rounded-full border border-gold/20 bg-gold/5 px-4 py-2 text-xs text-cream/70">
-                <Sparkles className="h-3 w-3 text-gold" />
-                Video intro coming soon
-              </div>
-            </div>
+            )}
           </div>
         </motion.div>
       </div>

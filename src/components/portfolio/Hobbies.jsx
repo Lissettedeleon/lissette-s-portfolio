@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 
 const HOBBIES = [
-  { emoji: "🏓", name: "Pickleball", photo: null },
-  { emoji: "🥾", name: "Hiking", photo: null },
-  { emoji: "🐕", name: "Dog Training", photo: null },
-  { emoji: "💪", name: "Fitness", photo: null },
-  { emoji: "✂️", name: "Couponing", photo: null },
+  { photo: "/hobby_pickleball.jpg", name: "Pickleball" },
+  { photo: "/hobby_hiking.jpg", name: "Hiking" },
+  { photo: "/hobby_dogs.jpg", name: "Dog Lover" },
+  { photo: "/hobby_adventure.jpg", name: "Adventurous" },
+  { emoji: "✂️", name: "Couponing" },
 ];
 
 export default function Hobbies() {
@@ -24,22 +24,20 @@ export default function Hobbies() {
             key={h.name}
             initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
             transition={{ delay: i * 0.06 }}
-            className="group relative flex aspect-square flex-col items-end justify-end overflow-hidden rounded-2xl border border-white/10 bg-white/[0.07] transition-all duration-300 hover:scale-105 hover:border-gold/50"
+            className="group relative flex aspect-square flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.07] text-center transition-all duration-300 hover:scale-105 hover:border-gold/50"
           >
-            {/* photo or emoji background */}
             {h.photo ? (
-              <img src={h.photo} alt={h.name} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <>
+                <img src={h.photo} alt={h.name} className="absolute inset-0 h-full w-full object-cover object-center" />
+                <div className="absolute inset-0 bg-noir/40" />
+                <span className="relative font-serif-display text-xl italic text-cream drop-shadow">{h.name}</span>
+              </>
             ) : (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-6xl opacity-60 transition-transform duration-500 group-hover:scale-110">
-                  {h.emoji}
-                </span>
-              </div>
+              <>
+                <span className="text-5xl opacity-70">{h.emoji}</span>
+                <span className="font-serif-display text-xl italic text-cream">{h.name}</span>
+              </>
             )}
-            {/* label */}
-            <div className="relative w-full bg-gradient-to-t from-noir/90 to-transparent px-4 py-3">
-              <span className="font-serif-display text-lg italic text-cream">{h.name}</span>
-            </div>
           </motion.div>
         ))}
       </div>

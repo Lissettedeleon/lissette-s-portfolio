@@ -4,9 +4,11 @@ import SectionTitle from "./SectionTitle";
 
 const GROUPS = [
   { title: "Languages", items: ["Python", "SQL"] },
-  { title: "Cloud", items: ["Google Cloud", "Firebase", "FlutterFlow"] },
-  { title: "Security", items: ["NIST CSF", "Access Controls", "Sec+"] },
-  { title: "Strengths", items: ["Documentation", "Team Lead", "AI Tools"] },
+  { title: "Security", items: ["NIST CSF", "Access Controls", "Sec+ (in progress)", "Wireshark", "Kali Linux"] },
+  { title: "Cloud", items: ["Google Cloud", "Firebase", "FlutterFlow", "AWS Security"] },
+  { title: "Dev Tools", items: ["VS Code", "Git", "GitHub", "Linux"] },
+  { title: "AI Tools", items: ["ChatGPT", "Claude", "Prompt Workflows"] },
+  { title: "Strengths", items: ["Documentation", "Data Validation", "Team Lead", "Written Communication"] },
 ];
 
 export default function About() {
@@ -14,7 +16,7 @@ export default function About() {
     <section id="about" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
       <SectionTitle eyebrow="01 — Who I Am">About Me</SectionTitle>
 
-      <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-2">
+      <div className="mt-14 flex flex-col gap-12">
         <motion.div
           initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="space-y-6 text-lg leading-relaxed text-cream/75"
@@ -29,12 +31,9 @@ export default function About() {
             strategic, detail-oriented, and always showing up. Seeking entry-level roles in
             cybersecurity or QA engineering.
           </p>
-          <p className="font-serif-display text-xl italic text-gold">
-            The best technologists never stop being curious. I definitely haven't. 🌿
-          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {GROUPS.map((g, i) => (
             <motion.div
               key={g.title}

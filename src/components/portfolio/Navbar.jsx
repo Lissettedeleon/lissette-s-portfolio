@@ -3,11 +3,16 @@ import React, { useEffect, useState } from "react";
 const LINKS = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
+  { label: "Cybersecurity", href: "#projects", tab: "cybersecurity" },
+  { label: "Software Development", href: "#projects", tab: "software" },
   { label: "Tools", href: "#tools" },
   { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];
+
+export function selectProjectsTab(tab) {
+  window.dispatchEvent(new CustomEvent("selectProjectsTab", { detail: tab }));
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -34,8 +39,9 @@ export default function Navbar() {
         <div className="hidden items-center gap-8 md:flex">
           {LINKS.map((l) => (
             <a
-              key={l.href}
+              key={l.label}
               href={l.href}
+              onClick={() => l.tab && selectProjectsTab(l.tab)}
               className="text-sm text-cream/70 transition-colors hover:text-gold"
             >
               {l.label}
@@ -67,9 +73,12 @@ export default function Navbar() {
           <div className="flex flex-col gap-4">
             {LINKS.map((l) => (
               <a
-                key={l.href}
+                key={l.label}
                 href={l.href}
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  if (l.tab) selectProjectsTab(l.tab);
+                  setOpen(false);
+                }}
                 className="text-sm text-cream/80 hover:text-gold"
               >
                 {l.label}
