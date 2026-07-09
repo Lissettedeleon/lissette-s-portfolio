@@ -1,19 +1,17 @@
 import React from "react";
-import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 
 const CARDS = [
   {
     title: "B.S. Computer Science",
     org: "University of Texas at San Antonio",
-    meta: "San Antonio, TX · GPA: 3.55",
+    date: "GPA 3.55",
     desc: "Strong foundation in data structures, algorithms, and software engineering. Served as TA supporting 140+ students in DSA.",
-    progress: false,
   },
   {
     title: "Cyber Defense Program",
     org: "Northeast Lakeview College",
-    meta: "Aug 2025 – Dec 2026 · GPA: 3.0",
+    date: "2025 — 2026",
     desc: "Aligned with CompTIA Security+ and Network+. Focused on threat analysis, network defense, and security operations.",
     progress: true,
   },
@@ -27,40 +25,34 @@ const ACHIEVEMENTS = [
 
 export default function Education() {
   return (
-    <section id="education" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
-      <SectionTitle eyebrow="06 — The Foundation">Education</SectionTitle>
-
-      <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2">
-        {CARDS.map((c, i) => (
-          <motion.div
-            key={c.title}
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="rounded-2xl border border-cream/25 bg-white/40 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/45"
-          >
-            <div className="flex items-start justify-between">
-              <span className="font-mono text-sm text-cream/40">{String(i + 1).padStart(2, "0")}</span>
-              {c.progress && (
-                <span className="rounded-lg border border-rose-dusty/40 bg-rose-dusty/10 px-3 py-1 text-xs text-rose-dusty">
-                  in progress
-                </span>
-              )}
+    <section id="education" className="scroll-mt-24">
+      <SectionTitle>Education</SectionTitle>
+      <ul className="space-y-2">
+        {CARDS.map((c) => (
+          <li key={c.title} className="group grid gap-1 rounded-2xl p-5 transition-colors hover:bg-cream/[0.05] sm:grid-cols-[130px_1fr] sm:gap-6">
+            <span className="pt-1 font-mono text-xs uppercase tracking-wide text-rose-dusty">{c.date}</span>
+            <div>
+              <h3 className="flex flex-wrap items-center gap-3 font-semibold text-cream">
+                {c.title} · <span className="font-normal text-cream/70">{c.org}</span>
+                {c.progress && (
+                  <span className="rounded-full bg-gold/15 px-3 py-0.5 font-mono text-[11px] font-medium text-gold">
+                    in progress
+                  </span>
+                )}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-cream/65">{c.desc}</p>
             </div>
-            <h3 className="mt-5 font-bold text-2xl text-cream">{c.title}</h3>
-            <p className="mt-1 text-sm text-gold">{c.org}</p>
-            <p className="mt-1 text-xs uppercase tracking-[0.12em] text-cream/50">{c.meta}</p>
-            <p className="mt-4 text-sm leading-relaxed text-cream/65">{c.desc}</p>
-          </motion.div>
+          </li>
         ))}
-      </div>
-
-      <div className="mt-10 flex flex-wrap gap-3">
+      </ul>
+      <ul className="mt-6 space-y-2 pl-5">
         {ACHIEVEMENTS.map((a) => (
-          <span key={a} className="rounded-lg border border-cream/25 bg-white/40 px-4 py-2 text-sm text-cream/80">
+          <li key={a} className="flex gap-3 text-sm text-cream/65">
+            <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-gold" />
             {a}
-          </span>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

@@ -1,9 +1,6 @@
 import React from "react";
-import ScrollProgress from "@/components/portfolio/ScrollProgress";
-import Navbar from "@/components/portfolio/Navbar";
-import Hero from "@/components/portfolio/Hero";
+import Sidebar from "@/components/portfolio/Sidebar";
 import About from "@/components/portfolio/About";
-import Divider from "@/components/portfolio/Divider";
 import Experience from "@/components/portfolio/Experience";
 import Projects from "@/components/portfolio/Projects";
 import LiveTools from "@/components/portfolio/LiveTools";
@@ -15,25 +12,21 @@ import Footer from "@/components/portfolio/Footer";
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-noir text-cream">
-      <ScrollProgress />
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Divider />
-        <Experience />
-        <Divider />
-        <Projects />
-        <Divider />
-        <LiveTools />
-        <Divider />
-        <Hobbies />
-        <Divider />
-        <Education />
-        <Divider />
-        <Contact />
-      </main>
-      <Footer />
+      <div className="mx-auto max-w-screen-xl px-6 py-14 md:px-12 lg:flex lg:justify-between lg:gap-14 lg:px-16 lg:py-0">
+        <Sidebar />
+        <main className="pt-16 lg:w-[52%] lg:py-24">
+          <div className="space-y-24 lg:space-y-32">
+            <About />
+            <Experience />
+            <Projects />
+            <LiveTools />
+            <Hobbies />
+            <Education />
+            <Contact />
+            <Footer />
+          </div>
+        </main>
+      </div>
     </div>
   );
 }

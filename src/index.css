@@ -40,8 +40,8 @@
   }
   body {
     @apply font-body;
-    background-color: #f2f1ec;
-    color: #20261f;
+    background-color: #e3efe8;
+    color: #1f2a23;
     overflow-x: hidden;
   }
 }
@@ -54,20 +54,20 @@
     color: #2f6b3f;
   }
   .text-rose-dusty {
-    color: #6f7468;
+    color: #647266;
   }
   .text-cream {
-    color: #20261f;
+    color: #1f2a23;
   }
   .bg-noir {
-    background-color: #f2f1ec;
+    background-color: #e3efe8;
   }
   .gold-gradient-text {
-    color: #20261f;
+    color: #1f2a23;
   }
   .gold-divider {
     height: 1px;
-    background: rgba(32, 38, 31, 0.25);
+    background: rgba(31, 42, 35, 0.2);
   }
   .glass-card {
     background: rgba(255, 255, 255, 0.5);
@@ -100,14 +100,14 @@
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #f2f1ec;
+  background: #e3efe8;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(32, 38, 31, 0.3);
+  background: rgba(31, 42, 35, 0.3);
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(32, 38, 31, 0.5);
+  background: rgba(31, 42, 35, 0.5);
 }
 
 /* hide custom cursor visuals on touch */

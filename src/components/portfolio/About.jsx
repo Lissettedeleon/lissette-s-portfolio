@@ -1,57 +1,38 @@
 import React from "react";
-import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 
-const GROUPS = [
-  { title: "Languages", items: ["Python", "SQL"] },
-  { title: "Security", items: ["NIST CSF", "Access Controls", "Sec+ (in progress)", "Wireshark", "Kali Linux"] },
-  { title: "Cloud", items: ["Google Cloud", "Firebase", "FlutterFlow", "AWS Security"] },
-  { title: "Dev Tools", items: ["VS Code", "Git", "GitHub", "Linux"] },
-  { title: "AI Tools", items: ["ChatGPT", "Claude", "Prompt Workflows"] },
-  { title: "Strengths", items: ["Documentation", "Data Validation", "Team Lead", "Written Communication"] },
+const SKILLS = [
+  "Python", "SQL", "Google Cloud", "Firebase", "FlutterFlow", "AWS Security",
+  "NIST CSF", "Wireshark", "Kali Linux", "VS Code", "Git", "Linux",
+  "ChatGPT", "Claude", "Prompt Workflows",
 ];
 
 export default function About() {
   return (
-    <section id="about" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
-      <SectionTitle eyebrow="01 — Who I Am">About Me</SectionTitle>
-
-      <div className="mt-14 flex flex-col gap-12">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          className="space-y-6 text-lg leading-relaxed text-cream/75"
-        >
-          <p>
-            I'm a San Antonio-based CS grad who found her calling at the intersection of
-            creativity and security. After earning my B.S. at UTSA (3.55 GPA), I dove into the
-            Cyber Defense Program — all while working full-time at Amazon.
-          </p>
-          <p>
-            I bring the same focus to a cybersecurity audit as I bring to the pickleball court —
-            strategic, detail-oriented, and always showing up. Seeking entry-level roles in
-            cybersecurity or QA engineering.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {GROUPS.map((g, i) => (
-            <motion.div
-              key={g.title}
-              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="group rounded-2xl border border-cream/25 bg-white/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50"
-            >
-              <h3 className="mb-4 text-xs uppercase tracking-[0.2em] text-rose-dusty">{g.title}</h3>
-              <div className="flex flex-wrap gap-2">
-                {g.items.map((it) => (
-                  <span key={it} className="rounded-lg border border-cream/10 bg-noir/40 px-3 py-1 text-sm text-cream/80">
-                    {it}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+    <section id="about" className="scroll-mt-24">
+      <SectionTitle>About</SectionTitle>
+      <div className="space-y-5 leading-relaxed text-cream/70">
+        <p>
+          I'm a San Antonio-based CS grad who found her calling at the
+          intersection of creativity and security. After earning my B.S. at{" "}
+          <span className="font-semibold text-cream">UTSA</span> (3.55 GPA), I
+          dove into the Cyber Defense Program at Northeast Lakeview College —
+          all while working full-time at Amazon.
+        </p>
+        <p>
+          I bring the same focus to a cybersecurity audit as I bring to the
+          pickleball court — strategic, detail-oriented, and always showing up.
+          Currently seeking entry-level roles in{" "}
+          <span className="font-semibold text-cream">cybersecurity</span> or{" "}
+          <span className="font-semibold text-cream">QA engineering</span>.
+        </p>
+      </div>
+      <div className="mt-8 flex flex-wrap gap-2">
+        {SKILLS.map((s) => (
+          <span key={s} className="rounded-full bg-gold/10 px-3.5 py-1.5 text-sm font-medium text-gold">
+            {s}
+          </span>
+        ))}
       </div>
     </section>
   );

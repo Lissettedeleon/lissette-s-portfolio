@@ -1,69 +1,40 @@
 import React from "react";
-import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import SecretScanner from "./tools/SecretScanner";
 import PromptInjectionSandbox from "./tools/PromptInjectionSandbox";
 import CyberQuiz from "./tools/CyberQuiz";
 import DevQuiz from "./tools/DevQuiz";
 
-function ToolShell({ id, emoji, title, subtitle, children }) {
+function ToolShell({ id, title, subtitle, children }) {
   return (
-    <motion.div
-      id={id}
-      initial={{ opacity: 0, y: 36 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-8%" }}
-      transition={{ duration: 0.6 }}
-      className="scroll-mt-28 rounded-lg border border-gold/15 bg-white/60 p-6 sm:p-8"
-    >
-      <div className="mb-6 flex items-center gap-3">
-        <div>
-          <h3 className="font-bold text-2xl text-cream">{title}</h3>
-          <p className="text-xs uppercase tracking-[0.15em] text-rose-dusty">{subtitle}</p>
-        </div>
+    <div id={id} className="scroll-mt-28 rounded-2xl bg-cream/[0.04] p-6 sm:p-8">
+      <div className="mb-6">
+        <h3 className="text-lg font-semibold text-cream">{title}</h3>
+        <p className="mt-1 font-mono text-xs uppercase tracking-[0.15em] text-rose-dusty">{subtitle}</p>
       </div>
       {children}
-    </motion.div>
+    </div>
   );
 }
 
 export default function LiveTools() {
   return (
-    <section id="live-tools" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
-      <SectionTitle eyebrow="04 — Try It Yourself">Live Security Tools</SectionTitle>
-
-      <div className="mt-14 space-y-8">
-        <ToolShell
-          id="demo-cyber-quiz"
-          emoji="🧠"
-          title="Security+ & AI Security Quiz"
-          subtitle="Live Demo · Quick Knowledge Check"
-        >
+    <section id="tools" className="scroll-mt-24">
+      <SectionTitle>Live Tools</SectionTitle>
+      <p className="mb-8 leading-relaxed text-cream/70">
+        Don't take my word for it — these run right here in your browser.
+      </p>
+      <div className="space-y-6">
+        <ToolShell id="demo-cyber-quiz" title="Security+ & AI Security Quiz" subtitle="Quick knowledge check">
           <CyberQuiz />
         </ToolShell>
-
-        <ToolShell
-          id="demo-dev-quiz"
-          emoji="💻"
-          title="Coding & AI Dev Tools Quiz"
-          subtitle="Live Demo · Quick Knowledge Check"
-        >
+        <ToolShell id="demo-dev-quiz" title="Coding & AI Dev Tools Quiz" subtitle="Quick knowledge check">
           <DevQuiz />
         </ToolShell>
-
-        <ToolShell
-          id="demo-secrets"
-          emoji="🔎"
-          title="API Key / Secret Leak Scanner"
-          subtitle="Live Demo · Client-Side Detection Engine"
-        >
+        <ToolShell id="demo-secrets" title="API Key / Secret Leak Scanner" subtitle="Client-side detection engine">
           <SecretScanner />
         </ToolShell>
-
-        <ToolShell
-          id="demo-injection"
-          emoji="🛡️"
-          title="Prompt Injection Sandbox"
-          subtitle="Live Demo · Simulated AI Security"
-        >
+        <ToolShell id="demo-injection" title="Prompt Injection Sandbox" subtitle="Simulated AI security">
           <PromptInjectionSandbox />
         </ToolShell>
       </div>
