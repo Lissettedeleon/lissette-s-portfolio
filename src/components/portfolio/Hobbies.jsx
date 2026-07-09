@@ -24,18 +24,18 @@ export default function Hobbies() {
             key={h.name}
             initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
             transition={{ delay: i * 0.06 }}
-            className="group relative flex aspect-square flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.07] text-center transition-all duration-300 hover:scale-105 hover:border-gold/50"
+            className="group relative flex aspect-square flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl border border-cream/15 bg-white/60 text-center transition-all duration-300 hover:scale-105 hover:border-gold/50"
           >
             {h.photo ? (
               <>
                 <img src={h.photo} alt={h.name} className="absolute inset-0 h-full w-full object-cover object-center" />
                 <div className="absolute inset-0 bg-noir/40" />
-                <span className="relative font-serif-display text-xl italic text-cream drop-shadow">{h.name}</span>
+                <span className="relative font-bold text-xl text-cream drop-shadow">{h.name}</span>
               </>
             ) : (
               <>
                 <span className="text-5xl opacity-70">{h.emoji}</span>
-                <span className="font-serif-display text-xl italic text-cream">{h.name}</span>
+                <span className="font-bold text-xl text-cream">{h.name}</span>
               </>
             )}
           </motion.div>

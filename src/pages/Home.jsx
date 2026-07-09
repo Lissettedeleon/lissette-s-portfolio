@@ -2,7 +2,6 @@ import React from "react";
 import ScrollProgress from "@/components/portfolio/ScrollProgress";
 import Navbar from "@/components/portfolio/Navbar";
 import Hero from "@/components/portfolio/Hero";
-import SkillTicker from "@/components/portfolio/SkillTicker";
 import About from "@/components/portfolio/About";
 import Divider from "@/components/portfolio/Divider";
 import Experience from "@/components/portfolio/Experience";
@@ -20,7 +19,6 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <SkillTicker />
         <About />
         <Divider />
         <Experience />

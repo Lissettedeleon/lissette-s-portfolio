@@ -4,7 +4,6 @@ import SectionTitle from "./SectionTitle";
 
 const CARDS = [
   {
-    emoji: "🎓",
     title: "B.S. Computer Science",
     org: "University of Texas at San Antonio",
     meta: "San Antonio, TX · GPA: 3.55",
@@ -12,7 +11,6 @@ const CARDS = [
     progress: false,
   },
   {
-    emoji: "🛡️",
     title: "Cyber Defense Program",
     org: "Northeast Lakeview College",
     meta: "Aug 2025 – Dec 2026 · GPA: 3.0",
@@ -22,9 +20,9 @@ const CARDS = [
 ];
 
 const ACHIEVEMENTS = [
-  "🚀 NASA Community College Aerospace Scholar (NCAS)",
-  "💻 CodePath Advanced Technical Course",
-  "⚡ RowdyHacks Hackathon Participant",
+  "NASA Community College Aerospace Scholar (NCAS)",
+  "CodePath Advanced Technical Course",
+  "RowdyHacks Hackathon Participant",
 ];
 
 export default function Education() {
@@ -38,17 +36,17 @@ export default function Education() {
             key={c.title}
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="rounded-2xl border border-white/10 bg-white/[0.07] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/45"
+            className="rounded-2xl border border-cream/15 bg-white/60 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/45"
           >
             <div className="flex items-start justify-between">
-              <span className="text-3xl">{c.emoji}</span>
+              <span className="font-mono text-sm text-cream/40">{String(i + 1).padStart(2, "0")}</span>
               {c.progress && (
                 <span className="rounded-full border border-rose-dusty/40 bg-rose-dusty/10 px-3 py-1 text-xs text-rose-dusty">
                   in progress
                 </span>
               )}
             </div>
-            <h3 className="mt-5 font-serif-display text-2xl italic text-cream">{c.title}</h3>
+            <h3 className="mt-5 font-bold text-2xl text-cream">{c.title}</h3>
             <p className="mt-1 text-sm text-gold">{c.org}</p>
             <p className="mt-1 text-xs uppercase tracking-[0.12em] text-cream/50">{c.meta}</p>
             <p className="mt-4 text-sm leading-relaxed text-cream/65">{c.desc}</p>
@@ -58,7 +56,7 @@ export default function Education() {
 
       <div className="mt-10 flex flex-wrap gap-3">
         {ACHIEVEMENTS.map((a) => (
-          <span key={a} className="rounded-full border border-gold/25 bg-gold/5 px-4 py-2 text-sm text-cream/80">
+          <span key={a} className="rounded-full border border-cream/15 bg-white/60 px-4 py-2 text-sm text-cream/80">
             {a}
           </span>
         ))}

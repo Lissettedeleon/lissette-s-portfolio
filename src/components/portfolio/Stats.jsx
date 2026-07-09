@@ -5,7 +5,7 @@ function Stat({ target, decimals, suffix, prefix = "", label }) {
   const { ref, display } = useCountUp(target, { decimals });
   return (
     <div ref={ref} className="text-center sm:text-left">
-      <div className="font-serif-display text-3xl italic text-gold sm:text-4xl">
+      <div className="font-bold text-3xl text-gold sm:text-4xl">
         {prefix}
         {display}
         {suffix}

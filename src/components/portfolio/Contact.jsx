@@ -42,7 +42,7 @@ export default function Contact() {
       });
       setStatus("sent");
       setForm({ name: "", email: "", subject: "", message: "" });
-      toast({ title: "Message sent — thank you! ✦", description: "Lissette will get back to you soon." });
+      toast({ title: "Message sent — thank you!", description: "Lissette will get back to you soon." });
       setTimeout(() => setStatus("idle"), 2500);
     } catch {
       setStatus("idle");
@@ -59,14 +59,14 @@ export default function Contact() {
         <form onSubmit={submit} className="space-y-4">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <input value={form.name} onChange={update("name")} placeholder="Your Name"
-              className="rounded-xl border border-gold/20 bg-noir/60 px-4 py-3 text-cream outline-none focus:border-gold/60" />
+              className="rounded-xl border border-cream/20 bg-white/70 px-4 py-3 text-cream outline-none focus:border-gold" />
             <input value={form.email} onChange={update("email")} type="email" placeholder="Email"
-              className="rounded-xl border border-gold/20 bg-noir/60 px-4 py-3 text-cream outline-none focus:border-gold/60" />
+              className="rounded-xl border border-cream/20 bg-white/70 px-4 py-3 text-cream outline-none focus:border-gold" />
           </div>
           <input value={form.subject} onChange={update("subject")} placeholder="Subject"
-            className="w-full rounded-xl border border-gold/20 bg-noir/60 px-4 py-3 text-cream outline-none focus:border-gold/60" />
+            className="w-full rounded-xl border border-cream/20 bg-white/70 px-4 py-3 text-cream outline-none focus:border-gold" />
           <textarea value={form.message} onChange={update("message")} placeholder="Message" rows={6}
-            className="w-full resize-none rounded-xl border border-gold/20 bg-noir/60 px-4 py-3 text-cream outline-none focus:border-gold/60" />
+            className="w-full resize-none rounded-xl border border-cream/20 bg-white/70 px-4 py-3 text-cream outline-none focus:border-gold" />
           <MagneticButton
             as="button" type="submit" disabled={status === "sending"}
             className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-noir disabled:opacity-70"
@@ -82,7 +82,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="lg:pl-8"
         >
-          <h3 className="font-serif-display text-3xl italic leading-snug text-cream">
+          <h3 className="font-bold text-3xl leading-snug text-cream">
             Ready to work with someone creative, detail-oriented, and passionate about security?
           </h3>
           <p className="mt-4 text-cream/65">
@@ -103,11 +103,11 @@ export default function Contact() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-gold/25 px-5 py-2.5 text-sm text-cream/85 hover:border-gold/60 hover:text-gold">
+              className="inline-flex items-center gap-2 rounded-full border border-cream/25 px-5 py-2.5 text-sm text-cream/85 hover:border-gold hover:text-gold">
               <Linkedin className="h-4 w-4" /> LinkedIn
             </a>
             <a href="https://github.com/joyee-c/LSDM" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-gold/25 px-5 py-2.5 text-sm text-cream/85 hover:border-gold/60 hover:text-gold">
+              className="inline-flex items-center gap-2 rounded-full border border-cream/25 px-5 py-2.5 text-sm text-cream/85 hover:border-gold hover:text-gold">
               <Github className="h-4 w-4" /> GitHub
             </a>
             <a href="#" className="inline-flex items-center gap-2 rounded-full bg-rose-dusty/15 px-5 py-2.5 text-sm text-rose-dusty hover:bg-rose-dusty/25">

@@ -1,151 +1,75 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowRight, Github, Linkedin, Mail, Play } from "lucide-react";
-
-const TOOLKIT = ["Python", "SQL", "Google Cloud", "Wireshark", "Kali Linux"];
+import { Play, X } from "lucide-react";
 
 export default function Hero() {
-  const videoRef = useRef(null);
-  const [playing, setPlaying] = useState(false);
-
-  function handlePlay() {
-    setPlaying(true);
-    videoRef.current?.play();
-  }
+  const [open, setOpen] = useState(false);
 
   return (
-    <section id="hero" className="relative flex min-h-screen items-center overflow-hidden pt-24">
-      {/* subtle blueprint grid */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(240,239,236,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(240,239,236,0.035) 1px, transparent 1px)",
-          backgroundSize: "44px 44px",
-          maskImage: "radial-gradient(ellipse 80% 70% at 50% 40%, black, transparent)",
-          WebkitMaskImage: "radial-gradient(ellipse 80% 70% at 50% 40%, black, transparent)",
-        }}
-      />
-      {/* single soft glow */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-32 top-20 h-[28rem] w-[28rem] rounded-full opacity-[0.12] blur-[120px]" style={{ background: "#b9a382" }} />
-      </div>
+    <section id="hero" className="relative flex min-h-screen flex-col items-center justify-center px-5 pt-24 text-center sm:px-8">
+      <motion.div
+        initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
+        className="flex w-full flex-col items-center"
+      >
+        <span className="inline-flex items-center gap-2 rounded-full border border-gold px-5 py-2 font-mono text-xs tracking-[0.2em] text-gold">
+          <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+          OPEN TO WORK
+        </span>
 
-      <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr]">
-        {/* Left */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-        >
-          {/* availability status */}
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-1.5 text-xs text-cream/70">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-            </span>
-            Available for work
-          </div>
+        <h1 className="mt-8 font-bold uppercase leading-[0.95] tracking-[-0.03em] text-cream text-6xl sm:text-7xl lg:text-8xl">
+          Lissette
+          <br />
+          <span className="text-gold">De Leon</span>
+        </h1>
 
-          <p className="mb-3 font-mono text-sm text-gold/80">hi, my name is</p>
+        <div className="mt-8 w-full max-w-2xl border-y-[1.5px] border-cream py-3 font-mono text-sm tracking-[0.35em] text-cream/70">
+          CYBERSECURITY&nbsp;&nbsp;✕&nbsp;&nbsp;QA&nbsp;&nbsp;✕&nbsp;&nbsp;AI
+        </div>
 
-          <h1 className="gold-gradient-text font-serif-display text-5xl italic leading-[1.05] tracking-tight sm:text-6xl lg:text-[4.25rem] xl:text-7xl">
-            Lissette De Leon
-          </h1>
+        <p className="mt-7 max-w-md leading-relaxed text-cream/60">
+          I find how software breaks — then make sure it can't. CS grad,
+          cyber defense student, and professional question-asker.
+        </p>
 
-          <h2 className="mt-4 font-serif-display text-2xl italic text-cream/80 sm:text-3xl">
-            Cybersecurity · QA · AI
-          </h2>
+        <div className="mt-9 flex flex-wrap justify-center gap-4">
+          <a href="#projects" className="rounded-full bg-cream px-8 py-3.5 text-sm font-bold text-noir transition-opacity hover:opacity-85">
+            View work
+          </a>
+          <a href="#contact" className="rounded-full border-[1.5px] border-cream px-8 py-3.5 text-sm font-bold text-cream transition-colors hover:bg-cream/5">
+            Contact
+          </a>
+        </div>
+      </motion.div>
 
-          <p className="mt-6 max-w-md text-base leading-relaxed text-cream/60">
-            "Curious enough to explore it. Careful enough to protect it." I find how
-            software breaks — then help make sure it can't.
-          </p>
+      {/* press-play sticker */}
+      <motion.button
+        initial={{ opacity: 0, scale: 0.8, rotate: 12 }} animate={{ opacity: 1, scale: 1, rotate: 6 }} transition={{ delay: 0.4, duration: 0.5 }}
+        onClick={() => setOpen(true)}
+        aria-label="Play intro video"
+        className="mt-12 flex h-36 w-36 flex-col items-center justify-center gap-1.5 rounded-full bg-cream font-mono text-[11px] tracking-[0.1em] text-noir shadow-[0_18px_40px_rgba(44,38,40,0.25)] transition-transform hover:scale-105 sm:absolute sm:bottom-12 sm:right-14 sm:mt-0"
+      >
+        <span className="flex h-10 w-10 items-center justify-center rounded-full border-[1.5px] border-gold text-gold">
+          <Play className="ml-0.5 h-4 w-4" fill="currentColor" />
+        </span>
+        PRESS PLAY
+        <span className="text-noir/60">MEET ME · 0:30</span>
+      </motion.button>
 
-          {/* CTAs + socials */}
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a
-              href="#projects"
-              className="group inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-noir transition-opacity hover:opacity-90"
+      {/* video lightbox */}
+      {open && (
+        <div className="fixed inset-0 z-[9500] flex items-center justify-center bg-cream/70 p-5 backdrop-blur-sm" onClick={() => setOpen(false)}>
+          <div className="relative w-full max-w-md" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setOpen(false)}
+              aria-label="Close video"
+              className="absolute -right-3 -top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-noir text-cream shadow-lg"
             >
-              View Projects
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center rounded-lg border border-cream/20 px-6 py-3 text-sm font-semibold text-cream/85 transition-colors hover:border-cream/45"
-            >
-              Get in Touch
-            </a>
-            <div className="ml-1 flex items-center gap-1">
-              <a href="https://github.com/lissettedeleon" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
-                className="rounded-lg p-2.5 text-cream/55 transition-colors hover:bg-white/[0.06] hover:text-gold">
-                <Github className="h-5 w-5" />
-              </a>
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-                className="rounded-lg p-2.5 text-cream/55 transition-colors hover:bg-white/[0.06] hover:text-gold">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="mailto:Lissette.deleon@my.utsa.edu" aria-label="Email"
-                className="rounded-lg p-2.5 text-cream/55 transition-colors hover:bg-white/[0.06] hover:text-gold">
-                <Mail className="h-5 w-5" />
-              </a>
-            </div>
+              <X className="h-5 w-5" />
+            </button>
+            <video src="/intro.mp4" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-2xl" autoPlay controls playsInline />
           </div>
-
-          {/* toolkit */}
-          <div className="mt-12 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-xs text-cream/40">
-            <span className="text-gold/60">// current toolkit</span>
-            {TOOLKIT.map((t, i) => (
-              <span key={t}>
-                {t}
-                {i < TOOLKIT.length - 1 && <span className="ml-3 text-cream/20">·</span>}
-              </span>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Right — intro video in a terminal-style window */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.6 }}
-        >
-          <div className="mx-auto w-full max-w-sm overflow-hidden rounded-2xl border border-white/10 bg-white/[0.05] shadow-2xl shadow-black/40">
-            {/* window chrome */}
-            <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
-              <span className="h-3 w-3 rounded-full bg-[#f87171]/60" />
-              <span className="h-3 w-3 rounded-full bg-[#fbbf24]/60" />
-              <span className="h-3 w-3 rounded-full bg-[#34d399]/60" />
-              <span className="ml-3 font-mono text-xs text-cream/45">intro.mp4 — lissette</span>
-            </div>
-            {/* video */}
-            <div className="relative aspect-[4/5]">
-              <video
-                ref={videoRef}
-                src="/intro.mp4"
-                className="absolute inset-0 h-full w-full object-cover"
-                playsInline
-                controls={playing}
-                onEnded={() => setPlaying(false)}
-              />
-              {!playing && (
-                <div className="absolute inset-0 flex items-center justify-center bg-noir/40 backdrop-blur-[2px]">
-                  <button
-                    aria-label="Play intro video"
-                    onClick={handlePlay}
-                    className="flex h-20 w-20 items-center justify-center rounded-full border border-gold/40 bg-gold/10 text-gold backdrop-blur-sm transition-colors hover:bg-gold/20"
-                  >
-                    <Play className="ml-1 h-8 w-8" fill="currentColor" />
-                  </button>
-                </div>
-              )}
-            </div>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-cream/40">
-        <span className="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
-        <ArrowDown className="h-3 w-3" />
-      </div>
+        </div>
+      )}
     </section>
   );
 }

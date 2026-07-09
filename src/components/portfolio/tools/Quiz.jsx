@@ -35,7 +35,7 @@ export default function Quiz({ questions }) {
     return (
       <div className="flex flex-col items-center gap-4 rounded-xl border border-gold/20 bg-noir/40 px-6 py-10 text-center">
         <Trophy className="h-10 w-10 text-gold" />
-        <p className="font-serif-display text-2xl italic text-cream">
+        <p className="font-bold text-2xl text-cream">
           You scored {score} / {questions.length}
         </p>
         <button

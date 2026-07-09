@@ -43,10 +43,10 @@ module.exports = {
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
-  			noir: '#121214',
-  			gold: '#b9a382',
-  			'rose-dusty': '#9c9ca6',
-  			cream: '#f0efec'
+  			noir: '#efe9e9',
+  			gold: '#c26d7c',
+  			'rose-dusty': '#8a7f82',
+  			cream: '#2c2628'
   		},
   		fontFamily: {
   			heading: ['var(--font-heading)'],

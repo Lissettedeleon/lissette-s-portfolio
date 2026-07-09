@@ -19,7 +19,7 @@ const PROJECTS = [
     emoji: "🔍",
     title: "Cybersecurity Audit",
     role: "Team Lead · Confidential Nonprofit",
-    badge: "⛨ NDA Signed",
+    badge: "NDA Signed",
     desc: "Led a 5-person structured security audit for a real client under NDA. Evaluated NIST controls, access policies, and auth workflows. Delivered full findings and remediation report.",
     tags: ["NIST CSF", "Gap Analysis", "Auth Testing", "Risk Reporting"],
     links: [],
@@ -69,7 +69,7 @@ const PROJECTS = [
     emoji: "🍓",
     title: "The Strawberry Shop",
     role: "Freelance Developer · Live Client Site",
-    badge: "🌐 Live",
+    badge: "Live",
     desc: "Built a live, revenue-generating ordering site for a real strawberry dessert business — end-to-end client project from requirements meetings to launch. Integrates Toast POS on the backend for order and payment processing, with AI tooling used throughout the build.",
     tags: ["Toast POS", "Payments Integration", "E-Commerce", "Client Project"],
     links: [
@@ -99,7 +99,7 @@ export default function Projects() {
     <section id="projects" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
       <SectionTitle eyebrow="03 — The Tangible">Selected Projects</SectionTitle>
 
-      <div className="mt-8 inline-flex rounded-full border border-gold/25 bg-noir/40 p-1.5">
+      <div className="mt-8 inline-flex rounded-full border border-cream/15 bg-white/60 p-1.5">
         {TABS.map((t) => {
           const count = PROJECTS.filter((p) => p.category === t.key).length;
           return (
@@ -108,14 +108,14 @@ export default function Projects() {
               onClick={() => setTab(t.key)}
               className={`flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 ${
                 tab === t.key
-                  ? "bg-gold text-noir shadow-[0_0_20px_rgba(179,157,219,0.35)]"
+                  ? "bg-cream text-noir"
                   : "text-cream/60 hover:text-cream"
               }`}
             >
               {t.label}
               <span
                 className={`rounded-full px-2 py-0.5 text-xs ${
-                  tab === t.key ? "bg-noir/20 text-noir" : "bg-cream/10 text-cream/50"
+                  tab === t.key ? "bg-noir/40 text-noir" : "bg-cream/10 text-cream/50"
                 }`}
               >
                 {count}
@@ -133,20 +133,17 @@ export default function Projects() {
             transition={{ delay: i * 0.07, duration: 0.6 }}
           >
             <TiltCard className="group h-full">
-              <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.07] p-7 transition-colors duration-300 hover:border-gold/45">
-                {/* scanner line */}
-                <span className="pointer-events-none absolute inset-x-0 top-0 h-px -translate-y-2 bg-gradient-to-r from-transparent via-gold to-transparent opacity-0 transition-all duration-700 group-hover:translate-y-[120%] group-hover:opacity-100" />
-
+              <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-cream/15 bg-white/60 p-7 transition-colors duration-300 hover:border-gold/45">
                 <div className="flex items-start justify-between">
-                  <span className="text-3xl">{p.emoji}</span>
+                  <span className="font-mono text-sm text-cream/40">{String(i + 1).padStart(2, "0")}</span>
                   {p.badge && (
-                    <span className="rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-xs font-medium text-gold">
+                    <span className="rounded-full border border-gold/40 bg-gold/10 px-3 py-1 font-mono text-xs font-medium text-gold">
                       {p.badge}
                     </span>
                   )}
                 </div>
 
-                <h3 className="mt-5 font-serif-display text-2xl italic text-cream">{p.title}</h3>
+                <h3 className="mt-5 font-bold text-2xl text-cream">{p.title}</h3>
                 <p className="mt-1 text-xs uppercase tracking-[0.12em] text-rose-dusty">{p.role}</p>
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-cream/65">{p.desc}</p>
 
@@ -159,9 +156,9 @@ export default function Projects() {
                 </div>
 
                 {(p.links?.length || p.tryHref) && (
-                  <div className="mt-6 flex flex-wrap gap-3 border-t border-gold/10 pt-5">
+                  <div className="mt-6 flex flex-wrap gap-3 border-t border-cream/10 pt-5">
                     {p.tryHref && (
-                      <a href={p.tryHref} className="inline-flex items-center gap-1.5 rounded-full bg-gold px-4 py-2 text-xs font-semibold text-noir hover:opacity-90">
+                      <a href={p.tryHref} className="inline-flex items-center gap-1.5 rounded-full bg-cream px-4 py-2 text-xs font-semibold text-noir hover:opacity-90">
                         Try It Live <ArrowRight className="h-3.5 w-3.5" />
                       </a>
                     )}

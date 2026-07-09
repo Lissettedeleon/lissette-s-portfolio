@@ -24,9 +24,9 @@
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
     --radius: 0.5rem;
-    --font-heading: "Cormorant Garamond", Georgia, serif;
+    --font-heading: "DM Sans", ui-sans-serif, system-ui, sans-serif;
     --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
-    --font-display: "Cormorant Garamond", Georgia, serif;
+    --font-display: "DM Sans", ui-sans-serif, system-ui, sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
   }
 }
@@ -40,8 +40,8 @@
   }
   body {
     @apply font-body;
-    background-color: #121214;
-    color: #f0efec;
+    background-color: #efe9e9;
+    color: #2c2628;
     overflow-x: hidden;
   }
 }
@@ -51,33 +51,27 @@
     font-family: var(--font-display);
   }
   .text-gold {
-    color: #b9a382;
+    color: #c26d7c;
   }
   .text-rose-dusty {
-    color: #9c9ca6;
+    color: #8a7f82;
   }
   .text-cream {
-    color: #f0efec;
+    color: #2c2628;
   }
   .bg-noir {
-    background-color: #121214;
+    background-color: #efe9e9;
   }
   .gold-gradient-text {
-    background: linear-gradient(120deg, #f0efec 0%, #b9a382 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+    color: #2c2628;
   }
   .gold-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(185, 163, 130, 0.5), transparent);
+    background: rgba(44, 38, 40, 0.15);
   }
   .glass-card {
-    background: rgba(240, 239, 236, 0.03);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(185, 163, 130, 0.14);
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(44, 38, 40, 0.12);
   }
   /* shine sweep on hover */
   .shine {
@@ -91,7 +85,7 @@
     left: -120%;
     width: 80%;
     height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(240, 239, 236, 0.12), transparent);
+    background: linear-gradient(120deg, transparent, rgba(44, 38, 40, 0.06), transparent);
     transform: skewX(-20deg);
     transition: left 0.7s ease;
     pointer-events: none;
@@ -106,14 +100,14 @@
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #121214;
+  background: #efe9e9;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(185, 163, 130, 0.35);
+  background: rgba(44, 38, 40, 0.3);
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(185, 163, 130, 0.6);
+  background: rgba(44, 38, 40, 0.5);
 }
 
 /* hide custom cursor visuals on touch */
@@ -131,6 +125,6 @@
 }
 
 :focus-visible {
-  outline: 2px solid #b9a382;
+  outline: 2px solid #c26d7c;
   outline-offset: 2px;
 }

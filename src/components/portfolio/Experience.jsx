@@ -44,7 +44,7 @@ export default function Experience() {
           initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true, margin: "-20%" }}
           transition={{ duration: 1.4, ease: "easeInOut" }}
           className="absolute left-[7px] top-2 h-full w-px origin-top sm:left-[11px]"
-          style={{ background: "linear-gradient(180deg,#b9a382,rgba(185,163,130,0.1))" }}
+          style={{ background: "linear-gradient(180deg,#c26d7c,rgba(194,109,124,0.1))" }}
         />
 
         <div className="space-y-14">
@@ -57,7 +57,7 @@ export default function Experience() {
             >
               <span className="absolute -left-8 top-1.5 h-3.5 w-3.5 rounded-full border border-gold bg-noir transition-all duration-300 group-hover:bg-gold sm:-left-12" />
               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="font-serif-display text-2xl italic text-cream">{job.role}</h3>
+                <h3 className="font-bold text-2xl text-cream">{job.role}</h3>
                 <span className="text-xs uppercase tracking-[0.15em] text-gold/80">{job.date}</span>
               </div>
               <p className="mt-1 text-sm text-rose-dusty">{job.org}</p>

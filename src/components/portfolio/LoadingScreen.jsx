@@ -31,7 +31,7 @@ export default function LoadingScreen() {
                 transition={{ duration: 1.6, ease: "easeInOut" }}
                 style={{ rotate: -90, transformOrigin: "center" }}
               />
-              <text x="60" y="78" textAnchor="middle" className="font-serif-display"
+              <text x="60" y="78" textAnchor="middle" className="font-bold"
                 style={{ fontSize: 52, fontStyle: "italic", fill: "#b9a382" }}>
                 LD
               </text>
