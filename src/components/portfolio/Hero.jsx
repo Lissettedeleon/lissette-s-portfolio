@@ -2,7 +2,6 @@ import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Play, ArrowDown } from "lucide-react";
 import MagneticButton from "./MagneticButton";
-import Typewriter from "./Typewriter";
 import Stats from "./Stats";
 import Particles from "./Particles";
 
@@ -56,15 +55,7 @@ export default function Hero() {
           </h1>
 
           <div className="mt-5 font-serif-display text-2xl italic text-cream/90 sm:text-3xl">
-            <Typewriter
-              words={[
-                "Cybersecurity Enthusiast",
-                "QA Engineering Explorer",
-                "Cloud Builder",
-                "Creative Problem Solver",
-                "Always Curious",
-              ]}
-            />
+            Cybersecurity · QA · AI
           </div>
 
           <p className="mt-5 max-w-md font-serif-display text-lg italic text-cream/60">
