@@ -55,7 +55,7 @@ export default function Experience() {
               transition={{ duration: 0.6 }}
               className="group relative"
             >
-              <span className="absolute -left-8 top-1.5 h-3.5 w-3.5 rounded-full border border-gold bg-noir transition-all duration-300 group-hover:bg-gold sm:-left-12" />
+              <span className="absolute -left-8 top-1.5 h-3.5 w-3.5 rounded-none border border-gold bg-noir transition-all duration-300 group-hover:bg-gold sm:-left-12" />
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <h3 className="font-bold text-2xl text-cream">{job.role}</h3>
                 <span className="text-xs uppercase tracking-[0.15em] text-gold/80">{job.date}</span>
@@ -64,7 +64,7 @@ export default function Experience() {
               <ul className="mt-4 space-y-2">
                 {job.points.map((p, j) => (
                   <li key={j} className="flex gap-3 text-cream/70">
-                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-gold" />
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-none bg-gold" />
                     <span className="leading-relaxed">{p}</span>
                   </li>
                 ))}

@@ -33,14 +33,14 @@ export default function Quiz({ questions }) {
 
   if (done) {
     return (
-      <div className="flex flex-col items-center gap-4 rounded-xl border border-gold/20 bg-noir/40 px-6 py-10 text-center">
+      <div className="flex flex-col items-center gap-4 rounded-none border border-gold/20 bg-noir/40 px-6 py-10 text-center">
         <Trophy className="h-10 w-10 text-gold" />
         <p className="font-bold text-2xl text-cream">
           You scored {score} / {questions.length}
         </p>
         <button
           onClick={handleRestart}
-          className="inline-flex items-center gap-2 rounded-full border border-gold/40 px-5 py-2.5 text-sm font-semibold text-gold hover:bg-gold/10"
+          className="inline-flex items-center gap-2 rounded-none border border-gold/40 px-5 py-2.5 text-sm font-semibold text-gold hover:bg-gold/10"
         >
           <RotateCcw className="h-4 w-4" /> Try Again
         </button>
@@ -72,7 +72,7 @@ export default function Quiz({ questions }) {
               key={i}
               onClick={() => handleAnswer(i)}
               disabled={selected !== null}
-              className={`flex w-full items-center justify-between rounded-xl border px-4 py-3 text-left text-sm transition-colors ${style}`}
+              className={`flex w-full items-center justify-between rounded-none border px-4 py-3 text-left text-sm transition-colors ${style}`}
             >
               {opt}
               {selected !== null && isCorrect && <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-300" />}
@@ -83,7 +83,7 @@ export default function Quiz({ questions }) {
       </div>
 
       {selected !== null && (
-        <div className="mt-4 rounded-xl border border-rose-dusty/25 bg-rose-dusty/5 px-4 py-3 text-sm text-cream/80">
+        <div className="mt-4 rounded-none border border-rose-dusty/25 bg-rose-dusty/5 px-4 py-3 text-sm text-cream/80">
           💡 {q.explanation}
         </div>
       )}
@@ -91,7 +91,7 @@ export default function Quiz({ questions }) {
       {selected !== null && (
         <button
           onClick={handleNext}
-          className="mt-5 inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-noir hover:opacity-90"
+          className="mt-5 inline-flex items-center gap-2 rounded-none bg-gold px-5 py-2.5 text-sm font-semibold text-noir hover:opacity-90"
         >
           {current + 1 < questions.length ? "Next Question" : "See Results"}
         </button>

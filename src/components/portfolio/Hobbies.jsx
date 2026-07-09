@@ -24,7 +24,7 @@ export default function Hobbies() {
             key={h.name}
             initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
             transition={{ delay: i * 0.06 }}
-            className="group relative flex aspect-square flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl border border-cream/15 bg-white/60 text-center transition-all duration-300 hover:scale-105 hover:border-gold/50"
+            className="group relative flex aspect-square flex-col items-center justify-center gap-3 overflow-hidden rounded-none border border-cream/25 bg-white/40 text-center transition-all duration-300 hover:scale-105 hover:border-gold/50"
           >
             {h.photo ? (
               <>

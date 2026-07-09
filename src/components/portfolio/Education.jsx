@@ -36,12 +36,12 @@ export default function Education() {
             key={c.title}
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="rounded-2xl border border-cream/15 bg-white/60 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/45"
+            className="rounded-none border border-cream/25 bg-white/40 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/45"
           >
             <div className="flex items-start justify-between">
               <span className="font-mono text-sm text-cream/40">{String(i + 1).padStart(2, "0")}</span>
               {c.progress && (
-                <span className="rounded-full border border-rose-dusty/40 bg-rose-dusty/10 px-3 py-1 text-xs text-rose-dusty">
+                <span className="rounded-none border border-rose-dusty/40 bg-rose-dusty/10 px-3 py-1 text-xs text-rose-dusty">
                   in progress
                 </span>
               )}
@@ -56,7 +56,7 @@ export default function Education() {
 
       <div className="mt-10 flex flex-wrap gap-3">
         {ACHIEVEMENTS.map((a) => (
-          <span key={a} className="rounded-full border border-cream/15 bg-white/60 px-4 py-2 text-sm text-cream/80">
+          <span key={a} className="rounded-none border border-cream/25 bg-white/40 px-4 py-2 text-sm text-cream/80">
             {a}
           </span>
         ))}

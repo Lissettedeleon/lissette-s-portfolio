@@ -59,17 +59,17 @@ export default function Contact() {
         <form onSubmit={submit} className="space-y-4">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <input value={form.name} onChange={update("name")} placeholder="Your Name"
-              className="rounded-xl border border-cream/20 bg-white/70 px-4 py-3 text-cream outline-none focus:border-gold" />
+              className="rounded-none border border-cream/20 bg-white/70 px-4 py-3 text-cream outline-none focus:border-gold" />
             <input value={form.email} onChange={update("email")} type="email" placeholder="Email"
-              className="rounded-xl border border-cream/20 bg-white/70 px-4 py-3 text-cream outline-none focus:border-gold" />
+              className="rounded-none border border-cream/20 bg-white/70 px-4 py-3 text-cream outline-none focus:border-gold" />
           </div>
           <input value={form.subject} onChange={update("subject")} placeholder="Subject"
-            className="w-full rounded-xl border border-cream/20 bg-white/70 px-4 py-3 text-cream outline-none focus:border-gold" />
+            className="w-full rounded-none border border-cream/20 bg-white/70 px-4 py-3 text-cream outline-none focus:border-gold" />
           <textarea value={form.message} onChange={update("message")} placeholder="Message" rows={6}
-            className="w-full resize-none rounded-xl border border-cream/20 bg-white/70 px-4 py-3 text-cream outline-none focus:border-gold" />
+            className="w-full resize-none rounded-none border border-cream/20 bg-white/70 px-4 py-3 text-cream outline-none focus:border-gold" />
           <MagneticButton
             as="button" type="submit" disabled={status === "sending"}
-            className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-noir disabled:opacity-70"
+            className="rounded-none bg-gold px-8 py-3 text-sm font-semibold text-noir disabled:opacity-70"
           >
             {status === "sending" ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending…</>
               : status === "sent" ? <><Check className="mr-2 h-4 w-4" /> Sent</>
@@ -103,14 +103,14 @@ export default function Contact() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-cream/25 px-5 py-2.5 text-sm text-cream/85 hover:border-gold hover:text-gold">
+              className="inline-flex items-center gap-2 rounded-none border border-cream/25 px-5 py-2.5 text-sm text-cream/85 hover:border-gold hover:text-gold">
               <Linkedin className="h-4 w-4" /> LinkedIn
             </a>
             <a href="https://github.com/joyee-c/LSDM" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-cream/25 px-5 py-2.5 text-sm text-cream/85 hover:border-gold hover:text-gold">
+              className="inline-flex items-center gap-2 rounded-none border border-cream/25 px-5 py-2.5 text-sm text-cream/85 hover:border-gold hover:text-gold">
               <Github className="h-4 w-4" /> GitHub
             </a>
-            <a href="#" className="inline-flex items-center gap-2 rounded-full bg-rose-dusty/15 px-5 py-2.5 text-sm text-rose-dusty hover:bg-rose-dusty/25">
+            <a href="#" className="inline-flex items-center gap-2 rounded-none bg-rose-dusty/15 px-5 py-2.5 text-sm text-rose-dusty hover:bg-rose-dusty/25">
               <FileText className="h-4 w-4" /> Resume
             </a>
           </div>

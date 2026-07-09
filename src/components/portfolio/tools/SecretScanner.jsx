@@ -149,14 +149,14 @@ export default function SecretScanner() {
         }}
         placeholder="Paste code, .env content, or config text to scan…"
         rows={8}
-        className="w-full resize-y rounded-xl border border-gold/20 bg-noir/60 px-4 py-3 font-mono text-sm text-cream outline-none focus:border-gold/60"
+        className="w-full resize-y rounded-none border border-gold/20 bg-noir/60 px-4 py-3 font-mono text-sm text-cream outline-none focus:border-gold/60"
       />
 
       <div className="mt-4 flex flex-wrap gap-3">
         <button
           onClick={handleScan}
           disabled={!input.trim()}
-          className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-noir transition-opacity hover:opacity-90 disabled:opacity-40"
+          className="inline-flex items-center gap-2 rounded-none bg-gold px-5 py-2.5 text-sm font-semibold text-noir transition-opacity hover:opacity-90 disabled:opacity-40"
         >
           <ScanSearch className="h-4 w-4" /> Scan for Secrets
         </button>
@@ -165,7 +165,7 @@ export default function SecretScanner() {
             setInput(SAMPLE_TEXT);
             setHasScanned(false);
           }}
-          className="inline-flex items-center gap-2 rounded-full border border-rose-dusty/50 px-5 py-2.5 text-sm font-semibold text-rose-dusty transition-colors hover:bg-rose-dusty/10"
+          className="inline-flex items-center gap-2 rounded-none border border-rose-dusty/50 px-5 py-2.5 text-sm font-semibold text-rose-dusty transition-colors hover:bg-rose-dusty/10"
         >
           <FileText className="h-4 w-4" /> Load Sample
         </button>
@@ -175,22 +175,22 @@ export default function SecretScanner() {
       {hasScanned && (
         <div className="mt-6">
           {findings.length === 0 ? (
-            <div className="flex items-center gap-3 rounded-xl border border-emerald-400/30 bg-emerald-400/5 px-4 py-3 text-sm text-emerald-300">
+            <div className="flex items-center gap-3 rounded-none border border-emerald-400/30 bg-emerald-400/5 px-4 py-3 text-sm text-emerald-300">
               <ShieldCheck className="h-5 w-5 shrink-0" />
               No secrets detected.
             </div>
           ) : (
             <>
-              <div className="flex flex-wrap items-center gap-3 rounded-xl border border-gold/20 bg-noir/40 px-4 py-3 text-sm text-cream/80">
+              <div className="flex flex-wrap items-center gap-3 rounded-none border border-gold/20 bg-noir/40 px-4 py-3 text-sm text-cream/80">
                 <ShieldAlert className="h-5 w-5 text-rose-dusty" />
                 <span className="font-semibold text-cream">{findings.length} finding{findings.length !== 1 ? "s" : ""}</span>
                 {criticalCount > 0 && (
-                  <span className="rounded-full px-2.5 py-0.5 text-xs font-medium" style={{ color: SEVERITY_STYLE.Critical.color, background: SEVERITY_STYLE.Critical.bg }}>
+                  <span className="rounded-none px-2.5 py-0.5 text-xs font-medium" style={{ color: SEVERITY_STYLE.Critical.color, background: SEVERITY_STYLE.Critical.bg }}>
                     {criticalCount} Critical
                   </span>
                 )}
                 {warningCount > 0 && (
-                  <span className="rounded-full px-2.5 py-0.5 text-xs font-medium" style={{ color: SEVERITY_STYLE.Warning.color, background: SEVERITY_STYLE.Warning.bg }}>
+                  <span className="rounded-none px-2.5 py-0.5 text-xs font-medium" style={{ color: SEVERITY_STYLE.Warning.color, background: SEVERITY_STYLE.Warning.bg }}>
                     {warningCount} Warning
                   </span>
                 )}
@@ -202,7 +202,7 @@ export default function SecretScanner() {
                   return (
                     <div
                       key={i}
-                      className="rounded-xl border px-4 py-3"
+                      className="rounded-none border px-4 py-3"
                       style={{ borderColor: style.border, background: style.bg }}
                     >
                       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -211,7 +211,7 @@ export default function SecretScanner() {
                           <span className="text-sm font-semibold text-cream">{f.type}</span>
                           <span className="text-xs text-cream/45">Line {f.line}</span>
                         </div>
-                        <span className="rounded-full px-2.5 py-0.5 text-xs font-medium" style={{ color: style.color, background: "rgba(0,0,0,0.2)" }}>
+                        <span className="rounded-none px-2.5 py-0.5 text-xs font-medium" style={{ color: style.color, background: "rgba(0,0,0,0.2)" }}>
                           {f.severity}
                         </span>
                       </div>
@@ -222,7 +222,7 @@ export default function SecretScanner() {
                 })}
               </div>
 
-              <div className="mt-6 rounded-xl border border-rose-dusty/25 bg-rose-dusty/5 px-4 py-4">
+              <div className="mt-6 rounded-none border border-rose-dusty/25 bg-rose-dusty/5 px-4 py-4">
                 <h4 className="text-sm font-semibold text-cream">Remediation Checklist</h4>
                 <ul className="mt-2 space-y-1.5">
                   {checklist.map((item, i) => (

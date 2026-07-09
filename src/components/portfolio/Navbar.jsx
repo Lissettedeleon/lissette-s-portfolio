@@ -28,11 +28,11 @@ export default function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-[9000] transition-all duration-500 ${
-        scrolled ? "border-b border-cream/10 bg-noir/80 backdrop-blur-xl" : "border-b border-transparent"
+        scrolled ? "border-b border-cream/20 bg-noir/90 backdrop-blur-sm" : "border-b border-transparent"
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-        <a href="#hero" className="font-mono text-xl font-bold tracking-tight text-cream">
+        <a href="#hero" className="font-mono text-base font-bold tracking-tight text-cream">
           L<span className="text-gold">D</span>
         </a>
 
@@ -42,7 +42,7 @@ export default function Navbar() {
               key={l.label}
               href={l.href}
               onClick={() => l.tab && selectProjectsTab(l.tab)}
-              className="text-sm text-cream/70 transition-colors hover:text-gold"
+              className="text-sm text-cream/70 underline-offset-4 transition-colors hover:text-cream hover:underline"
             >
               {l.label}
             </a>
@@ -50,8 +50,8 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <span className="hidden items-center gap-2 rounded-full border border-gold/50 bg-gold/10 px-3 py-1.5 font-mono text-xs font-medium text-gold sm:flex">
-            <span className="h-2 w-2 rounded-full bg-gold animate-pulse-dot" />
+          <span className="hidden items-center gap-2 font-mono text-xs font-medium text-gold sm:flex">
+            <span className="h-2 w-2 rounded-none bg-gold animate-pulse-dot" />
             Open to Work
           </span>
           <button
