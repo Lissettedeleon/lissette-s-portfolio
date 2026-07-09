@@ -40,7 +40,7 @@ export default function Hero() {
             ✦ CS Graduate · Cyber Defense Student
           </motion.p>
 
-          <h1 className="font-serif-display text-6xl italic leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl">
+          <h1 className="font-serif-display text-5xl italic leading-[1.05] tracking-tight sm:text-6xl lg:text-[4.25rem] xl:text-7xl">
             {NAME.split("").map((ch, i) => (
               <motion.span
                 key={i}
