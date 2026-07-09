@@ -6,7 +6,7 @@ const LEVELS = [
   { label: "Weak", color: "#f97316" },
   { label: "Fair", color: "#eab308" },
   { label: "Strong", color: "#22c55e" },
-  { label: "Very Strong", color: "#d4a853" },
+  { label: "Very Strong", color: "#b9a382" },
 ];
 
 function analyze(pw) {

@@ -40,8 +40,8 @@
   }
   body {
     @apply font-body;
-    background-color: #0d0a0c;
-    color: #faf5ee;
+    background-color: #121214;
+    color: #f0efec;
     overflow-x: hidden;
   }
 }
@@ -51,19 +51,19 @@
     font-family: var(--font-display);
   }
   .text-gold {
-    color: #d4a853;
+    color: #b9a382;
   }
   .text-rose-dusty {
-    color: #d4847a;
+    color: #9c9ca6;
   }
   .text-cream {
-    color: #faf5ee;
+    color: #f0efec;
   }
   .bg-noir {
-    background-color: #0d0a0c;
+    background-color: #121214;
   }
   .gold-gradient-text {
-    background: linear-gradient(120deg, #d4a853 0%, #d4847a 100%);
+    background: linear-gradient(120deg, #f0efec 0%, #b9a382 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -71,13 +71,13 @@
   }
   .gold-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(212, 168, 83, 0.5), transparent);
+    background: linear-gradient(90deg, transparent, rgba(185, 163, 130, 0.5), transparent);
   }
   .glass-card {
-    background: rgba(250, 245, 238, 0.03);
+    background: rgba(240, 239, 236, 0.03);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(212, 168, 83, 0.14);
+    border: 1px solid rgba(185, 163, 130, 0.14);
   }
   /* shine sweep on hover */
   .shine {
@@ -91,7 +91,7 @@
     left: -120%;
     width: 80%;
     height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(250, 245, 238, 0.12), transparent);
+    background: linear-gradient(120deg, transparent, rgba(240, 239, 236, 0.12), transparent);
     transform: skewX(-20deg);
     transition: left 0.7s ease;
     pointer-events: none;
@@ -106,14 +106,14 @@
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0d0a0c;
+  background: #121214;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(212, 168, 83, 0.35);
+  background: rgba(185, 163, 130, 0.35);
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(212, 168, 83, 0.6);
+  background: rgba(185, 163, 130, 0.6);
 }
 
 /* hide custom cursor visuals on touch */
@@ -131,6 +131,6 @@
 }
 
 :focus-visible {
-  outline: 2px solid #d4a853;
+  outline: 2px solid #b9a382;
   outline-offset: 2px;
 }

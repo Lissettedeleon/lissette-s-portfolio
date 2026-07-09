@@ -69,7 +69,7 @@ export default function Contact() {
             className="w-full resize-none rounded-xl border border-gold/20 bg-noir/60 px-4 py-3 text-cream outline-none focus:border-gold/60" />
           <MagneticButton
             as="button" type="submit" disabled={status === "sending"}
-            className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-noir shadow-[0_0_30px_rgba(212,168,83,0.3)] disabled:opacity-70"
+            className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-noir disabled:opacity-70"
           >
             {status === "sending" ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending…</>
               : status === "sent" ? <><Check className="mr-2 h-4 w-4" /> Sent</>

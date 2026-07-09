@@ -40,7 +40,7 @@ export default function About() {
               key={g.title}
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="shine group rounded-2xl border border-white/10 bg-white/[0.07] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_0_30px_rgba(212,168,83,0.15)]"
+              className="group rounded-2xl border border-white/10 bg-white/[0.07] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50"
             >
               <h3 className="mb-4 text-xs uppercase tracking-[0.2em] text-rose-dusty">{g.title}</h3>
               <div className="flex flex-wrap gap-2">

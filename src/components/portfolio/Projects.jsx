@@ -65,7 +65,7 @@ export default function Projects() {
             transition={{ delay: i * 0.07, duration: 0.6 }}
           >
             <TiltCard className="group h-full">
-              <div className="shine relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.07] p-7 transition-colors duration-300 hover:border-gold/45">
+              <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.07] p-7 transition-colors duration-300 hover:border-gold/45">
                 {/* scanner line */}
                 <span className="pointer-events-none absolute inset-x-0 top-0 h-px -translate-y-2 bg-gradient-to-r from-transparent via-gold to-transparent opacity-0 transition-all duration-700 group-hover:translate-y-[120%] group-hover:opacity-100" />
 

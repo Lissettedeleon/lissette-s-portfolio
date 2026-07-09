@@ -1,57 +1,28 @@
 import React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowDown, Sparkles } from "lucide-react";
 import MagneticButton from "./MagneticButton";
 import Stats from "./Stats";
-import Particles from "./Particles";
-
-const NAME = "Lissette De Leon";
 
 export default function Hero() {
-  const { scrollY } = useScroll();
-  const blobsY = useTransform(scrollY, [0, 800], [0, 80]);
-  const ringsY = useTransform(scrollY, [0, 800], [0, 240]);
-  const textY = useTransform(scrollY, [0, 800], [0, 400]);
-  const textOpacity = useTransform(scrollY, [0, 500], [1, 0]);
-
   return (
     <section id="hero" className="relative flex min-h-screen items-center overflow-hidden pt-24">
-      {/* aurora blobs (0.1x) */}
-      <motion.div style={{ y: blobsY }} className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-32 top-20 h-[28rem] w-[28rem] rounded-full opacity-30 blur-[120px]" style={{ background: "#d4a853" }} />
-        <div className="absolute -right-20 bottom-10 h-[26rem] w-[26rem] rounded-full opacity-20 blur-[120px]" style={{ background: "#d4847a" }} />
-      </motion.div>
-
-      {/* decorative rings (0.3x) */}
-      <motion.div style={{ y: ringsY }} className="pointer-events-none absolute right-[-6rem] top-1/4 hidden lg:block">
-        <div className="h-[34rem] w-[34rem] rounded-full border border-gold/15 animate-spin-slow" />
-        <div className="absolute inset-12 rounded-full border border-rose-dusty/15 animate-spin-slow" style={{ animationDirection: "reverse" }} />
-      </motion.div>
-
-      <Particles count={22} />
+      {/* single subtle background glow */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-32 top-20 h-[28rem] w-[28rem] rounded-full opacity-[0.14] blur-[120px]" style={{ background: "#b9a382" }} />
+      </div>
 
       <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-5 sm:px-8 lg:grid-cols-2">
         {/* Left */}
-        <motion.div style={{ y: textY, opacity: textOpacity }}>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-            className="mb-5 text-xs uppercase tracking-[0.3em] text-rose-dusty"
-          >
-            ✦ CS Graduate · Cyber Defense Student
-          </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
+        >
+          <p className="mb-5 text-xs uppercase tracking-[0.3em] text-rose-dusty">
+            CS Graduate · Cyber Defense Student
+          </p>
 
-          <h1 className="font-serif-display text-5xl italic leading-[1.05] tracking-tight sm:text-6xl lg:text-[4.25rem] xl:text-7xl">
-            {NAME.split("").map((ch, i) => (
-              <motion.span
-                key={i}
-                className="inline-block gold-gradient-text"
-                initial={{ opacity: 0, y: 30, rotateX: -40 }}
-                animate={{ opacity: 1, y: 0, rotateX: 0 }}
-                transition={{ delay: 0.4 + i * 0.04, duration: 0.5, ease: "easeOut" }}
-              >
-                {ch === " " ? "\u00A0" : ch}
-              </motion.span>
-            ))}
+          <h1 className="gold-gradient-text font-serif-display text-5xl italic leading-[1.05] tracking-tight sm:text-6xl lg:text-[4.25rem] xl:text-7xl">
+            Lissette De Leon
           </h1>
 
           <div className="mt-5 font-serif-display text-2xl italic text-cream/90 sm:text-3xl">
@@ -65,19 +36,19 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap gap-4">
             <MagneticButton
               as="a" href="#projects"
-              className="rounded-full bg-gold px-7 py-3 text-sm font-semibold text-noir shadow-[0_0_30px_rgba(212,168,83,0.35)]"
+              className="rounded-full bg-gold px-7 py-3 text-sm font-semibold text-noir hover:opacity-90"
             >
               See My Work
             </MagneticButton>
             <MagneticButton
               as="a" href="#contact"
-              className="rounded-full border border-rose-dusty/60 px-7 py-3 text-sm font-semibold text-rose-dusty hover:bg-rose-dusty/10"
+              className="rounded-full border border-cream/25 px-7 py-3 text-sm font-semibold text-cream/85 hover:border-cream/50"
             >
               Resume
             </MagneticButton>
             <MagneticButton
               as="a" href="#contact"
-              className="rounded-full px-7 py-3 text-sm font-semibold text-cream/80 hover:text-gold"
+              className="rounded-full px-7 py-3 text-sm font-semibold text-cream/70 hover:text-gold"
             >
               Say Hello
             </MagneticButton>
@@ -90,30 +61,28 @@ export default function Hero() {
 
         {/* Right — identity card */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6, duration: 0.7 }}
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.6 }}
           className="relative"
         >
-          <div className="glass-card shine relative aspect-[4/5] w-full overflow-hidden rounded-3xl">
+          <div className="glass-card relative aspect-[4/5] w-full overflow-hidden rounded-3xl">
             {/* top badge */}
             <div className="absolute right-4 top-4 rounded-full border border-gold/30 bg-noir/40 px-3 py-1 text-xs uppercase tracking-[0.2em] text-gold">
               Open to Work
             </div>
-            <div className="absolute left-4 top-4 text-2xl animate-bob">👋</div>
 
             {/* center content */}
             <div className="flex h-full flex-col items-center justify-center gap-6 px-8 text-center">
-              <div className="flex h-24 w-24 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-5xl">
-                🛡️
+              <div className="flex h-24 w-24 items-center justify-center rounded-full border border-gold/30 bg-gold/10 font-serif-display text-3xl italic text-gold">
+                LD
               </div>
               <div>
                 <p className="font-serif-display text-2xl italic text-cream">Lissette De Leon</p>
-                <p className="mt-1 text-xs uppercase tracking-[0.2em] text-gold/80">Cybersecurity · QA · AI</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.2em] text-gold/80">San Antonio, TX</p>
               </div>
-              <div className="flex flex-col gap-2 text-sm text-cream/60">
-                <span>🎓 B.S. Computer Science · UTSA</span>
-                <span>🛡️ Cyber Defense · NLC</span>
-                <span>📍 San Antonio, TX</span>
-              </div>
+              <p className="max-w-xs text-sm leading-relaxed text-cream/60">
+                I like figuring out how things break — and making sure they don't.
+                When I'm not doing that, you'll find me on a pickleball court or a hiking trail.
+              </p>
               <div className="flex items-center gap-2 rounded-full border border-gold/20 bg-gold/5 px-4 py-2 text-xs text-cream/70">
                 <Sparkles className="h-3 w-3 text-gold" />
                 Video intro coming soon
@@ -126,9 +95,6 @@ export default function Hero() {
       {/* scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-cream/40">
         <span className="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
-        <div className="h-10 w-px bg-gold/40">
-          <div className="h-full w-full origin-top bg-gold animate-scroll-line" />
-        </div>
         <ArrowDown className="h-3 w-3" />
       </div>
     </section>
