@@ -99,14 +99,14 @@ export default function Projects() {
     <section id="projects" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
       <SectionTitle eyebrow="03 — The Tangible">Selected Projects</SectionTitle>
 
-      <div className="mt-8 inline-flex rounded-none border border-cream/25 bg-white/40 p-1.5">
+      <div className="mt-8 inline-flex rounded-2xl border border-cream/25 bg-white/40 p-1.5">
         {TABS.map((t) => {
           const count = PROJECTS.filter((p) => p.category === t.key).length;
           return (
             <button
               key={t.key}
               onClick={() => setTab(t.key)}
-              className={`flex items-center gap-2 rounded-none px-6 py-2.5 text-sm font-semibold transition-all duration-300 ${
+              className={`flex items-center gap-2 rounded-lg px-6 py-2.5 text-sm font-semibold transition-all duration-300 ${
                 tab === t.key
                   ? "bg-cream text-noir"
                   : "text-cream/60 hover:text-cream"
@@ -114,7 +114,7 @@ export default function Projects() {
             >
               {t.label}
               <span
-                className={`rounded-none px-2 py-0.5 text-xs ${
+                className={`rounded-lg px-2 py-0.5 text-xs ${
                   tab === t.key ? "bg-noir/40 text-noir" : "bg-cream/10 text-cream/50"
                 }`}
               >
@@ -133,11 +133,11 @@ export default function Projects() {
             transition={{ delay: i * 0.07, duration: 0.6 }}
           >
             <TiltCard className="group h-full">
-              <div className="relative flex h-full flex-col overflow-hidden rounded-none border border-cream/25 bg-white/40 p-7 transition-colors duration-300 hover:border-gold/45">
+              <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-cream/25 bg-white/40 p-7 transition-colors duration-300 hover:border-gold/45">
                 <div className="flex items-start justify-between">
                   <span className="font-mono text-sm text-cream/40">{String(i + 1).padStart(2, "0")}</span>
                   {p.badge && (
-                    <span className="rounded-none border border-gold/40 bg-gold/10 px-3 py-1 font-mono text-xs font-medium text-gold">
+                    <span className="rounded-lg border border-gold/40 bg-gold/10 px-3 py-1 font-mono text-xs font-medium text-gold">
                       {p.badge}
                     </span>
                   )}
@@ -149,7 +149,7 @@ export default function Projects() {
 
                 <div className="mt-5 flex flex-wrap gap-2">
                   {p.tags.map((t) => (
-                    <span key={t} className="rounded-none border border-cream/10 bg-noir/40 px-2.5 py-1 text-xs text-cream/70">
+                    <span key={t} className="rounded-lg border border-cream/10 bg-noir/40 px-2.5 py-1 text-xs text-cream/70">
                       {t}
                     </span>
                   ))}
@@ -158,7 +158,7 @@ export default function Projects() {
                 {(p.links?.length || p.tryHref) && (
                   <div className="mt-6 flex flex-wrap gap-3 border-t border-cream/10 pt-5">
                     {p.tryHref && (
-                      <a href={p.tryHref} className="inline-flex items-center gap-1.5 rounded-none bg-cream px-4 py-2 text-xs font-semibold text-noir hover:opacity-90">
+                      <a href={p.tryHref} className="inline-flex items-center gap-1.5 rounded-lg bg-cream px-4 py-2 text-xs font-semibold text-noir hover:opacity-90">
                         Try It Live <ArrowRight className="h-3.5 w-3.5" />
                       </a>
                     )}

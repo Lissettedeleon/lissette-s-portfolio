@@ -51,7 +51,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
           <span className="hidden items-center gap-2 font-mono text-xs font-medium text-gold sm:flex">
-            <span className="h-2 w-2 rounded-none bg-gold animate-pulse-dot" />
+            <span className="h-2 w-2 rounded-lg bg-gold animate-pulse-dot" />
             Open to Work
           </span>
           <button

@@ -22,7 +22,7 @@ export default function Particles({ count = 26 }) {
       {dots.map((d, i) => (
         <span
           key={i}
-          className="absolute rounded-none"
+          className="absolute rounded-lg"
           style={{
             left: `${d.left}%`,
             top: `${d.top}%`,

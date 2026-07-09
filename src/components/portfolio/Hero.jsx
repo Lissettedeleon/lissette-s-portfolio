@@ -71,11 +71,11 @@ export default function Hero() {
             <button
               onClick={() => setOpen(false)}
               aria-label="Close video"
-              className="absolute -right-3 -top-3 z-10 flex h-10 w-10 items-center justify-center bg-noir text-cream shadow-lg"
+              className="absolute -right-3 -top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-noir text-cream shadow-lg"
             >
               <X className="h-5 w-5" />
             </button>
-            <video src="/intro.mp4" className="aspect-[4/5] w-full border-2 border-noir object-cover shadow-2xl" autoPlay controls playsInline />
+            <video src="/intro.mp4" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-2xl" autoPlay controls playsInline />
           </div>
         </div>
       )}
