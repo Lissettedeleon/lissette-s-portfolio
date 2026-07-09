@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Play, ArrowDown } from "lucide-react";
+import { ArrowDown, Sparkles } from "lucide-react";
 import MagneticButton from "./MagneticButton";
 import Stats from "./Stats";
 import Particles from "./Particles";
@@ -88,26 +88,36 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Right — proof of life card */}
+        {/* Right — identity card */}
         <motion.div
           initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6, duration: 0.7 }}
           className="relative"
         >
           <div className="glass-card shine relative aspect-[4/5] w-full overflow-hidden rounded-3xl">
+            {/* top badge */}
             <div className="absolute right-4 top-4 rounded-full border border-gold/30 bg-noir/40 px-3 py-1 text-xs uppercase tracking-[0.2em] text-gold">
-              Welcome
+              Open to Work
             </div>
             <div className="absolute left-4 top-4 text-2xl animate-bob">👋</div>
-            <div className="flex h-full items-center justify-center">
-              <button
-                aria-label="Play intro video"
-                className="flex h-20 w-20 items-center justify-center rounded-full border border-gold/40 bg-gold/10 animate-bob text-gold backdrop-blur-sm hover:bg-gold/20"
-              >
-                <Play className="ml-1 h-8 w-8" fill="currentColor" />
-              </button>
-            </div>
-            <div className="absolute inset-x-0 bottom-0 p-5 text-center text-xs uppercase tracking-[0.2em] text-cream/45">
-              Intro video coming soon
+
+            {/* center content */}
+            <div className="flex h-full flex-col items-center justify-center gap-6 px-8 text-center">
+              <div className="flex h-24 w-24 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-5xl">
+                🛡️
+              </div>
+              <div>
+                <p className="font-serif-display text-2xl italic text-cream">Lissette De Leon</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.2em] text-gold/80">Cybersecurity · QA · AI</p>
+              </div>
+              <div className="flex flex-col gap-2 text-sm text-cream/60">
+                <span>🎓 B.S. Computer Science · UTSA</span>
+                <span>🛡️ Cyber Defense · NLC</span>
+                <span>📍 San Antonio, TX</span>
+              </div>
+              <div className="flex items-center gap-2 rounded-full border border-gold/20 bg-gold/5 px-4 py-2 text-xs text-cream/70">
+                <Sparkles className="h-3 w-3 text-gold" />
+                Video intro coming soon
+              </div>
             </div>
           </div>
         </motion.div>
