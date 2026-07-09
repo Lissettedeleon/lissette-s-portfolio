@@ -11,17 +11,35 @@ export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [status, setStatus] = useState("idle");
 
-  const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
+  // Cap input lengths to prevent oversized/abusive submissions to the public entity.
+  const LIMITS = { name: 100, email: 254, subject: 150, message: 2000 };
+  const isValidEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+  const update = (k) => (e) =>
+    setForm((f) => ({ ...f, [k]: e.target.value.slice(0, LIMITS[k]) }));
 
   const submit = async (e) => {
     e.preventDefault();
-    if (!form.name || !form.email || !form.message) {
+    const name = form.name.trim();
+    const email = form.email.trim();
+    const message = form.message.trim();
+
+    if (!name || !email || !message) {
       toast({ title: "Please fill in your name, email, and message." });
+      return;
+    }
+    if (!isValidEmail(email)) {
+      toast({ title: "Please enter a valid email address." });
       return;
     }
     setStatus("sending");
     try {
-      await base44.entities.ContactMessage.create(form);
+      await base44.entities.ContactMessage.create({
+        name,
+        email,
+        subject: form.subject.trim(),
+        message,
+      });
       setStatus("sent");
       setForm({ name: "", email: "", subject: "", message: "" });
       toast({ title: "Message sent — thank you! ✦", description: "Lissette will get back to you soon." });
