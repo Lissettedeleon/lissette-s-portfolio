@@ -14,6 +14,9 @@ export default function Hobbies() {
   return (
     <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
       <SectionTitle eyebrow="05 — Off The Clock">Life Outside Code</SectionTitle>
+      <p className="mt-4 max-w-xl text-cream/55 text-sm leading-relaxed">
+        Because the best technologists have a life outside the terminal.
+      </p>
 
       <div className="mt-14 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
         {HOBBIES.map((h, i) => (
@@ -21,7 +24,7 @@ export default function Hobbies() {
             key={h.name}
             initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
             transition={{ delay: i * 0.06 }}
-            className="group relative flex aspect-square flex-col items-center justify-center gap-3 rounded-2xl border border-gold/15 overflow-hidden text-center transition-all duration-300 hover:scale-105 hover:rotate-2 hover:border-gold/50 hover:shadow-[0_0_30px_rgba(212,168,83,0.18)]"
+            className="group relative flex aspect-square flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.07] text-center transition-all duration-300 hover:scale-105 hover:border-gold/50"
           >
             {h.photo ? (
               <>
@@ -31,7 +34,7 @@ export default function Hobbies() {
               </>
             ) : (
               <>
-                <span className="text-5xl transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-12">{h.emoji}</span>
+                <span className="text-5xl opacity-70">{h.emoji}</span>
                 <span className="font-serif-display text-xl italic text-cream">{h.name}</span>
               </>
             )}

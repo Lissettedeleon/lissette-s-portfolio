@@ -28,8 +28,8 @@ export default function Particles({ count = 26 }) {
             top: `${d.top}%`,
             width: d.size,
             height: d.size,
-            background: d.gold ? "#d4a853" : "#d4847a",
-            boxShadow: `0 0 8px ${d.gold ? "rgba(212,168,83,0.7)" : "rgba(212,132,122,0.7)"}`,
+            background: d.gold ? "#b9a382" : "#9c9ca6",
+            boxShadow: `0 0 8px ${d.gold ? "rgba(185,163,130,0.7)" : "rgba(156,156,166,0.7)"}`,
             animation: `floatY ${d.dur}s ${d.delay}s ease-in-out infinite`,
           }}
         />

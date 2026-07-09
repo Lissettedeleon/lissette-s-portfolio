@@ -38,7 +38,7 @@ export default function Education() {
             key={c.title}
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="shine rounded-2xl border border-gold/15 bg-cream/[0.02] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/45"
+            className="rounded-2xl border border-white/10 bg-white/[0.07] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/45"
           >
             <div className="flex items-start justify-between">
               <span className="text-3xl">{c.emoji}</span>

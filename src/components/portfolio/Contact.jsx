@@ -11,17 +11,35 @@ export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [status, setStatus] = useState("idle");
 
-  const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
+  // Cap input lengths to prevent oversized/abusive submissions to the public entity.
+  const LIMITS = { name: 100, email: 254, subject: 150, message: 2000 };
+  const isValidEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+  const update = (k) => (e) =>
+    setForm((f) => ({ ...f, [k]: e.target.value.slice(0, LIMITS[k]) }));
 
   const submit = async (e) => {
     e.preventDefault();
-    if (!form.name || !form.email || !form.message) {
+    const name = form.name.trim();
+    const email = form.email.trim();
+    const message = form.message.trim();
+
+    if (!name || !email || !message) {
       toast({ title: "Please fill in your name, email, and message." });
+      return;
+    }
+    if (!isValidEmail(email)) {
+      toast({ title: "Please enter a valid email address." });
       return;
     }
     setStatus("sending");
     try {
-      await base44.entities.ContactMessage.create(form);
+      await base44.entities.ContactMessage.create({
+        name,
+        email,
+        subject: form.subject.trim(),
+        message,
+      });
       setStatus("sent");
       setForm({ name: "", email: "", subject: "", message: "" });
       toast({ title: "Message sent — thank you! ✦", description: "Lissette will get back to you soon." });
@@ -51,7 +69,7 @@ export default function Contact() {
             className="w-full resize-none rounded-xl border border-gold/20 bg-noir/60 px-4 py-3 text-cream outline-none focus:border-gold/60" />
           <MagneticButton
             as="button" type="submit" disabled={status === "sending"}
-            className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-noir shadow-[0_0_30px_rgba(212,168,83,0.3)] disabled:opacity-70"
+            className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-noir disabled:opacity-70"
           >
             {status === "sending" ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending…</>
               : status === "sent" ? <><Check className="mr-2 h-4 w-4" /> Sent</>

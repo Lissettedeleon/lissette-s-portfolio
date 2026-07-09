@@ -1,7 +1,5 @@
 import React from "react";
-import CustomCursor from "@/components/portfolio/CustomCursor";
 import ScrollProgress from "@/components/portfolio/ScrollProgress";
-import LoadingScreen from "@/components/portfolio/LoadingScreen";
 import Navbar from "@/components/portfolio/Navbar";
 import Hero from "@/components/portfolio/Hero";
 import SkillTicker from "@/components/portfolio/SkillTicker";
@@ -18,8 +16,6 @@ import Footer from "@/components/portfolio/Footer";
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-noir text-cream">
-      <LoadingScreen />
-      <CustomCursor />
       <ScrollProgress />
       <Navbar />
       <main>
