@@ -1,81 +1,97 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { X } from "lucide-react";
-
-const SPECS = [
-  { k: "Focus", v: "Cybersecurity · QA · AI" },
-  { k: "Currently", v: "Cyber Defense @ Northeast Lakeview College" },
-  { k: "Previously", v: "B.S. Computer Science @ UTSA · TA for 140+ students" },
-  { k: "Toolkit", v: "Python · SQL · Google Cloud · Wireshark · Kali Linux" },
-  { k: "Based in", v: "San Antonio, TX" },
-];
+import { Play, X, ArrowDown } from "lucide-react";
 
 export default function Hero() {
   const [open, setOpen] = useState(false);
 
   return (
-    <section id="hero" className="mx-auto flex min-h-screen max-w-5xl flex-col justify-center px-5 pb-16 pt-28 sm:px-8">
-      <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-        <p className="font-mono text-sm text-rose-dusty">
-          Lissette De Leon — portfolio, 2025
-        </p>
+    <section id="hero" className="relative flex min-h-screen flex-col items-center justify-center px-5 pt-24 text-center sm:px-8">
+      <motion.p
+        initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
+        className="font-mono text-xs tracking-[0.4em] text-gold"
+      >
+        ✦ TRANSMITTING FROM SAN ANTONIO, TX ✦
+      </motion.p>
 
-        <h1 className="mt-8 max-w-3xl text-4xl font-bold leading-[1.12] tracking-tight text-cream sm:text-5xl lg:text-6xl">
-          I find how software breaks.
-          <br />
-          Then I make sure it <span className="underline decoration-gold decoration-[3px] underline-offset-8">can't</span>.
-        </h1>
+      <motion.h1
+        initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.7 }}
+        className="gold-gradient-text mt-6 text-6xl font-bold leading-[0.98] tracking-tight sm:text-7xl lg:text-8xl"
+      >
+        Lissette
+        <br />
+        De Leon
+      </motion.h1>
 
-        <p className="mt-8 max-w-xl leading-relaxed text-cream/70">
-          Curious enough to explore it, careful enough to protect it — security
-          audits, QA testing, and AI-assisted builds. Currently seeking
-          entry-level cybersecurity and QA engineering roles.
-        </p>
+      <motion.p
+        initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.6 }}
+        className="mt-6 font-mono text-sm tracking-[0.3em] text-cream/70"
+      >
+        CYBERSECURITY · QA · AI
+      </motion.p>
 
-        {/* spec sheet */}
-        <div className="mt-12 max-w-2xl border-t border-cream/25">
-          {SPECS.map((row) => (
-            <div key={row.k} className="flex flex-col gap-1 border-b border-cream/15 py-3 sm:flex-row sm:gap-0">
-              <span className="w-36 shrink-0 font-mono text-xs uppercase tracking-[0.15em] text-rose-dusty sm:pt-0.5">
-                {row.k}
-              </span>
-              <span className="text-sm text-cream/85">{row.v}</span>
-            </div>
-          ))}
-          <div className="flex flex-col gap-1 border-b border-cream/15 py-3 sm:flex-row sm:gap-0">
-            <span className="w-36 shrink-0 font-mono text-xs uppercase tracking-[0.15em] text-rose-dusty sm:pt-0.5">
-              Status
-            </span>
-            <span className="text-sm font-semibold text-gold">Open to work</span>
-          </div>
-        </div>
+      <motion.p
+        initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 0.6 }}
+        className="mt-6 max-w-md leading-relaxed text-cream/60"
+      >
+        Exploring the dark corners of software so you don't have to.
+        I find how things break — then make sure they can't.
+      </motion.p>
 
-        {/* actions as plain underlined links */}
-        <div className="mt-10 flex flex-wrap gap-x-10 gap-y-4 text-sm font-semibold">
-          <a href="#projects" className="text-cream underline decoration-cream/40 decoration-2 underline-offset-[6px] transition-colors hover:decoration-gold">
-            View selected work ↓
-          </a>
-          <button onClick={() => setOpen(true)} className="text-cream underline decoration-cream/40 decoration-2 underline-offset-[6px] transition-colors hover:decoration-gold">
-            Watch the 30-second intro ▶
-          </button>
-          <a href="#contact" className="text-cream underline decoration-cream/40 decoration-2 underline-offset-[6px] transition-colors hover:decoration-gold">
-            Get in touch →
-          </a>
-        </div>
+      <motion.div
+        initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45, duration: 0.6 }}
+        className="mt-9 flex flex-wrap justify-center gap-4"
+      >
+        <a href="#projects" className="rounded-full bg-gold px-8 py-3.5 text-sm font-bold text-noir shadow-[0_0_28px_rgba(127,232,195,0.35)] transition-transform hover:scale-[1.03]">
+          Explore my work
+        </a>
+        <a href="#contact" className="rounded-full border border-gold/40 px-8 py-3.5 text-sm font-bold text-gold transition-colors hover:bg-gold/10">
+          Make contact
+        </a>
       </motion.div>
+
+      {/* floating video planet */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.7 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6, duration: 0.7 }}
+        className="relative mt-14 sm:absolute sm:bottom-16 sm:right-16 sm:mt-0"
+      >
+        {/* orbit ring */}
+        <div className="animate-orbit absolute -inset-5 rounded-full border border-dashed border-gold/25">
+          <span className="absolute -top-1 left-1/2 h-2 w-2 rounded-full bg-gold shadow-[0_0_8px_rgba(127,232,195,0.9)]" />
+        </div>
+        <button
+          onClick={() => setOpen(true)}
+          aria-label="Play intro video"
+          className="animate-floaty group relative flex h-36 w-36 flex-col items-center justify-center gap-1 overflow-hidden rounded-full border border-gold/30 bg-gold/10 font-mono text-[10px] tracking-[0.15em] text-cream backdrop-blur-sm transition-colors hover:bg-gold/20"
+        >
+          <video src="/intro.mp4" muted playsInline preload="metadata"
+            className="absolute inset-0 h-full w-full object-cover opacity-40 transition-opacity group-hover:opacity-60" />
+          <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-gold text-noir">
+            <Play className="ml-0.5 h-4 w-4" fill="currentColor" />
+          </span>
+          <span className="relative mt-1">MEET ME</span>
+          <span className="relative text-cream/60">0:30 · INTRO</span>
+        </button>
+      </motion.div>
+
+      {/* scroll cue */}
+      <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-cream/35 sm:flex">
+        <span className="font-mono text-[10px] tracking-[0.3em]">SCROLL</span>
+        <ArrowDown className="h-3 w-3 animate-bounce" />
+      </div>
 
       {/* video lightbox */}
       {open && (
-        <div className="fixed inset-0 z-[9500] flex items-center justify-center bg-cream/75 p-5" onClick={() => setOpen(false)}>
+        <div className="fixed inset-0 z-[9500] flex items-center justify-center bg-noir/85 p-5 backdrop-blur-sm" onClick={() => setOpen(false)}>
           <div className="relative w-full max-w-md" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setOpen(false)}
               aria-label="Close video"
-              className="absolute -right-3 -top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-noir text-cream shadow-lg"
+              className="absolute -right-3 -top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-gold text-noir shadow-lg"
             >
               <X className="h-5 w-5" />
             </button>
-            <video src="/intro.mp4" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-2xl" autoPlay controls playsInline />
+            <video src="/intro.mp4" className="aspect-[4/5] w-full rounded-2xl border border-gold/25 object-cover shadow-[0_0_60px_rgba(127,232,195,0.25)]" autoPlay controls playsInline />
           </div>
         </div>
       )}

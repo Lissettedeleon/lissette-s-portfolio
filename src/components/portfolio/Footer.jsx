@@ -2,10 +2,9 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="pb-8 pt-4">
-      <p className="text-sm leading-relaxed text-cream/45">
-        Designed and built by Lissette De Leon — San Antonio, TX · 2025.
-        Layout inspired by the two-column portfolios the dev community loves.
+    <footer className="pb-10 pt-6 text-center">
+      <p className="font-mono text-xs tracking-[0.2em] text-cream/40">
+        ✦ LISSETTE DE LEON — SAN ANTONIO, TX · 2025 ✦
       </p>
     </footer>
   );

@@ -1,5 +1,7 @@
 import React from "react";
-import Sidebar from "@/components/portfolio/Sidebar";
+import Starfield from "@/components/portfolio/Starfield";
+import Navbar from "@/components/portfolio/Navbar";
+import Hero from "@/components/portfolio/Hero";
 import About from "@/components/portfolio/About";
 import Experience from "@/components/portfolio/Experience";
 import Projects from "@/components/portfolio/Projects";
@@ -12,19 +14,19 @@ import Footer from "@/components/portfolio/Footer";
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-noir text-cream">
-      <div className="mx-auto max-w-screen-xl px-6 py-14 md:px-12 lg:flex lg:justify-between lg:gap-14 lg:px-16 lg:py-0">
-        <Sidebar />
-        <main className="pt-16 lg:w-[52%] lg:py-24">
-          <div className="space-y-24 lg:space-y-32">
-            <About />
-            <Experience />
-            <Projects />
-            <LiveTools />
-            <Hobbies />
-            <Education />
-            <Contact />
-            <Footer />
-          </div>
+      <Starfield />
+      <Navbar />
+      <div className="relative z-10">
+        <Hero />
+        <main className="mx-auto max-w-4xl space-y-28 px-5 py-24 sm:px-8 lg:space-y-36">
+          <About />
+          <Experience />
+          <Projects />
+          <LiveTools />
+          <Hobbies />
+          <Education />
+          <Contact />
+          <Footer />
         </main>
       </div>
     </div>
