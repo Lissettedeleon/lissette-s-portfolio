@@ -40,7 +40,7 @@
   }
   body {
     @apply font-body;
-    background-color: #e7f2ea;
+    background-color: #cbe3d4;
     color: #182420;
     overflow-x: hidden;
   }
@@ -64,7 +64,7 @@
     color: #182420;
   }
   .bg-noir {
-    background-color: #e7f2ea;
+    background-color: #cbe3d4;
   }
   .gold-gradient-text {
     color: #182420;
@@ -104,7 +104,7 @@
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #e7f2ea;
+  background: #cbe3d4;
 }
 ::-webkit-scrollbar-thumb {
   background: rgba(24, 36, 32, 0.3);

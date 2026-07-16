@@ -43,7 +43,7 @@ module.exports = {
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
-  			noir: '#e7f2ea',
+  			noir: '#cbe3d4',
   			gold: '#2e6b4f',
   			'rose-dusty': '#5f6f66',
   			cream: '#182420'
