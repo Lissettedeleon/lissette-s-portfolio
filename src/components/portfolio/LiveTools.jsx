@@ -7,7 +7,7 @@ import DevQuiz from "./tools/DevQuiz";
 
 function ToolShell({ id, title, subtitle, children }) {
   return (
-    <div id={id} className="scroll-mt-28 rounded-2xl bg-cream/[0.04] p-6 sm:p-8">
+    <div id={id} className="scroll-mt-28 rounded-xl border border-cream/15 bg-[#fafaf8] p-6 sm:p-8">
       <div className="mb-6">
         <h3 className="text-lg font-semibold text-cream">{title}</h3>
         <p className="mt-1 font-mono text-xs uppercase tracking-[0.15em] text-rose-dusty">{subtitle}</p>

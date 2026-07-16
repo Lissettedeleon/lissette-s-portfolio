@@ -41,15 +41,15 @@ export default function Experience() {
             key={job.role}
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ delay: i * 0.08, duration: 0.5 }}
-            className="rounded-2xl border border-cream/10 bg-cream/[0.03] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/40"
+            className="border-t border-cream/20 pt-5"
           >
             <p className="font-mono text-[11px] uppercase tracking-wide text-rose-dusty">{job.date}</p>
             <h3 className="mt-3 text-base font-semibold leading-snug text-cream">{job.role}</h3>
-            <p className="mt-1 text-sm font-medium text-gold">{job.org}</p>
+            <p className="mt-1 text-sm font-medium text-cream/60">{job.org}</p>
             <ul className="mt-4 space-y-2">
               {job.points.map((p) => (
                 <li key={p} className="flex gap-2.5 text-sm leading-relaxed text-cream/65">
-                  <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-gold" />
+                  <span className="mt-[11px] h-px w-4 shrink-0 bg-cream/40" />
                   {p}
                 </li>
               ))}

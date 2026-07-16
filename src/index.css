@@ -40,9 +40,13 @@
   }
   body {
     @apply font-body;
-    background-color: #16151a;
-    color: #efede8;
+    background-color: #ffffff;
+    color: #17181a;
     overflow-x: hidden;
+  }
+  h1, h2, h3 {
+    font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.02em;
   }
 }
 
@@ -51,31 +55,27 @@
     font-family: var(--font-display);
   }
   .text-gold {
-    color: #d89a5e;
+    color: #17181a;
   }
   .text-rose-dusty {
-    color: #9c968c;
+    color: #6d7076;
   }
   .text-cream {
-    color: #efede8;
+    color: #17181a;
   }
   .bg-noir {
-    background-color: #16151a;
+    background-color: #ffffff;
   }
   .gold-gradient-text {
-    background: linear-gradient(110deg, #efede8 30%, #d89a5e 90%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+    color: #17181a;
   }
   .gold-divider {
     height: 1px;
-    background: rgba(156, 150, 140, 0.25);
+    background: rgba(23, 24, 26, 0.15);
   }
   .glass-card {
-    background: rgba(239, 237, 232, 0.03);
-    border: 1px solid rgba(239, 237, 232, 0.08);
+    background: #ffffff;
+    border: 1px solid rgba(23, 24, 26, 0.12);
   }
   /* shine sweep on hover */
   .shine {
@@ -104,14 +104,14 @@
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #16151a;
+  background: #f2f2f0;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(216, 154, 94, 0.3);
+  background: rgba(23, 24, 26, 0.25);
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(216, 154, 94, 0.5);
+  background: rgba(23, 24, 26, 0.4);
 }
 
 /* hide custom cursor visuals on touch */
@@ -129,7 +129,7 @@
 }
 
 :focus-visible {
-  outline: 2px solid #d89a5e;
+  outline: 2px solid #17181a;
   outline-offset: 2px;
 }
 /* data-flow animations */
