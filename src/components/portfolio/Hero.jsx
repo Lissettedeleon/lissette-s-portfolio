@@ -31,15 +31,15 @@ export default function Hero() {
               View Projects
             </a>
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"
-              className="text-sm font-semibold text-cream underline decoration-cream/30 decoration-2 underline-offset-[6px] hover:decoration-cream">
+            className="text-sm font-semibold text-cream underline decoration-cream/30 decoration-2 underline-offset-[6px] hover:decoration-cream">
               Résumé
             </a>
             <a href="https://github.com/lissettedeleon" target="_blank" rel="noopener noreferrer"
-              className="text-sm font-semibold text-cream underline decoration-cream/30 decoration-2 underline-offset-[6px] hover:decoration-cream">
+            className="text-sm font-semibold text-cream underline decoration-cream/30 decoration-2 underline-offset-[6px] hover:decoration-cream">
               GitHub
             </a>
             <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
-              className="text-sm font-semibold text-cream underline decoration-cream/30 decoration-2 underline-offset-[6px] hover:decoration-cream">
+            className="text-sm font-semibold text-cream underline decoration-cream/30 decoration-2 underline-offset-[6px] hover:decoration-cream">
               LinkedIn
             </a>
           </div>
@@ -52,8 +52,8 @@ export default function Hero() {
         {/* intro video — plays automatically */}
         <motion.div
           initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.55 }}
-          className="relative mx-auto w-full max-w-[280px] sm:max-w-xs"
-        >
+          className="relative mx-auto w-full max-w-[280px] sm:max-w-xs">
+          
           <div className="overflow-hidden rounded-xl border border-cream/15 shadow-[0_24px_60px_rgba(24,36,32,0.18)]">
             <video
               ref={videoRef}
@@ -62,21 +62,21 @@ export default function Hero() {
               autoPlay
               muted
               loop
-              playsInline
-            />
+              playsInline />
+            
           </div>
           <button
             onClick={toggleMute}
             aria-label={muted ? "Unmute intro video" : "Mute intro video"}
-            className="absolute bottom-3 right-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/85 text-cream shadow-md backdrop-blur-sm transition-colors hover:bg-cream hover:text-white"
-          >
+            className="absolute bottom-3 right-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/85 text-cream shadow-md backdrop-blur-sm transition-colors hover:bg-cream hover:text-white">
+            
             {muted ? <VolumeX className="h-4.5 w-4.5 h-[18px] w-[18px]" /> : <Volume2 className="h-[18px] w-[18px]" />}
           </button>
-          <p className="mt-3 text-center font-mono text-xs text-cream/45">
+          <p className="mt-3 text-center font-mono text-xs text-cream/45 hidden">
             30-second intro · tap for sound
           </p>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
