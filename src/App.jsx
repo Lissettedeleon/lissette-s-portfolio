@@ -7,7 +7,9 @@ import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
-// Add page imports here
+import ProjectStrawberryShop from './pages/ProjectStrawberryShop';
+import ProjectTidyMe from './pages/ProjectTidyMe';
+import ProjectCyberAudit from './pages/ProjectCyberAudit';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -36,6 +38,9 @@ const AuthenticatedApp = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/projects/the-strawberry-shop" element={<ProjectStrawberryShop />} />
+      <Route path="/projects/tidyme" element={<ProjectTidyMe />} />
+      <Route path="/projects/cybersecurity-audit" element={<ProjectCyberAudit />} />
       {/* Add your page Route elements here */}
       <Route path="*" element={<PageNotFound />} />
     </Routes>

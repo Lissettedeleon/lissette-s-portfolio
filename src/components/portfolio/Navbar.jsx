@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { Github, Linkedin } from "lucide-react";
 
 const LINKS = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Cybersecurity", href: "#projects", tab: "cybersecurity" },
-  { label: "Software Development", href: "#projects", tab: "software" },
-  { label: "Tools", href: "#tools" },
-  { label: "Education", href: "#education" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#hero" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Skills", href: "/#skills" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
 ];
-
-export function selectProjectsTab(tab) {
-  window.dispatchEvent(new CustomEvent("selectProjectsTab", { detail: tab }));
-}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,37 +24,36 @@ export default function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-[9000] transition-all duration-500 ${
-        scrolled ? "border-b border-gold/15 bg-noir/70 backdrop-blur-xl" : "border-b border-transparent"
+        scrolled ? "border-b border-cream/8 bg-noir/80 backdrop-blur-xl" : "border-b border-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-        <a href="#hero" className="font-serif-display text-2xl italic tracking-tight text-cream">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8" aria-label="Main navigation">
+        <a href="/#hero" className="font-mono text-lg font-bold tracking-tight text-cream">
           L<span className="text-gold">D</span>
         </a>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-7 md:flex">
           {LINKS.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              onClick={() => l.tab && selectProjectsTab(l.tab)}
-              className="text-sm text-cream/70 transition-colors hover:text-gold"
-            >
+            <a key={l.label} href={l.href} className="text-sm text-cream/60 transition-colors hover:text-cream">
               {l.label}
             </a>
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
-          <span className="hidden items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1.5 text-xs font-medium text-emerald-300 sm:flex">
-            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse-dot" />
-            Open to Work
-          </span>
-          <button
-            onClick={() => setOpen((o) => !o)}
-            aria-label="Toggle menu"
-            className="text-cream md:hidden"
-          >
+        <div className="flex items-center gap-4">
+          <a href="https://github.com/lissettedeleon" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+            className="hidden text-cream/50 transition-colors hover:text-gold sm:block">
+            <Github className="h-4.5 w-4.5 h-[18px] w-[18px]" />
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+            className="hidden text-cream/50 transition-colors hover:text-gold sm:block">
+            <Linkedin className="h-[18px] w-[18px]" />
+          </a>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"
+            className="rounded-full border border-gold/50 px-4 py-1.5 text-xs font-semibold text-gold transition-colors hover:bg-gold/10">
+            Résumé
+          </a>
+          <button onClick={() => setOpen((o) => !o)} aria-label="Toggle menu" className="text-cream md:hidden">
             <div className="space-y-1.5">
               <span className="block h-0.5 w-6 bg-cream" />
               <span className="block h-0.5 w-6 bg-cream" />
@@ -69,18 +64,11 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-gold/15 bg-noir/95 px-5 py-4 backdrop-blur-xl md:hidden">
+        <div className="border-t border-cream/8 bg-noir/95 px-5 py-4 backdrop-blur-xl md:hidden">
           <div className="flex flex-col gap-4">
             {LINKS.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                onClick={() => {
-                  if (l.tab) selectProjectsTab(l.tab);
-                  setOpen(false);
-                }}
-                className="text-sm text-cream/80 hover:text-gold"
-              >
+              <a key={l.label} href={l.href} onClick={() => setOpen(false)}
+                className="text-sm text-cream/80 hover:text-gold">
                 {l.label}
               </a>
             ))}
