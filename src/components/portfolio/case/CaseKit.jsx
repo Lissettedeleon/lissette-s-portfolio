@@ -6,10 +6,10 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 // Status chip: Live / In Development / Planned
 export function Status({ kind }) {
   const styles = {
-    Live: "bg-[#3ecf8e]/15 text-[#3ecf8e]",
+    Live: "bg-[#7fb586]/15 text-[#8fc296]",
     "In Development": "bg-gold/15 text-gold",
     "In Progress": "bg-gold/15 text-gold",
-    Planned: "bg-[#8b7cf6]/15 text-[#a99cf9]",
+    Planned: "bg-[#8d86a8]/15 text-[#aaa2c4]",
   };
   return (
     <span className={`rounded-full px-3 py-1 font-mono text-[11px] font-medium ${styles[kind] || styles.Planned}`}>
@@ -27,7 +27,7 @@ export function Tag({ children }) {
 }
 
 // Horizontal (wrapping) flow diagram with animated arrows
-export function Flow({ steps, accent = "#4da3ff" }) {
+export function Flow({ steps, accent = "#d89a5e" }) {
   return (
     <div className="flex flex-wrap items-center gap-y-3 overflow-x-auto rounded-2xl bg-cream/[0.03] p-5">
       {steps.map((s, i) => (

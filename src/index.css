@@ -40,8 +40,8 @@
   }
   body {
     @apply font-body;
-    background-color: #0e1420;
-    color: #e9edf5;
+    background-color: #16151a;
+    color: #efede8;
     overflow-x: hidden;
   }
 }
@@ -51,19 +51,19 @@
     font-family: var(--font-display);
   }
   .text-gold {
-    color: #4da3ff;
+    color: #d89a5e;
   }
   .text-rose-dusty {
-    color: #8e9bb3;
+    color: #9c968c;
   }
   .text-cream {
-    color: #e9edf5;
+    color: #efede8;
   }
   .bg-noir {
-    background-color: #0e1420;
+    background-color: #16151a;
   }
   .gold-gradient-text {
-    background: linear-gradient(110deg, #e9edf5 30%, #4da3ff 80%, #38d1e0 100%);
+    background: linear-gradient(110deg, #efede8 30%, #d89a5e 90%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -71,11 +71,11 @@
   }
   .gold-divider {
     height: 1px;
-    background: rgba(142, 155, 179, 0.25);
+    background: rgba(156, 150, 140, 0.25);
   }
   .glass-card {
-    background: rgba(233, 237, 245, 0.03);
-    border: 1px solid rgba(233, 237, 245, 0.08);
+    background: rgba(239, 237, 232, 0.03);
+    border: 1px solid rgba(239, 237, 232, 0.08);
   }
   /* shine sweep on hover */
   .shine {
@@ -104,14 +104,14 @@
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0e1420;
+  background: #16151a;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(77, 163, 255, 0.3);
+  background: rgba(216, 154, 94, 0.3);
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(77, 163, 255, 0.5);
+  background: rgba(216, 154, 94, 0.5);
 }
 
 /* hide custom cursor visuals on touch */
@@ -129,7 +129,7 @@
 }
 
 :focus-visible {
-  outline: 2px solid #4da3ff;
+  outline: 2px solid #d89a5e;
   outline-offset: 2px;
 }
 /* data-flow animations */
