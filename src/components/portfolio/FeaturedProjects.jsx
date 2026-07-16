@@ -13,7 +13,7 @@ const PROJECTS = [
       "Commercial ordering site for an Ohio dessert business — customer experience, accounts, security review, and a Toast POS integration in development.",
     role: "Freelance Developer, end to end",
     tags: "Base44 · Claude Sonnet · GitHub · Toast architecture · Agentic AI",
-    frame: "https://thestrawberryshop.store",
+    img: "/projects/strawberryshop.png",
     external: { label: "Visit live site ↗", href: "https://thestrawberryshop.store" },
   },
   {
@@ -24,8 +24,10 @@ const PROJECTS = [
       "Cloud-connected storage app with authentication, uploads, and AI file classification — 3.15 TB managed across 86,000+ objects.",
     role: "Secondary Project Lead, UTSA",
     tags: "FlutterFlow · Firebase Authentication · Google Cloud",
-    img: "/projects/tidyme-report.png",
-    imgHref: "/projects/tidyme-report.pdf",
+    img: "https://img.youtube.com/vi/6j9aHk2kmaw/hqdefault.jpg",
+    imgHref: "https://www.youtube.com/watch?v=6j9aHk2kmaw",
+    isVideo: true,
+    report: "/projects/tidyme-report.pdf",
     external: { label: "GitHub ↗", href: "https://github.com/joyee-c/LSDM" },
   },
   {
@@ -73,31 +75,18 @@ export default function FeaturedProjects() {
             transition={{ duration: 0.5 }}
             className={`grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-14 ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}
           >
-            {p.frame ? (
-              <Link to={p.to} aria-label={`${p.title} case study`}
-                className="relative block overflow-hidden rounded-lg border border-cream/15 shadow-[0_18px_44px_rgba(24,36,32,0.14)]">
-                <div className="pointer-events-none aspect-[16/10] w-full overflow-hidden bg-white">
-                  <iframe
-                    src={p.frame}
-                    title={`${p.title} live preview`}
-                    loading="lazy"
-                    tabIndex={-1}
-                    aria-hidden="true"
-                    style={{ width: "200%", height: "200%", transform: "scale(0.5)", transformOrigin: "top left", border: 0 }}
-                  />
-                </div>
-                <span className="absolute bottom-3 right-3 rounded-md bg-white/90 px-3 py-1 font-mono text-[11px] text-cream shadow">
-                  live preview
-                </span>
-              </Link>
-            ) : p.imgHref ? (
+            {p.imgHref ? (
               <a href={p.imgHref} target="_blank" rel="noopener noreferrer" aria-label={`Open the ${p.title} report (PDF)`}
                 className="group relative block overflow-hidden rounded-lg border border-cream/15 shadow-[0_18px_44px_rgba(24,36,32,0.14)]">
-                <img src={p.img} alt={`${p.title} project report cover`} loading="lazy"
-                  className="aspect-[16/10] w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.01]" />
-                <span className="absolute bottom-3 right-3 rounded-md bg-white/90 px-3 py-1 font-mono text-[11px] text-cream shadow">
-                  full report (pdf)
-                </span>
+                <img src={p.img} alt={p.isVideo ? `${p.title} demo video` : `Screenshot of ${p.title}`} loading="lazy"
+                  className="aspect-[16/10] w-full object-cover transition-transform duration-300 group-hover:scale-[1.01]" />
+                {p.isVideo && (
+                  <span className="absolute inset-0 flex items-center justify-center bg-cream/10">
+                    <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-cream shadow-lg transition-transform group-hover:scale-110">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6 4l10 6-10 6V4z" /></svg>
+                    </span>
+                  </span>
+                )}
               </a>
             ) : (
               <Link to={p.to} aria-label={`${p.title} case study`}>
@@ -118,6 +107,12 @@ export default function FeaturedProjects() {
                   Read the case study
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
+                {p.report && (
+                  <a href={p.report} target="_blank" rel="noopener noreferrer"
+                    className="text-sm text-cream/60 underline decoration-cream/20 underline-offset-[6px] hover:text-cream">
+                    Full report (PDF) ↗
+                  </a>
+                )}
                 {p.external && (
                   <a href={p.external.href} target="_blank" rel="noopener noreferrer"
                     className="text-sm text-cream/60 underline decoration-cream/20 underline-offset-[6px] hover:text-cream">

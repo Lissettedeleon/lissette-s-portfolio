@@ -13,24 +13,6 @@ export default function ProjectStrawberryShop() {
       ]}
       next={{ to: "/projects/tidyme", label: "TidyMe" }}
     >
-      <Section title="Live Preview" status="Live">
-        <div className="overflow-hidden rounded-lg border border-cream/15 bg-white shadow-[0_18px_44px_rgba(24,36,32,0.14)]">
-          <iframe
-            src="https://thestrawberryshop.store"
-            title="The Strawberry Shop — live site"
-            loading="lazy"
-            className="h-[560px] w-full"
-            style={{ border: 0 }}
-          />
-        </div>
-        <p className="mt-3 font-mono text-xs text-rose-dusty">
-          This is the real production site, embedded live.{" "}
-          <a href="https://thestrawberryshop.store" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
-            Open it in a new tab ↗
-          </a>
-        </p>
-      </Section>
-
       <Section title="My Role">
         <p className="max-w-2xl text-sm leading-relaxed text-cream/70">
           Freelance developer — end to end. Requirements meetings with the
