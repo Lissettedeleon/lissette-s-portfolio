@@ -44,7 +44,7 @@ function Shot({ src, title }) {
   const [ok, setOk] = useState(true);
   if (!ok) {
     return (
-      <div className="flex aspect-[16/10] w-full items-center justify-center rounded-lg border border-cream/15 bg-[#f6f6f4]">
+      <div className="flex aspect-[16/10] w-full items-center justify-center rounded-lg border border-cream/15 bg-white/50">
         <span className="font-mono text-sm text-cream/35">{title}</span>
       </div>
     );
@@ -55,7 +55,7 @@ function Shot({ src, title }) {
       alt={`Screenshot of ${title}`}
       loading="lazy"
       onError={() => setOk(false)}
-      className="aspect-[16/10] w-full rounded-lg border border-cream/15 object-cover object-top shadow-[0_18px_44px_rgba(23,24,26,0.12)] transition-transform duration-300 hover:scale-[1.01]"
+      className="aspect-[16/10] w-full rounded-lg border border-cream/15 object-cover object-top shadow-[0_18px_44px_rgba(24,36,32,0.14)] transition-transform duration-300 hover:scale-[1.01]"
     />
   );
 }

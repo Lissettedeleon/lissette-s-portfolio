@@ -40,8 +40,8 @@
   }
   body {
     @apply font-body;
-    background-color: #ffffff;
-    color: #17181a;
+    background-color: #e7f2ea;
+    color: #182420;
     overflow-x: hidden;
   }
   h1, h2, h3 {
@@ -55,27 +55,27 @@
     font-family: var(--font-display);
   }
   .text-gold {
-    color: #17181a;
+    color: #2e6b4f;
   }
   .text-rose-dusty {
-    color: #6d7076;
+    color: #5f6f66;
   }
   .text-cream {
-    color: #17181a;
+    color: #182420;
   }
   .bg-noir {
-    background-color: #ffffff;
+    background-color: #e7f2ea;
   }
   .gold-gradient-text {
-    color: #17181a;
+    color: #182420;
   }
   .gold-divider {
     height: 1px;
-    background: rgba(23, 24, 26, 0.15);
+    background: rgba(24, 36, 32, 0.18);
   }
   .glass-card {
     background: #ffffff;
-    border: 1px solid rgba(23, 24, 26, 0.12);
+    border: 1px solid rgba(24, 36, 32, 0.12);
   }
   /* shine sweep on hover */
   .shine {
@@ -104,14 +104,14 @@
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #f2f2f0;
+  background: #e7f2ea;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(23, 24, 26, 0.25);
+  background: rgba(24, 36, 32, 0.3);
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(23, 24, 26, 0.4);
+  background: rgba(24, 36, 32, 0.45);
 }
 
 /* hide custom cursor visuals on touch */
@@ -129,7 +129,7 @@
 }
 
 :focus-visible {
-  outline: 2px solid #17181a;
+  outline: 2px solid #2e6b4f;
   outline-offset: 2px;
 }
 /* data-flow animations */

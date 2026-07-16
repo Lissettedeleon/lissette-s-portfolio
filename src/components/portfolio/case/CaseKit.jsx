@@ -30,8 +30,8 @@ export function Flow({ steps }) {
           </span>
           {i < steps.length - 1 && (
             <svg width="34" height="10" className="mx-1 shrink-0" aria-hidden="true">
-              <line x1="0" y1="5" x2="26" y2="5" stroke="#17181a" strokeWidth="1.2" className="flow-line" />
-              <path d="M26 1 L33 5 L26 9 Z" fill="#17181a" />
+              <line x1="0" y1="5" x2="26" y2="5" stroke="#182420" strokeWidth="1.2" className="flow-line" />
+              <path d="M26 1 L33 5 L26 9 Z" fill="#182420" />
             </svg>
           )}
         </React.Fragment>

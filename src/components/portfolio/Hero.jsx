@@ -54,7 +54,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.55 }}
           className="relative mx-auto w-full max-w-[280px] sm:max-w-xs"
         >
-          <div className="overflow-hidden rounded-xl border border-cream/15 shadow-[0_24px_60px_rgba(23,24,26,0.16)]">
+          <div className="overflow-hidden rounded-xl border border-cream/15 shadow-[0_24px_60px_rgba(24,36,32,0.18)]">
             <video
               ref={videoRef}
               src="/intro.mp4"
