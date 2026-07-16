@@ -72,9 +72,9 @@ export default function Hero() {
             
             {muted ? <VolumeX className="h-4.5 w-4.5 h-[18px] w-[18px]" /> : <Volume2 className="h-[18px] w-[18px]" />}
           </button>
-          <p className="mt-3 text-center font-mono text-xs text-cream/45 hidden">
-            30-second intro · tap for sound
-          </p>
+          
+
+          
         </motion.div>
       </div>
     </section>);
