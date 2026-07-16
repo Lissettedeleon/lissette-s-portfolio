@@ -53,11 +53,17 @@ export default function Contact() {
 
   return (
     <section id="contact" className="scroll-mt-24">
-      <SectionTitle>Contact</SectionTitle>
+      <SectionTitle kicker="Get In Touch">Contact</SectionTitle>
       <p className="max-w-md leading-relaxed text-cream/70">
-        Actively seeking entry-level cybersecurity and QA engineering roles.
+        Open to entry-level software engineering, cloud, QA, and security roles.
         If you think we'd work well together, say hello.
       </p>
+
+      <div className="mt-6 flex flex-wrap gap-3">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="rounded-full border border-cream/15 px-5 py-2 text-sm text-cream/80 transition-colors hover:border-gold/60 hover:text-gold">LinkedIn</a>
+        <a href="https://github.com/lissettedeleon" target="_blank" rel="noopener noreferrer" className="rounded-full border border-cream/15 px-5 py-2 text-sm text-cream/80 transition-colors hover:border-gold/60 hover:text-gold">GitHub</a>
+        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="rounded-full border border-gold/50 px-5 py-2 text-sm font-semibold text-gold transition-colors hover:bg-gold/10">Résumé</a>
+      </div>
 
       <div className="mt-6 space-y-2 text-sm text-cream/70">
         <a href="mailto:Lissette.deleon@my.utsa.edu" className="flex items-center gap-3 transition-colors hover:text-gold">

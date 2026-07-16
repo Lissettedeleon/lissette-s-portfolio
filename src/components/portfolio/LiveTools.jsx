@@ -20,9 +20,9 @@ function ToolShell({ id, title, subtitle, children }) {
 export default function LiveTools() {
   return (
     <section id="tools" className="scroll-mt-24">
-      <SectionTitle>Live Tools</SectionTitle>
+      <SectionTitle kicker="Feature Demonstrations">Live Demos</SectionTitle>
       <p className="mb-8 leading-relaxed text-cream/70">
-        Don't take my word for it — these run right here in your browser.
+        Working security and engineering demos — they run right here in your browser.
       </p>
       <div className="space-y-6">
         <ToolShell id="demo-cyber-quiz" title="Security+ & AI Security Quiz" subtitle="Quick knowledge check">

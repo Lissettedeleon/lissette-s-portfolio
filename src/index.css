@@ -40,8 +40,8 @@
   }
   body {
     @apply font-body;
-    background-color: #0a1210;
-    color: #e6f4ec;
+    background-color: #0e1420;
+    color: #e9edf5;
     overflow-x: hidden;
   }
 }
@@ -51,19 +51,19 @@
     font-family: var(--font-display);
   }
   .text-gold {
-    color: #7fe8c3;
+    color: #4da3ff;
   }
   .text-rose-dusty {
-    color: #8aa596;
+    color: #8e9bb3;
   }
   .text-cream {
-    color: #e6f4ec;
+    color: #e9edf5;
   }
   .bg-noir {
-    background-color: #0a1210;
+    background-color: #0e1420;
   }
   .gold-gradient-text {
-    background: linear-gradient(120deg, #e6f4ec 20%, #7fe8c3 100%);
+    background: linear-gradient(110deg, #e9edf5 30%, #4da3ff 80%, #38d1e0 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -71,11 +71,11 @@
   }
   .gold-divider {
     height: 1px;
-    background: rgba(127, 232, 195, 0.25);
+    background: rgba(142, 155, 179, 0.25);
   }
   .glass-card {
-    background: rgba(230, 244, 236, 0.04);
-    border: 1px solid rgba(127, 232, 195, 0.15);
+    background: rgba(233, 237, 245, 0.03);
+    border: 1px solid rgba(233, 237, 245, 0.08);
   }
   /* shine sweep on hover */
   .shine {
@@ -104,14 +104,14 @@
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a1210;
+  background: #0e1420;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(127, 232, 195, 0.3);
+  background: rgba(77, 163, 255, 0.3);
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(127, 232, 195, 0.5);
+  background: rgba(77, 163, 255, 0.5);
 }
 
 /* hide custom cursor visuals on touch */
@@ -129,21 +129,19 @@
 }
 
 :focus-visible {
-  outline: 2px solid #7fe8c3;
+  outline: 2px solid #4da3ff;
   outline-offset: 2px;
 }
-/* space theme animations */
-@keyframes twinkle {
-  0%, 100% { opacity: 0.15; }
-  50% { opacity: 0.9; }
+/* data-flow animations */
+@keyframes dashmove {
+  to { stroke-dashoffset: -24; }
 }
-@keyframes floaty {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
+.flow-line {
+  stroke-dasharray: 6 6;
+  animation: dashmove 1.4s linear infinite;
 }
-@keyframes orbit-spin {
-  to { transform: rotate(360deg); }
+@keyframes pulse-node {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
 }
-.star { position: absolute; border-radius: 9999px; background: #e6f4ec; animation: twinkle 4s ease-in-out infinite; }
-.animate-floaty { animation: floaty 7s ease-in-out infinite; }
-.animate-orbit { animation: orbit-spin 40s linear infinite; }
+.pulse-node { animation: pulse-node 2.4s ease-in-out infinite; }
