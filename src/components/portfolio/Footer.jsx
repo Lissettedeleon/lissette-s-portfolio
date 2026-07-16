@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail, Github } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -13,10 +13,6 @@ export default function Footer() {
           <a href="https://github.com/lissettedeleon" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
             className="text-cream/50 transition-colors hover:text-gold">
             <Github className="h-4 w-4" />
-          </a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-            className="text-cream/50 transition-colors hover:text-gold">
-            <Linkedin className="h-4 w-4" />
           </a>
         </div>
         <p className="text-xs text-cream/40">

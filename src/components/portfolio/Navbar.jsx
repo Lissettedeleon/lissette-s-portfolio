@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Github, Linkedin } from "lucide-react";
+import { Github } from "lucide-react";
 
 const LINKS = [
   { label: "Home", href: "/#hero" },
@@ -43,14 +43,6 @@ export default function Navbar() {
           <a href="https://github.com/lissettedeleon" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
             className="hidden text-cream/50 transition-colors hover:text-gold sm:block">
             <Github className="h-4.5 w-4.5 h-[18px] w-[18px]" />
-          </a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-            className="hidden text-cream/50 transition-colors hover:text-gold sm:block">
-            <Linkedin className="h-[18px] w-[18px]" />
-          </a>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"
-            className="rounded-md bg-cream px-4 py-2 text-xs font-semibold text-white transition-opacity hover:opacity-85">
-            Résumé
           </a>
           <button onClick={() => setOpen((o) => !o)} aria-label="Toggle menu" className="text-cream md:hidden">
             <div className="space-y-1.5">
