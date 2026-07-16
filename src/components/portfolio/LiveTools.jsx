@@ -1,17 +1,30 @@
 import React from "react";
 import SectionTitle from "./SectionTitle";
-import SortingVisualizer from "./demos/SortingVisualizer";
+import TestRunner from "./demos/TestRunner";
+import CloudSimulator from "./demos/CloudSimulator";
 
 export default function LiveTools() {
   return (
     <section id="tools" className="scroll-mt-24">
-      <SectionTitle kicker="Code in Action">Algorithm Visualizer</SectionTitle>
+      <SectionTitle kicker="Code in Action">Live Demos</SectionTitle>
       <p className="mb-8 max-w-xl leading-relaxed text-cream/70">
-        From my time TA'ing Data Structures & Algorithms for 140+ students —
-        pick an algorithm and watch it sort, right here.
+        Two working demos, running right here in your browser.
       </p>
-      <div className="rounded-xl border border-cream/15 bg-white/55 p-6 sm:p-8">
-        <SortingVisualizer />
+      <div className="space-y-8">
+        <div className="rounded-xl border border-cream/15 bg-white/55 p-6 sm:p-8">
+          <h3 className="text-lg font-semibold text-cream">Automated Test Runner</h3>
+          <p className="mb-6 mt-1 font-mono text-xs uppercase tracking-[0.15em] text-rose-dusty">
+            QA automation · catch the bug, apply the fix, re-run
+          </p>
+          <TestRunner />
+        </div>
+        <div className="rounded-xl border border-cream/15 bg-white/55 p-6 sm:p-8">
+          <h3 className="text-lg font-semibold text-cream">Cloud Request Simulator</h3>
+          <p className="mb-6 mt-1 font-mono text-xs uppercase tracking-[0.15em] text-rose-dusty">
+            Serverless architecture · caching, retries, graceful failure
+          </p>
+          <CloudSimulator />
+        </div>
       </div>
     </section>
   );
