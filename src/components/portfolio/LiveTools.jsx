@@ -1,14 +1,13 @@
 import React from "react";
 import SectionTitle from "./SectionTitle";
 import TestRunner from "./demos/TestRunner";
-import CloudSimulator from "./demos/CloudSimulator";
 
 export default function LiveTools() {
   return (
     <section id="tools" className="scroll-mt-24">
       <SectionTitle kicker="Code in Action">Live Demos</SectionTitle>
       <p className="mb-8 max-w-xl leading-relaxed text-cream/70">
-        Two working demos, running right here in your browser.
+        A working demo, running right here in your browser.
       </p>
       <div className="space-y-8">
         <div className="rounded-xl border border-cream/15 bg-white/55 p-6 sm:p-8">
@@ -17,13 +16,6 @@ export default function LiveTools() {
             QA automation · catch the bug, apply the fix, re-run
           </p>
           <TestRunner />
-        </div>
-        <div className="rounded-xl border border-cream/15 bg-white/55 p-6 sm:p-8">
-          <h3 className="text-lg font-semibold text-cream">Cloud Request Simulator</h3>
-          <p className="mb-6 mt-1 font-mono text-xs uppercase tracking-[0.15em] text-rose-dusty">
-            Serverless architecture · caching, retries, graceful failure
-          </p>
-          <CloudSimulator />
         </div>
       </div>
     </section>
