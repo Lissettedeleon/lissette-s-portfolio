@@ -11,10 +11,23 @@ export default function ProjectTidyMe() {
       links={[
         { label: "Live App", href: "https://app.flutterflow.io/run/enQjGoUsrBVoUBRkVWPH", primary: true },
         { label: "GitHub", href: "https://github.com/joyee-c/LSDM" },
-        { label: "Video Demo", href: "https://www.youtube.com/watch?v=6j9aHk2kmaw" },
+        { label: "Full Report (PDF)", href: "/projects/tidyme-report.pdf" },
       ]}
       next={{ to: "/projects/cybersecurity-audit", label: "Cybersecurity Audit" }}
     >
+      <Section title="Demo">
+        <div className="overflow-hidden rounded-lg border border-cream/15 shadow-[0_18px_44px_rgba(24,36,32,0.14)]">
+          <iframe
+            src="https://www.youtube.com/embed/6j9aHk2kmaw"
+            title="TidyMe demo video"
+            className="aspect-video w-full"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
+      </Section>
+
       <Section title="My Role">
         <p className="max-w-2xl text-sm leading-relaxed text-cream/70">
           Secondary project lead on a university team (CS 4243, UTSA). Owned

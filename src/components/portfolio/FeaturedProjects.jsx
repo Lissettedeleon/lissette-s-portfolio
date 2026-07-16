@@ -24,7 +24,7 @@ const PROJECTS = [
       "Cloud-connected storage app with authentication, uploads, and AI file classification — 3.15 TB managed across 86,000+ objects.",
     role: "Secondary Project Lead, UTSA",
     tags: "FlutterFlow · Firebase Authentication · Google Cloud",
-    img: "/projects/tidyme.png",
+    embed: "https://www.youtube.com/embed/6j9aHk2kmaw",
     external: { label: "GitHub ↗", href: "https://github.com/joyee-c/LSDM" },
   },
   {
@@ -72,9 +72,22 @@ export default function FeaturedProjects() {
             transition={{ duration: 0.5 }}
             className={`grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-14 ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}
           >
-            <Link to={p.to} aria-label={`${p.title} case study`}>
-              <Shot src={p.img} title={p.title} />
-            </Link>
+            {p.embed ? (
+              <div className="overflow-hidden rounded-lg border border-cream/15 shadow-[0_18px_44px_rgba(24,36,32,0.14)]">
+                <iframe
+                  src={p.embed}
+                  title={`${p.title} demo video`}
+                  className="aspect-video w-full"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            ) : (
+              <Link to={p.to} aria-label={`${p.title} case study`}>
+                <Shot src={p.img} title={p.title} />
+              </Link>
+            )}
             <div>
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-rose-dusty">{p.type}</p>
               <h3 className="mt-3 text-3xl font-bold text-cream">{p.title}</h3>
