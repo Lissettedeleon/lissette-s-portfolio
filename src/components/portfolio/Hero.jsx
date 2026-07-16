@@ -30,17 +30,9 @@ export default function Hero() {
             <a href="/#projects" className="rounded-md bg-cream px-7 py-3.5 text-sm font-semibold text-white transition-opacity hover:opacity-85">
               View Projects
             </a>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"
-            className="text-sm font-semibold text-cream underline decoration-cream/30 decoration-2 underline-offset-[6px] hover:decoration-cream">
-              Résumé
-            </a>
             <a href="https://github.com/lissettedeleon" target="_blank" rel="noopener noreferrer"
             className="text-sm font-semibold text-cream underline decoration-cream/30 decoration-2 underline-offset-[6px] hover:decoration-cream">
               GitHub
-            </a>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
-            className="text-sm font-semibold text-cream underline decoration-cream/30 decoration-2 underline-offset-[6px] hover:decoration-cream">
-              LinkedIn
             </a>
           </div>
 
