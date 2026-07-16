@@ -13,7 +13,7 @@ const PROJECTS = [
       "Commercial ordering site for an Ohio dessert business — customer experience, accounts, security review, and a Toast POS integration in development.",
     role: "Freelance Developer, end to end",
     tags: "Base44 · Claude Sonnet · GitHub · Toast architecture · Agentic AI",
-    img: "/projects/strawberryshop.png",
+    frame: "https://thestrawberryshop.store",
     external: { label: "Visit live site ↗", href: "https://thestrawberryshop.store" },
   },
   {
@@ -24,7 +24,8 @@ const PROJECTS = [
       "Cloud-connected storage app with authentication, uploads, and AI file classification — 3.15 TB managed across 86,000+ objects.",
     role: "Secondary Project Lead, UTSA",
     tags: "FlutterFlow · Firebase Authentication · Google Cloud",
-    embed: "https://www.youtube.com/embed/6j9aHk2kmaw",
+    img: "/projects/tidyme-report.png",
+    imgHref: "/projects/tidyme-report.pdf",
     external: { label: "GitHub ↗", href: "https://github.com/joyee-c/LSDM" },
   },
   {
@@ -72,17 +73,32 @@ export default function FeaturedProjects() {
             transition={{ duration: 0.5 }}
             className={`grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-14 ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}
           >
-            {p.embed ? (
-              <div className="overflow-hidden rounded-lg border border-cream/15 shadow-[0_18px_44px_rgba(24,36,32,0.14)]">
-                <iframe
-                  src={p.embed}
-                  title={`${p.title} demo video`}
-                  className="aspect-video w-full"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              </div>
+            {p.frame ? (
+              <Link to={p.to} aria-label={`${p.title} case study`}
+                className="relative block overflow-hidden rounded-lg border border-cream/15 shadow-[0_18px_44px_rgba(24,36,32,0.14)]">
+                <div className="pointer-events-none aspect-[16/10] w-full overflow-hidden bg-white">
+                  <iframe
+                    src={p.frame}
+                    title={`${p.title} live preview`}
+                    loading="lazy"
+                    tabIndex={-1}
+                    aria-hidden="true"
+                    style={{ width: "200%", height: "200%", transform: "scale(0.5)", transformOrigin: "top left", border: 0 }}
+                  />
+                </div>
+                <span className="absolute bottom-3 right-3 rounded-md bg-white/90 px-3 py-1 font-mono text-[11px] text-cream shadow">
+                  live preview
+                </span>
+              </Link>
+            ) : p.imgHref ? (
+              <a href={p.imgHref} target="_blank" rel="noopener noreferrer" aria-label={`Open the ${p.title} report (PDF)`}
+                className="group relative block overflow-hidden rounded-lg border border-cream/15 shadow-[0_18px_44px_rgba(24,36,32,0.14)]">
+                <img src={p.img} alt={`${p.title} project report cover`} loading="lazy"
+                  className="aspect-[16/10] w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.01]" />
+                <span className="absolute bottom-3 right-3 rounded-md bg-white/90 px-3 py-1 font-mono text-[11px] text-cream shadow">
+                  full report (pdf)
+                </span>
+              </a>
             ) : (
               <Link to={p.to} aria-label={`${p.title} case study`}>
                 <Shot src={p.img} title={p.title} />

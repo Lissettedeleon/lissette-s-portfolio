@@ -16,16 +16,17 @@ export default function ProjectTidyMe() {
       next={{ to: "/projects/cybersecurity-audit", label: "Cybersecurity Audit" }}
     >
       <Section title="Demo">
-        <div className="overflow-hidden rounded-lg border border-cream/15 shadow-[0_18px_44px_rgba(24,36,32,0.14)]">
-          <iframe
-            src="https://www.youtube.com/embed/6j9aHk2kmaw"
-            title="TidyMe demo video"
-            className="aspect-video w-full"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-        </div>
+        <a href="https://www.youtube.com/watch?v=6j9aHk2kmaw" target="_blank" rel="noopener noreferrer" aria-label="Watch the TidyMe demo on YouTube"
+          className="group relative block overflow-hidden rounded-lg border border-cream/15 shadow-[0_18px_44px_rgba(24,36,32,0.14)]">
+          <img src="https://img.youtube.com/vi/6j9aHk2kmaw/hqdefault.jpg" alt="TidyMe demo video thumbnail" loading="lazy"
+            className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-[1.01]" />
+          <span className="absolute inset-0 flex items-center justify-center bg-cream/10">
+            <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-cream shadow-lg transition-transform group-hover:scale-110">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6 4l10 6-10 6V4z" /></svg>
+            </span>
+          </span>
+        </a>
+        <p className="mt-3 font-mono text-xs text-rose-dusty">Opens on YouTube — video owner has embedding disabled.</p>
       </Section>
 
       <Section title="My Role">

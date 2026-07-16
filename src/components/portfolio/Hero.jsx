@@ -1,16 +1,16 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Volume2, VolumeX } from "lucide-react";
+import { MapPin, Play } from "lucide-react";
 
 export default function Hero() {
   const videoRef = useRef(null);
-  const [muted, setMuted] = useState(true);
+  const [playing, setPlaying] = useState(false);
 
-  function toggleMute() {
+  function handlePlay() {
     const v = videoRef.current;
     if (!v) return;
-    v.muted = !v.muted;
-    setMuted(v.muted);
+    setPlaying(true);
+    v.play();
   }
 
   return (
@@ -41,34 +41,38 @@ export default function Hero() {
           </p>
         </motion.div>
 
-        {/* intro video — plays automatically */}
+        {/* intro video — click to play, with sound */}
         <motion.div
           initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.55 }}
-          className="relative mx-auto w-full max-w-[280px] sm:max-w-xs">
-          
-          <div className="overflow-hidden rounded-xl border border-cream/15 shadow-[0_24px_60px_rgba(24,36,32,0.18)]">
+          className="relative mx-auto w-full max-w-[280px] sm:max-w-xs"
+        >
+          <div className="relative overflow-hidden rounded-xl border border-cream/15 shadow-[0_24px_60px_rgba(24,36,32,0.18)]">
             <video
               ref={videoRef}
               src="/intro.mp4"
               className="aspect-[4/5] w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline />
-            
+              preload="metadata"
+              controls={playing}
+              playsInline
+              onEnded={() => setPlaying(false)}
+            />
+            {!playing && (
+              <button
+                onClick={handlePlay}
+                aria-label="Play intro video"
+                className="absolute inset-0 flex items-center justify-center bg-cream/10 transition-colors hover:bg-cream/5"
+              >
+                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-cream shadow-lg transition-transform hover:scale-110">
+                  <Play className="ml-1 h-6 w-6" fill="currentColor" />
+                </span>
+              </button>
+            )}
           </div>
-          <button
-            onClick={toggleMute}
-            aria-label={muted ? "Unmute intro video" : "Mute intro video"}
-            className="absolute bottom-3 right-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/85 text-cream shadow-md backdrop-blur-sm transition-colors hover:bg-cream hover:text-white">
-            
-            {muted ? <VolumeX className="h-4.5 w-4.5 h-[18px] w-[18px]" /> : <Volume2 className="h-[18px] w-[18px]" />}
-          </button>
-          
-
-          
+          <p className="mt-3 text-center font-mono text-xs text-cream/45">
+            30-second intro
+          </p>
         </motion.div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
