@@ -6,6 +6,7 @@ import LiveTools from "@/components/portfolio/LiveTools";
 import Experience from "@/components/portfolio/Experience";
 import Skills from "@/components/portfolio/Skills";
 import About from "@/components/portfolio/About";
+import Hobbies from "@/components/portfolio/Hobbies";
 import Education from "@/components/portfolio/Education";
 import Footer from "@/components/portfolio/Footer";
 
@@ -20,6 +21,7 @@ export default function Home() {
         <Experience />
         <Skills />
         <About />
+        <Hobbies />
         <Education />
       </main>
       <Footer />
