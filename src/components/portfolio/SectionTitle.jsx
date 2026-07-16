@@ -11,7 +11,7 @@ export default function SectionTitle({ kicker, children }) {
       className="mb-10"
     >
       {kicker && (
-        <p className="mb-2 font-mono text-xs uppercase tracking-[0.3em] text-gold">{kicker}</p>
+        <p className="mb-2 font-mono text-xs uppercase tracking-[0.3em] text-rose-dusty">{kicker}</p>
       )}
       <h2 className="text-3xl font-bold tracking-tight text-cream sm:text-4xl">{children}</h2>
     </motion.div>

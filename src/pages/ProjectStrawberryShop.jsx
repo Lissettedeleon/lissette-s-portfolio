@@ -61,7 +61,7 @@ export default function ProjectStrawberryShop() {
           Toast will serve as the POS and commerce backend. The integration
           layer is designed; connection work is in progress.
         </p>
-        <Flow steps={["Customer", "Website", "Integration Layer", "Toast APIs", "Menu · Orders · Payments · Fulfillment"]} accent="#8b7cf6" />
+        <Flow steps={["Customer", "Website", "Integration Layer", "Toast APIs", "Menu · Orders · Payments · Fulfillment"]} accent="#aaa2c4" />
         <div className="mt-5 flex flex-wrap gap-2">
           {["Menu synchronization", "Pricing synchronization", "Order submission", "Payment workflows", "Fulfillment data", "API error handling", "Order-status monitoring"].map((t) => (
             <span key={t} className="rounded-full border border-cream/10 px-3 py-1 text-xs text-cream/60">{t}</span>
@@ -75,7 +75,7 @@ export default function ProjectStrawberryShop() {
           recommend fixes, support regression testing, and preserve human
           approval before production changes.
         </p>
-        <Flow steps={["Monitor", "Detect", "Classify", "Recommend", "Test", "Human Review", "GitHub Update", "Deploy", "Monitor"]} accent="#38d1e0" />
+        <Flow steps={["Monitor", "Detect", "Classify", "Recommend", "Test", "Human Review", "GitHub Update", "Deploy", "Monitor"]} accent="#8fc296" />
         <div className="mt-5 flex flex-wrap items-center gap-3 text-xs text-cream/60">
           <Status kind="Live" /> Site, GitHub revisions, human review
           <Status kind="In Development" /> Defect detection and classification

@@ -20,16 +20,12 @@ export default function Skills() {
             key={g.title}
             initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ delay: i * 0.06, duration: 0.45 }}
-            className="grid grid-cols-1 gap-3 sm:grid-cols-[220px_1fr] sm:gap-6"
+            className="grid grid-cols-1 gap-2 border-t border-cream/20 pt-5 sm:grid-cols-[220px_1fr] sm:gap-6"
           >
             <h3 className="pt-1 font-mono text-xs uppercase tracking-[0.2em] text-rose-dusty">{g.title}</h3>
-            <div className="flex flex-wrap gap-2">
-              {g.items.map((it) => (
-                <span key={it} className="rounded-full bg-gold/10 px-3.5 py-1.5 text-sm font-medium text-gold transition-colors hover:bg-gold/20">
-                  {it}
-                </span>
-              ))}
-            </div>
+            <p className="font-mono text-sm leading-relaxed text-cream/70">
+              {g.items.join("  ·  ")}
+            </p>
           </motion.div>
         ))}
       </div>

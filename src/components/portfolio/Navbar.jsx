@@ -7,7 +7,6 @@ const LINKS = [
   { label: "Experience", href: "/#experience" },
   { label: "Skills", href: "/#skills" },
   { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -50,7 +49,7 @@ export default function Navbar() {
             <Linkedin className="h-[18px] w-[18px]" />
           </a>
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"
-            className="rounded-full border border-gold/50 px-4 py-1.5 text-xs font-semibold text-gold transition-colors hover:bg-gold/10">
+            className="rounded-md bg-cream px-4 py-2 text-xs font-semibold text-white transition-opacity hover:opacity-85">
             Résumé
           </a>
           <button onClick={() => setOpen((o) => !o)} aria-label="Toggle menu" className="text-cream md:hidden">
