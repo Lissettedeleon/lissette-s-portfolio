@@ -4,30 +4,22 @@ import SectionTitle from "./SectionTitle";
 
 const JOBS = [
   {
-    role: "Teaching Assistant — Data Structures & Algorithms",
-    org: "UT San Antonio",
-    date: "2023 — 2024",
+    role: "ICQA Associate",
+    org: "Amazon Fulfillment | San Antonio, TX",
+    date: "January 2021 to Present",
     points: [
-      "Supported more than 140 students",
-      "Reviewed algorithm logic and code structure",
-      "Explained debugging and technical problem-solving",
+      "Conduct inventory control and quality assurance (ICQA) audits and data integrity validation in a high compliance environment, maintaining 99.5% accuracy while handling sensitive operational data with strict confidentiality.",
+      "Investigate and resolve record mismatches, document findings and corrective actions, and escalate unresolved issues through structured compliance workflows.",
     ],
   },
   {
-    role: "Fulfillment Center Associate — Tier 1",
-    org: "Amazon",
-    date: "2021 — Present",
+    role: "Teaching Assistant, Data Structures and Algorithms",
+    org: "UTSA",
+    date: "August 2023 to May 2024",
     points: [
-      "Cross-trained in ICQA and Ship Dock",
-      "Maintained ~99.5% accuracy",
-      "Discrepancy investigation, scanning, routing, quality, standardized workflows",
+      "Reviewed and graded code for 140+ students, explaining errors and recommending improvements in algorithm design and computational complexity.",
+      "Mentored students on debugging strategies and problem decomposition.",
     ],
-  },
-  {
-    role: "Hardware Sales / Customer Service",
-    org: "Home Depot",
-    date: "2018 — 2020",
-    points: ["Customer communication", "Product education", "Problem-solving"],
   },
 ];
 

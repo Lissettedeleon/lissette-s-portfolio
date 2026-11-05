@@ -82,7 +82,7 @@ export function ChallengeCards({ items }) {
 }
 
 // Page shell for case studies
-export function CasePage({ kicker, title, summary, tags, links, children, next }) {
+export function CasePage({ kicker, title, titleLink, summary, tags, links, children, next }) {
   return (
     <div className="relative min-h-screen bg-noir text-cream">
       <div className="mx-auto max-w-3xl px-5 pb-24 pt-28 sm:px-8">
@@ -92,7 +92,15 @@ export function CasePage({ kicker, title, summary, tags, links, children, next }
 
         <motion.header initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }} className="mt-10">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-rose-dusty">{kicker}</p>
-          <h1 className="mt-3 text-4xl font-bold tracking-tight text-cream sm:text-5xl">{title}</h1>
+          <div className="mt-3 flex flex-wrap items-baseline gap-x-5 gap-y-2">
+            <h1 className="text-4xl font-bold tracking-tight text-cream sm:text-5xl">{title}</h1>
+            {titleLink && (
+              <a href={titleLink.href} target="_blank" rel="noopener noreferrer"
+                className="text-sm font-semibold text-cream underline decoration-cream/30 decoration-2 underline-offset-[6px] hover:decoration-cream">
+                {titleLink.label}
+              </a>
+            )}
+          </div>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-cream/70">{summary}</p>
           {tags && (
             <p className="mt-5 flex flex-wrap gap-x-4 gap-y-1">

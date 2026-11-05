@@ -6,7 +6,7 @@ const SCHOOLS = [
   {
     degree: "B.S. Computer Science",
     school: "University of Texas at San Antonio",
-    note: "GPA 3.55",
+    note: "GPA 3.5 | May 2024",
   },
   {
     degree: "Cyber Defense Program",

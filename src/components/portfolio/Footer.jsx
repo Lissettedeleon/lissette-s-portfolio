@@ -6,9 +6,9 @@ export default function Footer() {
     <footer className="border-t border-cream/8 pb-10 pt-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-5 sm:px-8">
         <div className="flex items-center gap-5">
-          <a href="mailto:Lissette.deleon@my.utsa.edu" aria-label="Email"
+          <a href="mailto:lissette.deleon@my.utsa.edu" aria-label="Email"
             className="inline-flex items-center gap-2 text-sm text-cream/60 transition-colors hover:text-gold">
-            <Mail className="h-4 w-4" /> Lissette.deleon@my.utsa.edu
+            <Mail className="h-4 w-4" /> lissette.deleon@my.utsa.edu
           </a>
           <a href="https://github.com/lissettedeleon" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
             className="text-cream/50 transition-colors hover:text-gold">
@@ -16,7 +16,7 @@ export default function Footer() {
           </a>
         </div>
         <p className="text-xs text-cream/40">
-          Lissette De Leon · San Antonio, TX · 2025
+          Lissette De Leon | San Antonio, TX
         </p>
       </div>
     </footer>

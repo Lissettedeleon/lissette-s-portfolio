@@ -1,36 +1,43 @@
 import React from "react";
+import Seo from "@/components/portfolio/Seo";
 import { CasePage, Section, Flow, Bullets } from "@/components/portfolio/case/CaseKit";
 
 export default function ProjectCyberAudit() {
   return (
-    <CasePage
-      kicker="Case Study · Security Assessment"
-      title="Cybersecurity Audit"
-      summary="Led a five-member team in reviewing access controls, security policies, and data-protection practices for a nonprofit organization."
-      tags={["Team Leadership", "NIST-Aligned Review", "Access Controls", "Policy Evaluation", "Confidential (NDA)"]}
-      next={{ to: "/projects/the-strawberry-shop", label: "The Strawberry Shop" }}
-    >
-      <Section title="Process">
-        <Flow steps={["Scope", "NIST-Aligned Review", "Access-Control Analysis", "Policy Evaluation", "Gap Identification", "Findings Report"]} />
-      </Section>
+    <>
+      <Seo
+        title="Cybersecurity Audit | Lissette De Leon"
+        description="A security assessment aligned with the NIST Cybersecurity Framework, led by Lissette De Leon for a confidential nonprofit under NDA."
+      />
+      <CasePage
+        kicker="Case Study | Security Assessment"
+        title="Cybersecurity Audit"
+        summary="Team lead for a security assessment aligned with the NIST Cybersecurity Framework at a confidential nonprofit, covering access controls, security policies, and data protection practices."
+        tags={["Team Lead", "NIST Cybersecurity Framework", "Access Controls", "Data Protection", "Confidential under NDA"]}
+        next={{ to: "/projects/the-strawberry-shop", label: "The Strawberry Shop" }}
+      >
+        <Section title="Process">
+          <Flow steps={["Scope", "NIST Cybersecurity Framework", "Access controls", "Security policies", "Data protection", "Findings report"]} />
+        </Section>
 
-      <Section title="What I Did">
-        <Bullets items={[
-          "Led and coordinated a 5-person audit team",
-          "Reviewed access controls and authentication workflows",
-          "Evaluated security policies against NIST guidance",
-          "Identified gaps and documented findings with remediation guidance",
-          "Maintained strict confidentiality under NDA",
-        ]} cols={1} />
-      </Section>
+        <Section title="What I Did">
+          <Bullets items={[
+            "Led a team of five through the assessment",
+            "Reviewed access controls",
+            "Reviewed security policies and data protection practices",
+            "Identified gaps and documented remediation guidance",
+            "Kept the client anonymous under NDA",
+          ]} cols={1} />
+        </Section>
 
-      <Section title="Why It Matters">
-        <p className="max-w-2xl text-sm leading-relaxed text-cream/70">
-          This work is the security lens I bring to every development project —
-          the authentication reviews, input validation, and protected-route
-          testing in my software projects come directly from this experience.
-        </p>
-      </Section>
-    </CasePage>
+        <Section title="Why It Matters">
+          <p className="max-w-2xl text-sm leading-relaxed text-cream/70">
+            This work carries into my own projects. Before each release I check
+            authentication flows, protected routes, access controls, and input
+            validation.
+          </p>
+        </Section>
+      </CasePage>
+    </>
   );
 }

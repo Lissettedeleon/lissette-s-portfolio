@@ -3,11 +3,8 @@ import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 
 const GROUPS = [
-  { title: "Programming", items: ["Python", "SQL", "JavaScript"] },
-  { title: "Software Engineering", items: ["Data Structures", "Algorithms", "OOP", "Debugging", "Application Testing", "Git", "GitHub", "SDLC"] },
-  { title: "Cloud & Applications", items: ["Firebase", "Firebase Authentication", "Google Cloud", "File Storage", "Authentication", "API Integration Concepts"] },
-  { title: "AI-Assisted Development", items: ["Claude Sonnet", "Base44", "Agentic AI Workflows", "AI-Assisted Debugging", "Automated Quality Checks", "Human-in-the-Loop Review"] },
-  { title: "Security", items: ["Authentication Testing", "Access-Control Review", "Input Validation", "Web Application Security", "Secure Development", "NIST-Aligned Assessments"] },
+  { title: "Technical", items: ["Python", "SQL", "GitHub", "APIs", "Google Cloud", "Firebase", "AI Tooling"] },
+  { title: "Professional", items: ["Application Testing", "Debugging", "Troubleshooting", "Requirements Analysis", "Documentation", "Collaboration"] },
 ];
 
 export default function Skills() {

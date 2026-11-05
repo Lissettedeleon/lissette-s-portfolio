@@ -14,8 +14,7 @@ export default function Hobbies() {
     <section id="off-the-clock" className="scroll-mt-24">
       <SectionTitle kicker="Off the Clock">Life Outside the Terminal</SectionTitle>
       <p className="mb-8 max-w-xl leading-relaxed text-cream/70">
-        Pickleball, hiking trails, my dogs, and an unreasonable talent for
-        couponing.
+        Pickleball, hiking, and my dogs.
       </p>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
         {PHOTOS.map((p, i) => (

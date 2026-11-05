@@ -18,12 +18,12 @@ export default function Hero() {
       <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
         <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
           <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-cream sm:text-5xl lg:text-6xl">
-            Building reliable software, secure applications, and intelligent workflows.
+            Lissette De Leon
           </h1>
 
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-cream/65">
-            Computer Science graduate developing cloud-connected applications,
-            secure web experiences, and AI-assisted engineering workflows.
+            Computer Science graduate | Application testing, QA, cloud, API, and
+            security projects
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
@@ -37,7 +37,7 @@ export default function Hero() {
           </div>
 
           <p className="mt-9 flex items-center gap-2 font-mono text-xs text-cream/45">
-            <MapPin className="h-3.5 w-3.5" /> San Antonio, Texas
+            <MapPin className="h-3.5 w-3.5" /> San Antonio, TX
           </p>
         </motion.div>
 
