@@ -1,5 +1,6 @@
 import React from "react";
 import Seo from "@/components/portfolio/Seo";
+import ShopPhotos from "@/components/portfolio/strawberry/ShopPhotos";
 import { CasePage, Section, Flow, Bullets } from "@/components/portfolio/case/CaseKit";
 
 export default function ProjectStrawberryShop() {
@@ -23,6 +24,10 @@ export default function ProjectStrawberryShop() {
             deploy the website, and I manage development from client
             requirements through production releases via GitHub.
           </p>
+        </Section>
+
+        <Section title="Photos" status="Live">
+          <ShopPhotos />
         </Section>
 
         <Section title="What I Built" status="Live">

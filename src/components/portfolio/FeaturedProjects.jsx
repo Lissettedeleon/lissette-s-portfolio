@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import SectionTitle from "./SectionTitle";
+import AuditScan from "./audit/AuditScan";
 
 const PROJECTS = [
   {
@@ -13,7 +14,7 @@ const PROJECTS = [
       "Website for a dessert kiosk at Liberty Township Mall in Ohio, built to match the brand and support online ordering, with development managed through GitHub from client requirements to release.",
     role: "Freelance Developer | August 2026 to Present",
     tags: "GitHub | Testing before deployment | Toast POS integration in progress",
-    img: "/projects/strawberryshop.png",
+    img: "https://thestrawberryshop.store/images/cta-cup.webp",
     external: { label: "Visit live site ↗", href: "https://thestrawberryshop.store" },
   },
   {
@@ -38,7 +39,7 @@ const PROJECTS = [
       "Led a team of five through a security assessment aligned with the NIST Cybersecurity Framework, covering access controls, security policies, and data protection practices.",
     role: "Team Lead | Confidential nonprofit",
     tags: "NIST Cybersecurity Framework | Access controls | Data protection",
-    img: "/projects/audit.png",
+    visual: "audit",
     external: null,
   },
 ];
@@ -75,7 +76,11 @@ export default function FeaturedProjects() {
             transition={{ duration: 0.5 }}
             className={`grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-14 ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}
           >
-            {p.imgHref ? (
+            {p.visual === "audit" ? (
+              <Link to={p.to} aria-label={`${p.title} case study`} className="block">
+                <AuditScan />
+              </Link>
+            ) : p.imgHref ? (
               <a href={p.imgHref} target="_blank" rel="noopener noreferrer" aria-label={`Open the ${p.title} report (PDF)`}
                 className="group relative block overflow-hidden rounded-lg border border-cream/15 shadow-[0_18px_44px_rgba(24,36,32,0.14)]">
                 <img src={p.img} alt={p.isVideo ? `${p.title} demo video` : `Screenshot of ${p.title}`} loading="lazy"

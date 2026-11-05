@@ -1,5 +1,6 @@
 import React from "react";
 import Seo from "@/components/portfolio/Seo";
+import AuditScan from "@/components/portfolio/audit/AuditScan";
 import { CasePage, Section, Flow, Bullets } from "@/components/portfolio/case/CaseKit";
 
 export default function ProjectCyberAudit() {
@@ -16,6 +17,8 @@ export default function ProjectCyberAudit() {
         tags={["Team Lead", "NIST Cybersecurity Framework", "Access Controls", "Data Protection", "Confidential under NDA"]}
         next={{ to: "/projects/the-strawberry-shop", label: "The Strawberry Shop" }}
       >
+        <AuditScan />
+
         <Section title="Process">
           <Flow steps={["Scope", "NIST Cybersecurity Framework", "Access controls", "Security policies", "Data protection", "Findings report"]} />
         </Section>
