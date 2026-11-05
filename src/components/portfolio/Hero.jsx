@@ -68,9 +68,6 @@ export default function Hero() {
               </button>
             )}
           </div>
-          <p className="mt-3 text-center font-mono text-xs text-cream/45">
-            30-second intro
-          </p>
         </motion.div>
       </div>
     </section>
