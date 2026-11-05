@@ -14,7 +14,7 @@ const PROJECTS = [
       "Website for a dessert kiosk at Liberty Township Mall in Ohio, built to match the brand and support online ordering, with development managed through GitHub from client requirements to release.",
     role: "Freelance Developer | August 2026 to Present",
     tags: "GitHub | Testing before deployment | Toast POS integration in progress",
-    video: "/intro.mp4",
+    video: "https://media.base44.com/videos/public/6a3e1d18dd902b1f0281e6f2/9d8e3cbc0_strawberry-intro.mp4",
     external: { label: "Visit live site ↗", href: "https://thestrawberryshop.store" },
   },
   {
