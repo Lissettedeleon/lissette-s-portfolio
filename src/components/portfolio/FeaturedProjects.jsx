@@ -14,7 +14,7 @@ const PROJECTS = [
       "Website for a dessert kiosk at Liberty Township Mall in Ohio, built to match the brand and support online ordering, with development managed through GitHub from client requirements to release.",
     role: "Freelance Developer | August 2026 to Present",
     tags: "GitHub | Testing before deployment | Toast POS integration in progress",
-    img: "https://thestrawberryshop.store/images/cta-cup.webp",
+    video: "https://thestrawberryshop.store/videos/hero.mp4",
     external: { label: "Visit live site ↗", href: "https://thestrawberryshop.store" },
   },
   {
@@ -79,6 +79,19 @@ export default function FeaturedProjects() {
             {p.visual === "audit" ? (
               <Link to={p.to} aria-label={`${p.title} case study`} className="block">
                 <AuditScan />
+              </Link>
+            ) : p.video ? (
+              <Link to={p.to} aria-label={`${p.title} case study`}
+                className="group relative block overflow-hidden rounded-lg border border-cream/15 shadow-[0_18px_44px_rgba(24,36,32,0.14)]">
+                <video
+                  src={p.video}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="aspect-[16/10] w-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
+                />
               </Link>
             ) : p.imgHref ? (
               <a href={p.imgHref} target="_blank" rel="noopener noreferrer" aria-label={`Open the ${p.title} report (PDF)`}
